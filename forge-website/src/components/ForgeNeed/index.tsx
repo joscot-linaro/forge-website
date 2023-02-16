@@ -16,17 +16,17 @@ const ForgeNeed = () => {
     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',mt:2,mb:8}}>
         <Typography variant="h5" noWrap sx={{mb:5,mt:2,mx: 'auto'}}>Everything you need</Typography>
     <Grid container spacing={2} justifyContent="center" sx={{mx: 'auto',width:'50%',backgroundColor:'white',display:'flex',flexDirection:"row"}}>
-    <Grid item xs={6} sx={{fontSize:'18px',}}>
+    <Grid item xs={6} sx={{fontSize:'15px',p:1}}>
     Build reliable and optimized code for the right results on
-multiple Server and HPC architectures, from the latest
-compilers and C++ standards to Intel, 64-bit Arm, AMD,
-OpenPOWER and Nvidia GPU hardware. Linaro Forge
-combines Linaro DDT, the leading debugger for time-saving
-high performance application debugging, Linaro MAP, the
-trusted performance profiler for invaluable optimization advice
-across native and Python HPC codes, and Linaro Performance
-Reports for advanced reporting capabilities. Linaro DDT and
-Linaro MAP are also available as standalone products.
+    multiple Server and HPC architectures, from the latest
+    compilers and C++ standards to Intel, 64-bit Arm, AMD,
+    OpenPOWER and Nvidia GPU hardware. Linaro Forge
+    combines Linaro DDT, the leading debugger for time-saving
+    high performance application debugging, Linaro MAP, the
+    trusted performance profiler for invaluable optimization advice
+    across native and Python HPC codes, and Linaro Performance
+    Reports for advanced reporting capabilities. Linaro DDT and
+    Linaro MAP are also available as standalone products.
       </Grid>
       <Grid sx={{display:'flex',flexDirection:'column',backgroundColor:'white',fontSize:'18px',height:50}} item xs={6}>
      <Box sx={{backgroundColor:'#e6e6e6',mb:1,p:2}}>

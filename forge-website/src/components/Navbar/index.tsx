@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Link from 'next/link'
+import Link from 'next/link';
 import { useRouter } from "next/router";
 
 const pages = ['Linaro DDT', 'Linaro MAP', 'Documentations'];
@@ -50,7 +50,7 @@ function ResponsiveAppBar() {
   return (
     <ThemeProvider theme={darkTheme}>
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" sx={{fontFamily:'serif'}}>
         <Toolbar disableGutters>
        
           <Typography
@@ -61,9 +61,7 @@ function ResponsiveAppBar() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
+              fontWeight: 500,
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -104,22 +102,36 @@ function ResponsiveAppBar() {
                 <MenuItem >
                   <Typography textAlign="center">Linaro DDT</Typography>
                   <Typography textAlign="center">Linaro MAP</Typography>
-                  <Typography textAlign="center" onClick={()=>router.push("/documentations")} >Documentations</Typography>
+                  <Typography component="a" textAlign="center" href="/documentations">Documentations</Typography>
                 </MenuItem>
              
             </Menu>
           </Box>
        
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            
               <Button
-                key={page}
+                
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
+                <Link href='/downloadForge'>Linaro DDT</Link>
               </Button>
-            ))}
+              <Button
+               
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                <Link href='/linaroMap'>Linaro MAP</Link>
+              </Button>
+              <Button
+               
+                // onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                <Link href='/documentations'>Documentations</Link>
+              </Button>
+           
           </Box>
         </Toolbar>
       </Container>

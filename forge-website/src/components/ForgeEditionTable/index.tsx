@@ -10,7 +10,7 @@ import LinaroForgeEditions from '../../../content/JsonFiles/LinaroForgeEditions.
 
 const ForgeEditionTable = () => {
   return (
-    <TableContainer sx={{width:'60%',display:'flex',mx:'auto'}} component={Paper}>
+    <TableContainer sx={{width:'60%',display:'flex',mx:'auto',mb:2}} component={Paper}>
     <Table sx={{ minWidth: 650, }} size="small" aria-label="a dense table">
       <TableHead>
         <TableRow >

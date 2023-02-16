@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../src/components/Navbar/index';
-import LinaroMap from '../src/components/HeroCard/LinaroMapHeroCard/index';
+import Navbar from '../components/Navbar/index';
+import LinaroMap from '../components/HeroCard/LinaroMapHeroCard/index';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import CardHolder from '../src/components/CardHolder/index';
+import CardHolder from '../components/CardHolder/index';
 
 const linaroMap = () => {
   return (

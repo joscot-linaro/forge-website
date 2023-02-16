@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import Navbar from '../src/components/Navbar/index';
-import TrialHeroCard from '../src/components/HeroCard/TrialHeroCard/index';
+import Navbar from '../components/Navbar/index';
+import TrialHeroCard from '../components/HeroCard/TrialHeroCard/index';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -8,7 +8,7 @@ import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from "@mui/material/Button";
-import FreeTrialContentText from '../src/components/FreeTrialContentText/index';
+import FreeTrialContentText from '../components/FreeTrialContentText/index';
 
 const freeTrial = () => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };

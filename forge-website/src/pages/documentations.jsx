@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../src/components/Navbar/index';
-import DocumentationsHeroCard from '../src/components/HeroCard/DocumentationsHeroCard/index';
+import Navbar from '../components/Navbar/index';
+import DocumentationsHeroCard from '../components/HeroCard/DocumentationsHeroCard/index';
 
 const documentations = () => {
   return (
