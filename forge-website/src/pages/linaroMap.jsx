@@ -12,10 +12,10 @@ const linaroMap = () => {
     <div>
       <Navbar />
       <LinaroMap />
-       <Grid  sx={{display:'flex',flexDirection:'column',height:300,borderRadius:0,borderColor:'white'}}>
+       <Grid container spacing={2}  sx={{display:'flex',width:'100%',flexDirection:'column',borderRadius:0,borderColor:'white',}}>
         <Typography variant="h5" noWrap sx={{mb:5,mt:2,mx: 'auto'}}>Show Exactly Where and Why Code Is Losing Performance</Typography>
-    <Grid container spacing={4} justifyContent="center" sx={{mx: 'auto',width:'80%',backgroundColor:'white',display:'flex',flexDirection:"row"}}>
-    <Grid item xs={6} sx={{padding:'20px 20px',fontSize:'16px',height:50,p:10}}>
+    <Grid container spacing={2} justifyContent="center" sx={{p:6,mx: 'auto',width:'100%',backgroundColor:'white',display:'flex',flexDirection:{sm:'row',md:'row',xs:'column'},}}>
+    <Grid item xs='auto' md={4} sx={{fontSize:'15px',width:{xs:'100%',md:'70%'},}}>
       <ul>
         <li>No need to change your code or the way you build it</li>
         <li>Profiling for applications running on more than one server and multiple processes</li>
@@ -24,8 +24,8 @@ const linaroMap = () => {
         <li>View memory usage over time to discover high watermarks and changes across the complete memory footprint</li>
       </ul>
       </Grid>
-      <Grid sx={{display:'flex',flexDirection:'column',backgroundColor:'white',fontSize:'14px',height:50}} item xs={6}>
-     <Box sx={{backgroundColor:'#e6e6e6',mb:1,p:2}}>
+      <Grid sx={{display:'flex',flexDirection:'column',backgroundColor:'white',fontSize:'14px',width:'100%',}} item xs={6}>
+     <Box xs='auto' md={4} sx={{backgroundColor:'#e6e6e6',mb:1,p:2,}}>
         <p>Download your free trial of Linaro Forge or contact us
           for more information.</p>
           <Button sx={{backgroundColor:'white',borderColor:'#f28630',fontSize:'12px'}} onClick={()=>router.push("/freeTrial")} variant="outlined">Download Free Trial</Button></Box>
