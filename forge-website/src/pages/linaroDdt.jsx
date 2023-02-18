@@ -7,6 +7,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import HeroText from '../components/HeroText/index';
+import LinaroDdtFeatures from '../components/LinaroDdtFeatures/index';
+import TalkAndContact from '../components/TalkAndContact/index';
+import LinaroDdtHeroCard from '../components/HeroCard/LinaroDdtHeroCard/index';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -19,6 +23,7 @@ const linaroDdt = () => {
   return (
     <>
     <Navbar/>
+    <LinaroDdtHeroCard/>
     <Typography variant="h5" sx={{display:'flex',justifyContent:'center',mb:2,mt:4,mx: 'auto'}}>The Number One Debugger for C, C++ and Fortran Threaded
 and Parallel Code</Typography>
     <Box sx={{ width: '100%',mt:2, }}>
@@ -64,6 +69,9 @@ and Parallel Code</Typography>
             </ul>
         </Grid>
       </Grid>
+      <HeroText/>
+      <LinaroDdtFeatures/>
+      <TalkAndContact backColor={'white'} />
     </Box>
     </>
   )

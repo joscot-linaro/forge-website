@@ -41,7 +41,7 @@ export default function Home({allPlatformsData}) {
         
       </Head> */}
 	  {/* <Container sx={{width:'100%'}}> */}
-	  <Navbar />
+	  {/* <Navbar /> */}
     <HeroCard />
 		<ForgeNeed/>
     <HeaderText />

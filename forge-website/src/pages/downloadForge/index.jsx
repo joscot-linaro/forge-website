@@ -36,7 +36,7 @@ const downloadForge = () => {
     <InstallForge/>
     <ArmForgeToolsLinks/>
     </Container>
-    <TalkAndContact/>
+    <TalkAndContact backColor={'#e6e6e6'} />
     </>
   )
 }

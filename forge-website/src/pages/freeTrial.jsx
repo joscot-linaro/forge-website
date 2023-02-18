@@ -4,16 +4,17 @@ import TrialHeroCard from '../components/HeroCard/TrialHeroCard/index';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Checkbox from '@mui/material/Checkbox';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from "@mui/material/Button";
 import FreeTrialContentText from '../components/FreeTrialContentText/index';
+import jwt from 'jsonwebtoken';
+import bearer  from 'bearer';
+
 
 const freeTrial = () => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   const [formSuccess, setFormSuccess] = useState(false);
   const [test,setTest]=useState(false);
+  const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -35,6 +36,7 @@ const freeTrial = () => {
   //     [fieldName]: fieldValue
   //   }));
   // }
+
   const handleInput = (e) => {
     const fieldName = e.target.name;
     const fieldValue = e.target.value;
@@ -44,10 +46,37 @@ const freeTrial = () => {
       [fieldName]: fieldValue
     }));
   }
+  async function postData(url ) {
+    try{
+      const response = await fetch(url, {
+        method: 'POST',
+        mode: 'no-cors',
+        // body: data
+        // body: JSON.stringify(data)
+    });
+    const jwtData = await response.body;
+    console.log('response is', response);
+    return jwtData;
+    }catch(err){
+      console.log(err);
+    }
+
+ }
+
 const submitForm=(e)=> {
   e.preventDefault();
-  console.log(formData);
-  console.log(JSON.stringify(formData));
+  var token = jwt.sign(formData,secretKey,{
+    expiresIn: "1h" ,  // expires in 1 hour
+    issuer:'TrialRequest'
+  });
+
+   console.log('token is :',token);
+  // console.log('json data',JSON.stringify(formData));
+  postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
+  .then(res=>
+ console.log(res)
+  )
+
 }
   return (
     <>

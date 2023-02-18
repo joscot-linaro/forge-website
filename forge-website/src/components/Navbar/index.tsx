@@ -48,8 +48,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-    <AppBar position="static">
+    // <ThemeProvider theme={darkTheme}>
+    <AppBar position="absolute" sx={{opacity:2,backgroundColor:'rgba(0, 0, 0, 0.5)',}}>
       <Container maxWidth="xl" sx={{fontFamily:'serif'}}>
         <Toolbar disableGutters>
        
@@ -136,7 +136,7 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
-    </ThemeProvider>
+    // </ThemeProvider>
   );
 }
 export default ResponsiveAppBar;
