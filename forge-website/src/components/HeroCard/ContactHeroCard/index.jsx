@@ -3,8 +3,7 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Navbar from '../../Navbar/index';
 
-
-const DocumentationsHeroCard= () => {
+const ContactHeroCard = () => {
   return (
     <Card sx={{ display: 'flex',width:'100%' ,height:'350px',borderRadius:0,position:'relative'}}>
       
@@ -16,11 +15,11 @@ const DocumentationsHeroCard= () => {
     />
     <Navbar />
     <div style={{position: "absolute", color: "white",top: 100,left: "50%",transform: "translateX(-50%)",display:'flex',flexDirection:'column',fontSize:'40px'}}> 
-    <div  style={{color: "white",marginLeft:'140px'}}>Documentation</div>
+    <div  style={{color: "white",marginLeft:'140px'}}>Contact us</div>
     </div>
    
 </Card>
   )
 }
 
-export default DocumentationsHeroCard;
+export default ContactHeroCard;

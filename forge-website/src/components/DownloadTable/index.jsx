@@ -24,9 +24,9 @@ const DownloadTable = () => {
         </TableRow>
       </TableHead>
       <TableBody>
-      {downloads.map((row) => (
+      {downloads.map((row,index) => (
           <TableRow
-            key={row.os}
+            key={index}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
           >
             <TableCell component="th" scope="row" align="center">
@@ -34,12 +34,12 @@ const DownloadTable = () => {
             </TableCell>
                 <TableCell align="center">
                   {row.download.map((item)=>(
-                    <div style={{color:'#2596be',}}><Link style={{textDecoration:'none!important',color:'#2596be'}} href={item.link}>{item.name}</Link></div>
+                    <div key={item.link} style={{color:'#2596be',}}><Link style={{textDecoration:'none!important',color:'#2596be'}} href={item.link}>{item.name}</Link></div>
                   ))}
                 </TableCell>
             
             <TableCell align="center"> {row.download.map((item)=>(
-                    <div>{item.checksum}</div>
+                    <div key={item.link}>{item.checksum}</div>
                   ))}</TableCell>
                 </TableRow> 
          

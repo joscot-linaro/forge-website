@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 const HeroText = () => {
   return (
     <Box sx={{backgroundColor:'#c9ced2',display:'flex',flexDirection:'column'}}>
-  <Typography variant='caption' fontWeight={100} fontSize={16}  p={4}  sx={{width:'50%',display:'flex',mx:'auto',}}>
+  <Typography variant='body1' fontWeight={0} fontSize={16}  p={4}  sx={{width:'60%',mx:'auto',}}>
   “With Arm DDT, debugging is fast and enjoyable. It’s easy to just pick up
 – it is outstanding for debugging multithreaded and parallel software.”
   </Typography >

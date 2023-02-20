@@ -1,19 +1,20 @@
 import React,{useState} from 'react';
-import Navbar from '../components/Navbar/index';
-import TrialHeroCard from '../components/HeroCard/TrialHeroCard/index';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
-import FreeTrialContentText from '../components/FreeTrialContentText/index';
+import Typography from '@mui/material/Typography';
+import ContactHeroCard from '../../components/HeroCard/ContactHeroCard/index';
+import { useRouter } from "next/router";
 import jwt from 'jsonwebtoken';
-import bearer  from 'bearer';
 
-
-const freeTrial = () => {
+const contact = () => {
+  const router = useRouter();
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   const [formSuccess, setFormSuccess] = useState(false);
-  const [test,setTest]=useState(false);
   const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
@@ -23,19 +24,19 @@ const freeTrial = () => {
     Company:"",
     Email:"",
     Tel_Number:"",
-    // Linaro_Forge:false,
-    // Linaro_Compiler:false,
-    // Linaro_Performance:false
+    Linaro_Forge:false,
+    Linaro_Compiler:false,
+    Linaro_Performance:false
   });
-  // const handleCheckboxInput=(e)=>{
-  //   const fieldName = e.target.name;
-  //   const fieldValue = e.target.checked;
+  const handleCheckboxInput=(e)=>{
+    const fieldName = e.target.name;
+    const fieldValue = e.target.checked;
   
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [fieldName]: fieldValue
-  //   }));
-  // }
+    setFormData((prevState) => ({
+      ...prevState,
+      [fieldName]: fieldValue
+    }));
+  }
 
   const handleInput = (e) => {
     const fieldName = e.target.name;
@@ -67,24 +68,25 @@ const submitForm=(e)=> {
   e.preventDefault();
   var token = jwt.sign(formData,secretKey,{
     expiresIn: "1h" ,  // expires in 1 hour
-    issuer:'TrialRequest'
+    issuer:'ContactUs'
   });
 
    console.log('token is :',token);
-  // console.log('json data',JSON.stringify(formData));
-  postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
-  .then(res=>
- console.log(res)
-  )
-
+  const res=postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
+  if(res.status===0){
+    router.push('/contactUs/thanks')
+     }
 }
   return (
     <>
-      <Navbar/>
-      <TrialHeroCard/>
+      <ContactHeroCard/>
       <Grid container  spacing={2} sx={{width:'70%',display:'flex',flexDirection:'row',mx:'auto'}}>
      <Box sx={{width:'50%'}}>
-      <FreeTrialContentText />
+     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'70%',mt:4,}}>
+     <Typography variant="h5" sx={{mt:2,}}>Request a Call Back</Typography>
+     <Typography variant="caption"  sx={{mt:4,fontWeight:'600',borderBottom:'2px solid #e6e6e6',p:2}}>Please provide your details in the fields opposite and we
+     will call you back as soon as possible.</Typography>
+     </Grid>
      </Box>
      <Box    
      component="form"
@@ -170,28 +172,27 @@ const submitForm=(e)=> {
           value={formData.Country}
           onChange={handleInput}
         />
-        <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px'}}>Submit</Button>
         </div>
         
-        {/* <div style={{display:'flex',flexDirection:'column'}}>
+        <div style={{display:'flex',flexDirection:'column',padding:'14px'}}>
           <p>Which product(s) are you interested in?</p>
           <FormGroup>
       <FormControlLabel control={<Checkbox name='Linaro_Forge' checked={formData.Linaro_Forge} onChange={handleCheckboxInput} />} label="Linaro Forge (includes Linaro DDT, Linaro MAP
-and Linaro Performance Reports)" />
+       and Linaro Performance Reports)" />
       <FormControlLabel  control={<Checkbox name='Linaro_Compiler' checked={formData.Linaro_Compiler} onChange={handleCheckboxInput} />} label="Linaro Compiler for Linux" />
       <FormControlLabel   control={<Checkbox name='Linaro_Performance' checked={formData.Linaro_Performance} onChange={handleCheckboxInput}  />} label="Linaro Performance Libraries" />
     </FormGroup>
     <p>Linaro will process your information in accordance
-with our Privacy Policy.</p>
-
-        </div> */}
+      with our Privacy Policy.</p>
+      <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px'}}>Submit</Button>
+        </div>
       </Box>
         </Grid>
  
       
       </>
-      
+   
   )
 }
 
-export default freeTrial;
+export default contact

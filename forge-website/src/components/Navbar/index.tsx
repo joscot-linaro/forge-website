@@ -48,8 +48,8 @@ function ResponsiveAppBar() {
   };
 
   return (
-    // <ThemeProvider theme={darkTheme}>
-    <AppBar position="absolute" sx={{opacity:2,backgroundColor:'rgba(0, 0, 0, 0.5)',}}>
+    <ThemeProvider theme={darkTheme}>
+    <AppBar position="absolute" sx={{backgroundColor:'rgba(0, 0, 0, 0.5)',}}>
       <Container maxWidth="xl" sx={{fontFamily:'serif'}}>
         <Toolbar disableGutters>
        
@@ -69,7 +69,7 @@ function ResponsiveAppBar() {
             Linaro Forge
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }, }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -85,12 +85,12 @@ function ResponsiveAppBar() {
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
-                horizontal: 'right',
+                horizontal: 'left',
               }}
               keepMounted
               transformOrigin={{
                 vertical: 'top',
-                horizontal: 'right',
+                horizontal: 'left',
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
@@ -99,44 +99,44 @@ function ResponsiveAppBar() {
               }}
             >
               {/* {pages.map((page) => ( */}
-                <MenuItem >
-                  <Typography textAlign="center">Linaro DDT</Typography>
-                  <Typography textAlign="center">Linaro MAP</Typography>
-                  <Typography component="a" textAlign="center" href="/documentations">Documentations</Typography>
+                <MenuItem sx={{display:'flex',flexDirection:'column',}}>
+                  <Typography component="a" textAlign="center" href='/linaroDdt' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
+                  <Typography component="a" textAlign="center" href='/linaroMap' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
+                  <Typography component="a" textAlign="center" href="/documentations" sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentations</Typography>
                 </MenuItem>
              
             </Menu>
           </Box>
        
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent:'right',mr:4, } }}>
             
               <Button
                 
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href='/linaroDdt'>Linaro DDT</Link>
+                <Link href='/linaroDdt' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Link>
               </Button>
               <Button
                
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href='/linaroMap'>Linaro MAP</Link>
+                <Link href='/linaroMap' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Link>
               </Button>
               <Button
                
                 // onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href='/documentations'>Documentations</Link>
+                <Link href='/documentations' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentations</Link>
               </Button>
            
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
-    // </ThemeProvider>
+    </ThemeProvider>
   );
 }
 export default ResponsiveAppBar;

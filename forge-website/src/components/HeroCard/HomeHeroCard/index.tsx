@@ -6,7 +6,7 @@ import Navbar from '../../Navbar/index';
 
 const HomeHeroCard= () => {
   return (
-    <Card sx={{ display: 'flex',backgroundColor:'white',color:'red',width:'100%' ,height:'350px',position:'relative'}}>
+    <Card sx={{ display: 'flex',width:'100%' ,height:'350px',borderRadius:0,position:'relative'}}>
       
         <CardMedia
                 component="img"
