@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
 
-const DocumentationsHeroCard= () => {
+const DocumentationHeroCard= () => {
   return (
     <Grid sx={{ display: 'flex',width:'100%' ,height:'350px',borderRadius:0,position:'relative'}}>
       
@@ -25,4 +25,4 @@ const DocumentationsHeroCard= () => {
   )
 }
 
-export default DocumentationsHeroCard;
+export default DocumentationHeroCard;
