@@ -28,7 +28,7 @@ jobs:
           cd "$GITHUB_WORKSPACE/website/forge-website"
           if [ -d out ]; then rm -r out; fi
       - name: Build site
-        run: cd "$GITHUB_WORKSPACE/website/forge-website" && npm install && npm export
+        run: cd "$GITHUB_WORKSPACE/website/forge-website" && npm install && npm run export
       - name: Sync to S3
         run: |
           # Sync HTML files with different cache settings. Using "no-cache" does *NOT* mean that the file is not
