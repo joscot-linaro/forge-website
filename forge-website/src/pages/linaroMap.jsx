@@ -7,6 +7,8 @@ import HeaderBar from '../components/HeaderBar/index';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import TalkAndContact from '../components/TalkAndContact/index';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 import { useRouter } from "next/router"; 
 
 const LinaroMap = () => {
@@ -23,13 +25,13 @@ const LinaroMap = () => {
         <Grid item xs={6} sx={{display:'flex',mx:{xs:'auto'},justifyContent:'center',width:'100%'
         }} >
             {/* <Typography fontSize={14} variant="h5" > */}
-            <ul style={{width:{xs:'100%',md:'56%'},marginLeft:'10%'}}>
-              <li>No need to change your code or the way you build it</li>
-              <li>Profiling for applications running on more than one server and multiple processes</li>
-              <li>Clear views of bottlenecks in I/O, in compute, in thread or in multi-process activity</li>
-              <li>Deep insight into actual processor instruction types that affect your performance</li>
-              <li>View memory usage over time to discover high watermarks and changes across the complete memory footprint</li>
-            </ul>
+            <List sx={{ listStyleType: 'disc', pl: 7 ,width:{xs:'100%',md:'70%',fontFamily:'sans-serif',fontSize:'14px'}}}>
+            <ListItem sx={{ display: 'list-item' }}>No need to change your code or the way you build it</ListItem>
+            <ListItem sx={{ display: 'list-item' }}>Profiling for applications running on more than one server and multiple processes</ListItem>
+            <ListItem sx={{ display: 'list-item' }}>Clear views of bottlenecks in I/O, in compute, in thread or in multi-process activity</ListItem>
+            <ListItem sx={{ display: 'list-item' }}>Deep insight into actual processor instruction types that affect your performance</ListItem>
+            <ListItem sx={{ display: 'list-item' }}>View memory usage over time to discover high watermarks and changes across the complete memory footprint</ListItem>
+              </List>
             {/* </Typography> */}
          </Grid>
         <Grid item xs={6} sx={{mx:{xs:'auto',md:'0'}}} >
@@ -54,11 +56,11 @@ const LinaroMap = () => {
           Find resources that describe how to develop, deploy and
           optimize enterprise and scientific HPC (High Performance
           Computing) applications, including:</Typography>
-          <ul style={{fontFamily:'inherit'}}>
-              <li>Help and Tutorials</li>
-              <li>HPC Blog</li>
-              <li>Arm Forge</li>
-          </ul>
+          <List sx={{ listStyleType: 'disc', pl: 7 ,fontFamily:'sans-serif',fontSize:'14px'}}>
+          <ListItem sx={{ display: 'list-item' }}>Help and Tutorials</ListItem>
+          <ListItem sx={{ display: 'list-item' }}>HPC Blog</ListItem>
+          <ListItem sx={{ display: 'list-item' }}>Arm Forge</ListItem>
+          </List>
         </Grid>
       </Grid>
       <TalkAndContact backColor={'#e6e6e6'} />

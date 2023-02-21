@@ -27,7 +27,7 @@ const LinaroDdt = () => {
       <Grid container rowSpacing={1} sx={{flexDirection:{xs:'column',md:'row'}}} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
         <Grid item xs={6} sx={{display:'flex',mx:{xs:'auto'},justifyContent:'center',width:'100%'
         }} >
-            <Typography fontSize={14} variant="body1" pl={4} pr={1} sx={{display:'flex',mt:2,mx: 'auto',width:'60%'}}>Linaro DDT is the number one server and HPC debugger in
+            <Typography fontSize={14} variant="body1" pl={4} pr={1} sx={{display:'flex',mt:2,mx: 'auto',width:{md:'57%',xs:'100%'}}}>Linaro DDT is the number one server and HPC debugger in
                 research, industry, and academia for software engineers and
                 scientists developing C++, C, Fortran parallel and threaded
                 applications on CPUs, GPUs, Intel and Arm. Linaro DDT is
@@ -55,7 +55,7 @@ const LinaroDdt = () => {
         <Grid item xs={6} sx={{padding:4,mx:{xs:'auto',md:'0'}}}>  
         <Typography variant="h5" sx={{mx: 'auto',ml:2,p:3,fontWeight:'600'}}>Linaro DDT Makes
         Debugging Faster</Typography>
-        <List sx={{ listStyleType: 'disc', pl: 7 }}>
+        <List sx={{ listStyleType: 'disc', pl: 7,fontFamily:'sans-serif',fontSize:'14px' }}>
                  <ListItem sx={{ display: 'list-item' }}>Cross-platform for multiple server and HPC architectures</ListItem>
                 <ListItem sx={{ display: 'list-item' }}>Native parallel debugging of Python applications</ListItem>
                  <ListItem sx={{ display: 'list-item' }}>Has market leading memory debugging</ListItem>
