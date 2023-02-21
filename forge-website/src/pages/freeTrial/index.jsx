@@ -1,5 +1,9 @@
-import React,{useState} from 'react';
+import React,{useState,useMemo} from 'react';
 import TrialHeroCard from '../../components/HeroCard/TrialHeroCard/index';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -9,11 +13,11 @@ import FreeTrialContentText from '../../components/FreeTrialContentText/index';
 import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
+import countryList from 'react-select-country-list';
 
 const FreeTrial = () => {
   const router = useRouter();
-  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-  const [formSuccess, setFormSuccess] = useState(false);
+  const options = useMemo(() => countryList().getData(), []);
   const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
@@ -148,16 +152,23 @@ const submitForm=async(e)=> {
           value={formData.Tel_Number}
           onChange={handleInput}
         />
-            <TextField
-          required
-          id="outlined-country-input"
-          name='Country'
-          InputProps={{ sx: { height: 40 } }}
-          placeholder="Select Country"
-          sx={{backgroundColor:'white',width:'60% !important'}}
+         <Box sx={{ mt:1 ,ml:1,mb:2}}>
+        <FormControl style={{backgroundColor:'white',color:'black',width:290,}}>
+        <InputLabel id="country-select-label" >Country</InputLabel>
+        <Select
+          labelId="country-select-label"
+          id="country-select"
           value={formData.Country}
+          label="Country"
+          name='Country'
           onChange={handleInput}
-        />
+        >
+        {options.map((item)=>(
+          <MenuItem key={item.label} value={item.label}>{item.label}</MenuItem>
+        ))}
+        </Select>
+      </FormControl>
+      </Box>
         <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px',mt:6,ml:1}}>Submit</Button>
         </Grid>
       </Box>

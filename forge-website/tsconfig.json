@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.jsx", "src/components/ForgePlatforms/index.jsx", "src/components/ForgeNeed/index.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/index.jsx", "src/components/ForgePlatforms/index.jsx", "src/components/ForgeNeed/index.jsx", "src/components/Navbar/index.jsx"],
   "exclude": ["node_modules"]
 }
