@@ -8,7 +8,7 @@ import ForgeFeaturesBenefits from '../../../content/JsonFiles/ForgeFeaturesBenef
 const ForgeFeatures = () => {
   return (
     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,backgroundColor:'#e6e6e6',}}>
-      <Typography variant="h5" noWrap sx={{mb:5,mt:2,mx: 'auto'}}>Features and Benefits</Typography>
+      <Typography variant="h5" noWrap sx={{mb:5,mt:2,mx: 'auto',fontWeight:'600'}}>Features and Benefits</Typography>
       <Grid container  spacing={2} sx={{width:'80%',display:'flex',mx:'auto'}}  >
             <Grid item xs={12}>
             <Grid container justifyContent="center" spacing={2}>

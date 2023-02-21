@@ -9,6 +9,7 @@ import LinaroDdtFeatures from '../components/LinaroDdtFeatures/index';
 import TalkAndContact from '../components/TalkAndContact/index';
 import LinaroDdtHeroCard from '../components/HeroCard/LinaroDdtHeroCard/index';
 import { useRouter } from "next/router";
+import HeaderBar from '../components/HeaderBar/index';
 
 const linaroDdt = () => {
   const router = useRouter();
@@ -16,6 +17,7 @@ const linaroDdt = () => {
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
+      <HeaderBar/>
     <LinaroDdtHeroCard/>
     <Grid sx={{ width: '100%',mt:2,}}>
     <Typography variant="h5" sx={{display:'flex',justifyContent:'center',mb:2,mt:4,mx: 'auto',fontWeight:'600'}}>The Number One Debugger for C, C++ and Fortran Threaded
@@ -36,9 +38,9 @@ const linaroDdt = () => {
         <Box xs='auto' md={4} sx={{backgroundColor:'#e6e6e6',mb:1,p:3,mt:2,}}>
         <Typography variant="subtitle2" sx={{mb:2,mt:2,mx: 'auto'}}>Download your free trial of Linaro Forge or contact us
           for more information.</Typography>
-          <Button sx={{backgroundColor:'white',borderColor:'#f28630',fontSize:'12px'}} onClick={()=>router.push("/freeTrial")} variant="outlined">Download Free Trial</Button></Box>
+          <Button sx={{backgroundColor:'white',borderColor:'#f28630',fontSize:'14px',color:'black',fontWeight:'600'}} onClick={()=>router.push("/freeTrial")} variant="outlined">Download Free Trial</Button></Box>
          <Box sx={{backgroundColor:'#e6e6e6',p:2}}>
-         <Button onClick={()=>router.push("/contactUs")} sx={{backgroundColor:'white',borderColor:'#9bcc4c',fontSize:'12px'}} variant="outlined">Contact us today</Button></Box>
+         <Button onClick={()=>router.push("/contactUs")} sx={{backgroundColor:'white',borderColor:'#9bcc4c',fontSize:'14px',color:'black',fontWeight:'600'}} variant="outlined">Contact us today</Button></Box>
         </Grid> 
          <Grid item xs={6} sx={{mx:{xs:'auto',md:'0'},}}>
         <CardMedia

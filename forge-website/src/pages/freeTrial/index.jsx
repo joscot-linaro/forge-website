@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import FreeTrialContentText from '../../components/FreeTrialContentText/index';
 import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
+import HeaderBar from '../../components/HeaderBar/index';
 
 const freeTrial = () => {
   const router = useRouter();
@@ -40,7 +41,6 @@ const freeTrial = () => {
         mode: 'no-cors',
     });
     const jwtData = await response;
-    console.log('response is', jwtData);
     return jwtData;
     }catch(err){
       console.log(err);
@@ -54,8 +54,7 @@ const submitForm=async(e)=> {
     expiresIn: "1h" ,  // expires in 1 hour
     issuer:'TrialRequest'
   });
- const res=await postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
- console.log('res',res.status);
+ const res=await postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
     if(res.status===0){
     router.push('/freeTrial/thanks')
     }
@@ -63,10 +62,10 @@ const submitForm=async(e)=> {
 }
   return (
     <>
-     
       <Grid flexGrow={2} sx={{backgroundColor:'white',
       boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
       , }} >
+        <HeaderBar/>
      <TrialHeroCard/>
      <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'}}} >
         <Grid item xs={6}>

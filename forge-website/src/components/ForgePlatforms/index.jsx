@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcolor,icon }) => {
   const colorRef = useRef();
   const router = useRouter();
-  console.log(link)
   return (
     <div key={id}>
     <Card   

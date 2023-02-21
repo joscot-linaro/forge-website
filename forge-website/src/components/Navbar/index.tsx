@@ -63,7 +63,7 @@ function ResponsiveAppBar() {
               display: { xs: 'none', md: 'flex' },
               fontWeight: 500,
               color: 'inherit',
-              textDecoration: 'none',
+              textDecoration: 'none!important',
             }}
           >
             Linaro Forge
@@ -113,21 +113,21 @@ function ResponsiveAppBar() {
               <Button
                 
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
                 <Link href='/linaroDdt' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Link>
               </Button>
               <Button
                
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
                 <Link href='/linaroMap' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Link>
               </Button>
               <Button
                
                 // onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
                 <Link href='/documentations' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentations</Link>
               </Button>

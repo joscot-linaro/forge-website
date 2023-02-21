@@ -8,18 +8,10 @@ import HeaderText from '../components/HeaderText/index';
 import ForgeFeatures from '../components/ForgeFeatures/index';
 import ForgeEditions from '../components/ForgeEditions/index';
 import TalkAndContact from '../components/TalkAndContact/index';
-// import { useThemeContext } from '@linaro-marketing/linaro-mui-web';
-
-// interface allPlatformsDataProps{
-// 	id:string,
-// 	platName:string,
-// 	title:string,
-// 	description:string,
-// }
+import HeaderBar from '../components/HeaderBar/index';
 
 export async function getStaticProps() {
     const allPlatformsData =await getSortedPostsData();
-    console.log('data is :',allPlatformsData);
     return {
       props: {
         allPlatformsData,
@@ -33,12 +25,7 @@ export default function Home({allPlatformsData}) {
  
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' } }} >
-      {/* <Head>
-        <title>Forge Website</title>
-        
-      </Head> */}
-	  {/* <Container sx={{width:'100%'}}> */}
-	  {/* <Navbar /> */}
+<HeaderBar/>
     <HeroCard />
 		<ForgeNeed/>
     <HeaderText />

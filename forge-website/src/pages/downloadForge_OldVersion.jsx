@@ -1,7 +1,6 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -12,12 +11,14 @@ import Paper from '@mui/material/Paper';
 import previousVersions from '../../content/JsonFiles/previous_versions.json';
 import Link from 'next/link';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
+import HeaderBar from '../components/HeaderBar/index';
 
 const downloadForge_OldVersion = () => {
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
+      <HeaderBar/>
    <DownloadHeroCard/>
     
    <Grid sx={{ width: '100%',mt:2,}}>

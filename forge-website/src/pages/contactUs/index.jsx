@@ -9,12 +9,11 @@ import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
 import ContactHeroCard from '../../components/HeroCard/ContactHeroCard/index';
 import { useRouter } from "next/router";
+import HeaderBar from '../../components/HeaderBar/index';
 import jwt from 'jsonwebtoken';
 
 const contact = () => {
   const router = useRouter();
-  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-  const [formSuccess, setFormSuccess] = useState(false);
   const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
@@ -52,11 +51,8 @@ const contact = () => {
       const response = await fetch(url, {
         method: 'POST',
         mode: 'no-cors',
-        // body: data
-        // body: JSON.stringify(data)
     });
     const jwtData = await response.body;
-    console.log('response is', response);
     return jwtData;
     }catch(err){
       console.log(err);
@@ -70,8 +66,6 @@ const submitForm=(e)=> {
     expiresIn: "1h" ,  // expires in 1 hour
     issuer:'ContactUs'
   });
-
-   console.log('token is :',token);
   const res=postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
   if(res.status===0){
     router.push('/contactUs/thanks')
@@ -79,25 +73,31 @@ const submitForm=(e)=> {
 }
   return (
     <>
+     <Grid flexGrow={2} sx={{backgroundColor:'white',
+      boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
+      , }} >
+    <HeaderBar />
       <ContactHeroCard/>
-      <Grid container  spacing={2} sx={{width:'70%',display:'flex',flexDirection:'row',mx:'auto'}}>
-     <Box sx={{width:'50%'}}>
+      <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'}}} >
+      <Grid item xs={6}>
      <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'70%',mt:4,}}>
-     <Typography variant="h5" sx={{mt:2,}}>Request a Call Back</Typography>
-     <Typography variant="caption"  sx={{mt:4,fontWeight:'600',borderBottom:'2px solid #e6e6e6',p:2}}>Please provide your details in the fields opposite and we
+     <Typography variant="h5" sx={{mt:2,fontWeight:'600'}}>Request a Call Back</Typography>
+     <Typography variant="caption"  sx={{mt:4,borderBottom:'1px solid #e6e6e6',pb:3}}>Please provide your details in the fields opposite and we
      will call you back as soon as possible.</Typography>
      </Grid>
-     </Box>
+     </Grid>
+     <Grid item xs={6} sx={{width:'100%'}}>
      <Box    
      component="form"
       sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
-        backgroundColor:'#e6e6e6',width:'50%',
+        backgroundColor:'#e6e6e6',ml:{xs:'8%',md:'0'},height:'100%',p:{md:'5%',},
+         display:'flex',
+         width:{xs:'700px',md:'90%'}
     
       }}
-      noValidate
       autoComplete="off">
-        <div style={{display:'flex',flexDirection:'column',padding:'20px',marginTop:'20px'}}>
+        <Grid style={{display:'flex',flexDirection:'column',padding:'20px',}}>
         <TextField
           required
           id="outlined-name-input"
@@ -138,8 +138,8 @@ const submitForm=(e)=> {
           value={formData.Company}
           onChange={handleInput}
         />
-        <p style={{fontSize:'14px'}}>Note: your temporary license will be sent to this
-        email address.</p>
+        <Typography variant='caption' sx={{fontSize:'14px',width:'70%'}}>Note: your temporary license will be sent to this
+        email address.</Typography>
        <TextField
           required
           name='Email'
@@ -172,24 +172,27 @@ const submitForm=(e)=> {
           value={formData.Country}
           onChange={handleInput}
         />
-        </div>
-        
-        <div style={{display:'flex',flexDirection:'column',padding:'14px'}}>
-          <p>Which product(s) are you interested in?</p>
-          <FormGroup>
-      <FormControlLabel control={<Checkbox name='Linaro_Forge' checked={formData.Linaro_Forge} onChange={handleCheckboxInput} />} label="Linaro Forge (includes Linaro DDT, Linaro MAP
-       and Linaro Performance Reports)" />
-      <FormControlLabel  control={<Checkbox name='Linaro_Compiler' checked={formData.Linaro_Compiler} onChange={handleCheckboxInput} />} label="Linaro Compiler for Linux" />
-      <FormControlLabel   control={<Checkbox name='Linaro_Performance' checked={formData.Linaro_Performance} onChange={handleCheckboxInput}  />} label="Linaro Performance Libraries" />
+                <Typography variant='body1' style={{fontSize:'14px'}}>Which product(s) are you interested in?</Typography>
+          <FormGroup sx={{mt:3}}>
+      <FormControlLabel  control={<Checkbox name='Linaro_Forge' checked={formData.Linaro_Forge} onChange={handleCheckboxInput} />}
+       label={<Typography style={{fontSize:'14px'}}>Linaro Forge (includes Linaro DDT, Linaro MAP
+        and Linaro Performance Reports)</Typography>}
+        />
+      <FormControlLabel control={<Checkbox name='Linaro_Compiler' checked={formData.Linaro_Compiler} onChange={handleCheckboxInput} />}
+      label={<Typography style={{fontSize:'14px'}}>Linaro Compiler for Linux</Typography>}
+       />
+      <FormControlLabel control={<Checkbox name='Linaro_Performance' checked={formData.Linaro_Performance} onChange={handleCheckboxInput}  />}
+      label={<Typography style={{fontSize:'14px'}}>Linaro Performance Libraries</Typography>}
+       />
     </FormGroup>
-    <p>Linaro will process your information in accordance
-      with our Privacy Policy.</p>
-      <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px'}}>Submit</Button>
-        </div>
+    <Typography variant='body1' style={{fontSize:'14px'}}>Linaro will process your information in accordance
+      with our Privacy Policy.</Typography>
+      <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px',mt:3}}>Submit</Button>
+        </Grid>
       </Box>
         </Grid>
- 
-      
+          </Grid>
+      </Grid>
       </>
    
   )

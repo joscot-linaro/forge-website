@@ -8,6 +8,7 @@ import InstallForge from '../../components/installForge/index';
 import ArmForgeToolsLinks from '../../components/ArmForgeToolsLinks/index';
 import TalkAndContact from '../../components/TalkAndContact/index';
 import { useRouter } from "next/router";
+import HeaderBar from '../../components/HeaderBar/index';
 
 const downloadForge = () => {
   const buttonTitles=[{name:'Older versions of Linaro Forge',to:'/downloadForge_OldVersion'},{name:'Linaro License Server',to:'/licenseServer'},{name:'See Source code',to:'/openSource'},{name:'Supported platforms',to:'/'},{name:'User guide',to:'https://docs.linaroforge.com'}];
@@ -17,6 +18,7 @@ const downloadForge = () => {
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
+      <HeaderBar/>
     <DownloadHeroCard/>
     <Grid sx={{ width: '100%',mt:2,}}>
     

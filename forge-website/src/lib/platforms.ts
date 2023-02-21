@@ -8,7 +8,6 @@ import html from "remark-html";
 const postsDirectory = path.join(process.cwd(), "ForgePlatforms");
 
 export function getSortedPostsData() {
-    console.log('a',postsDirectory);
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((fileName) => {
     const id = fileName.replace(/\.md$/, "");

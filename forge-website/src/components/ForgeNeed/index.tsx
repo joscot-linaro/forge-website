@@ -9,7 +9,7 @@ const ForgeNeed = () => {
   const router = useRouter();
   return (
     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',mt:2,mb:8}}>
-        <Typography variant="h5" noWrap sx={{mb:5,mt:2,mx: 'auto'}}>Everything you need</Typography>
+        <Typography variant="h5" noWrap sx={{mb:5,mt:2,mx: 'auto',fontWeight:'600'}}>Everything you need</Typography>
     <Grid container spacing={2} justifyContent="center" sx={{mx: 'auto',backgroundColor:'white',display:'flex',flexDirection:{xs:'column',md:'row'}}}>
     <Grid item xs={10} md={5}>
     <Typography fontSize={14} variant="body1" pr={1} sx={{pl:{xs:1,md:4}}}>
