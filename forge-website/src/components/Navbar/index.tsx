@@ -10,7 +10,6 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import Link from 'next/link';
 import { useRouter } from "next/router";
 
 const pages = ['Linaro DDT', 'Linaro MAP', 'Documentations'];
@@ -109,24 +108,24 @@ function ResponsiveAppBar() {
             
               <Button
                 
-                onClick={handleCloseNavMenu}
+                onClick={()=>router.push('/linaroDdt')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography component='a' href='/linaroDdt' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
+                <Typography sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
               </Button>
               <Button
                
-                onClick={handleCloseNavMenu}
+                onClick={()=>router.push('/linaroMap')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography component='a' href='/linaroMap' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
+                <Typography  style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
               </Button>
               <Button
                
-                // onClick={handleCloseNavMenu}
+               onClick={()=>router.push('/documentation')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography component='a' href='/documentations' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
+                <Typography sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
               </Button>
            
           </Box>
