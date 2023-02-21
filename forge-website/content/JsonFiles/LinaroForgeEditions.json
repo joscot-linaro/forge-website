@@ -1,0 +1,67 @@
+[
+    {
+      "Feature" : "Scalable debugging",
+      "Linaro_Forge":".",
+      "Linaro_Forge_Ultimate":"."
+    },
+    {
+        "Feature" : "Scalable profiling",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Memory debugging",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "CPU, MPI, I/O profiling",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Native remote client",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Version control integration",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Python debug and profiling for HPC",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Regional profiling with Caliper",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "CPU hardware counters",
+        "Linaro_Forge":"",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Full GPU profiling and debugging",
+        "Linaro_Forge":"Optional extra",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Custom metrics API",
+        "Linaro_Forge":"",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Performance report generation",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      },
+      {
+        "Feature" : "Application efficiency advice",
+        "Linaro_Forge":".",
+        "Linaro_Forge_Ultimate":"."
+      }
+]
