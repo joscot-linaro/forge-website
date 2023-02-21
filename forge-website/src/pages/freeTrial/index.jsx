@@ -164,7 +164,7 @@ const submitForm=async(e)=> {
           onChange={handleInput}
         >
         {options.map((item)=>(
-          <MenuItem value={item.label}>{item.label}</MenuItem>
+          <MenuItem key={item.label} value={item.label}>{item.label}</MenuItem>
         ))}
         </Select>
       </FormControl>
