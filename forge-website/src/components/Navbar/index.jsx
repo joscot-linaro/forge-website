@@ -25,10 +25,10 @@ function ResponsiveAppBar() {
         },
       });
  
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+
+  const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
   // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -111,21 +111,21 @@ function ResponsiveAppBar() {
                 onClick={()=>router.push('/linaroDdt')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
               </Button>
               <Button
                
                 onClick={()=>router.push('/linaroMap')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography  style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
+                <Typography underline='none' component='a' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
               </Button>
               <Button
                
                onClick={()=>router.push('/documentation')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
               </Button>
            
           </Box>

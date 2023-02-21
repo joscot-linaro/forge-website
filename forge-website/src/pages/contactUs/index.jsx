@@ -1,9 +1,10 @@
-import React,{useState} from 'react';
+import React,{useState,useMemo} from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import FormGroup from '@mui/material/FormGroup';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
+import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
@@ -11,8 +12,12 @@ import ContactHeroCard from '../../components/HeroCard/ContactHeroCard/index';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import jwt from 'jsonwebtoken';
+import countryList from 'react-select-country-list';
+
 
 const Contact = () => {
+  const options = useMemo(() => countryList().getData(), []);
+  console.log(options);
   const router = useRouter();
   const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
@@ -162,7 +167,24 @@ const submitForm=(e)=> {
           value={formData.Tel_Number}
           onChange={handleInput}
         />
-            <TextField
+         <Box sx={{ mt:1 ,ml:1,mb:2}}>
+        <FormControl style={{backgroundColor:'white',color:'black',width:290,}}>
+        <InputLabel id="country-select-label" >Country</InputLabel>
+        <Select
+          labelId="country-select-label"
+          id="country-select"
+          value={formData.Country}
+          label="Country"
+          name='Country'
+          onChange={handleInput}
+        >
+        {options.map((item)=>(
+          <MenuItem value={item.label}>{item.label}</MenuItem>
+        ))}
+        </Select>
+      </FormControl>
+      </Box>
+            {/* <TextField
           required
           id="outlined-country-input"
           name='Country'
@@ -171,20 +193,14 @@ const submitForm=(e)=> {
           sx={{backgroundColor:'white',width:'60% !important'}}
           value={formData.Country}
           onChange={handleInput}
-        />
-                {/* <Typography variant='body1' style={{fontSize:'14px'}}>Which product(s) are you interested in?</Typography>
-          <FormGroup sx={{mt:3}}>
-      <FormControlLabel  control={<Checkbox name='Linaro_Forge' checked={formData.Linaro_Forge} onChange={handleCheckboxInput} />}
-       label={<Typography style={{fontSize:'14px'}}>Linaro Forge (includes Linaro DDT, Linaro MAP
-        and Linaro Performance Reports)</Typography>}
-        />
-      <FormControlLabel control={<Checkbox name='Linaro_Compiler' checked={formData.Linaro_Compiler} onChange={handleCheckboxInput} />}
-      label={<Typography style={{fontSize:'14px'}}>Linaro Compiler for Linux</Typography>}
-       />
-      <FormControlLabel control={<Checkbox name='Linaro_Performance' checked={formData.Linaro_Performance} onChange={handleCheckboxInput}  />}
-      label={<Typography style={{fontSize:'14px'}}>Linaro Performance Libraries</Typography>}
-       />
-    </FormGroup> */}
+        >
+          {options.map(name=>{
+              <MenuItem key={name.label}>
+              <span >{name.label}</span>
+            </MenuItem>
+          })}
+          </TextField> */}
+               
     <Typography variant='body1' style={{fontSize:'14px'}}>Linaro will process your information in accordance
       with our Privacy Policy.</Typography>
       <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px',mt:3}}>Submit</Button>
