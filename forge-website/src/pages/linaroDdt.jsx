@@ -8,6 +8,8 @@ import HeroText from '../components/HeroText/index';
 import LinaroDdtFeatures from '../components/LinaroDdtFeatures/index';
 import TalkAndContact from '../components/TalkAndContact/index';
 import LinaroDdtHeroCard from '../components/HeroCard/LinaroDdtHeroCard/index';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 import { useRouter } from "next/router";
 import HeaderBar from '../components/HeaderBar/index';
 
@@ -53,15 +55,15 @@ const LinaroDdt = () => {
         <Grid item xs={6} sx={{padding:4,mx:{xs:'auto',md:'0'}}}>  
         <Typography variant="h5" sx={{mx: 'auto',ml:2,p:3,fontWeight:'600'}}>Linaro DDT Makes
         Debugging Faster</Typography>
-            <ul>
-                <li>Cross-platform for multiple server and HPC architectures</li>
-                <li>Native parallel debugging of Python applications</li>
-                <li>Has market leading memory debugging</li>
-                <li>Outstanding C++ debugging support</li>
-                <li>Complete Fortran debugging support</li>
-                <li>Has an offline mode for debugging non-interactively</li>
-                <li>Handles and visualizes huge data sets</li>
-            </ul>
+        <List sx={{ listStyleType: 'disc', pl: 7 }}>
+                 <ListItem sx={{ display: 'list-item' }}>Cross-platform for multiple server and HPC architectures</ListItem>
+                <ListItem sx={{ display: 'list-item' }}>Native parallel debugging of Python applications</ListItem>
+                 <ListItem sx={{ display: 'list-item' }}>Has market leading memory debugging</ListItem>
+                 <ListItem sx={{ display: 'list-item' }}>Outstanding C++ debugging support</ListItem>
+                 <ListItem sx={{ display: 'list-item' }}>Complete Fortran debugging support</ListItem>
+                 <ListItem sx={{ display: 'list-item' }}>Has an offline mode for debugging non-interactively</ListItem>
+                 <ListItem sx={{ display: 'list-item' }}>Handles and visualizes huge data sets</ListItem>
+                </List>
         </Grid>
       </Grid>
       
