@@ -13,7 +13,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Link from 'next/link';
 import { useRouter } from "next/router";
 
-const pages = ['Linaro DDT', 'Linaro MAP', 'Documentations'];
+const pages = ['Linaro DDT', 'Linaro MAP', 'Documentation'];
 
 function ResponsiveAppBar() {
   const router = useRouter();
@@ -99,7 +99,7 @@ function ResponsiveAppBar() {
                 <MenuItem sx={{display:'flex',flexDirection:'column',justifyContent:'flex-end'}}>
                   <Typography component="a" textAlign="center" href='/linaroDdt' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
                   <Typography component="a" textAlign="center" href='/linaroMap' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
-                  <Typography component="a" textAlign="center" href="/documentations" sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
+                  <Typography component="a" textAlign="center" href="/documentation" sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
                 </MenuItem>
              
             </Menu>
@@ -126,7 +126,7 @@ function ResponsiveAppBar() {
                 // onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography component='a' href='/documentations' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
+                <Typography component='a' href='/documentation' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
               </Button>
            
           </Box>
