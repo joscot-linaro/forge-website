@@ -39,7 +39,7 @@ const LinaroDdt = () => {
         <Typography variant="subtitle2" sx={{mb:2,mt:2,mx: 'auto'}}>Download your free trial of Linaro Forge or contact us
           for more information.</Typography>
           <Button sx={{backgroundColor:'white',borderColor:'#f28630',fontSize:'14px',color:'black',fontWeight:'600'}} onClick={()=>router.push("/freeTrial")} variant="outlined">Download Free Trial</Button></Box>
-         <Box sx={{backgroundColor:'#e6e6e6',p:2}}>
+         <Box sx={{backgroundColor:'#e6e6e6',p:3}}>
          <Button onClick={()=>router.push("/contactUs")} sx={{backgroundColor:'white',borderColor:'#9bcc4c',fontSize:'14px',color:'black',fontWeight:'600'}} variant="outlined">Contact us today</Button></Box>
         </Grid> 
          <Grid item xs={6} sx={{mx:{xs:'auto',md:'0'},}}>

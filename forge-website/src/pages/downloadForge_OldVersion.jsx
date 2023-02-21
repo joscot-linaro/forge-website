@@ -9,7 +9,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import previousVersions from '../../content/JsonFiles/previous_versions.json';
-import Link from 'next/link';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import HeaderBar from '../components/HeaderBar/index';
 
@@ -49,11 +48,13 @@ const DownloadForge_OldVersion = () => {
                   ))}
                 </TableCell>
             
-            <TableCell align="center"> {row.versions.map((item)=>(
+            <TableCell style={{fontSize:'12px'}} align="center"> {row.versions.map((item)=>(
               item.packages.map((pack)=>(
-                <div key={pack.link} style={{color:'#2596be',}}><Link style={{textDecoration:'none!important',color:'#2596be'}} href={pack.link}>{pack.label}</Link>
+                <Typography component='div' key={pack.link}>
+                <Typography component='a' sx={{color:'#2596be',textDecoration:'none',fontSize:'12px'}} href={pack.link}>{pack.label}
                 {pack.suffix &&<span style={{color:'black',}}>-{pack.suffix}</span>}
-                </div>
+                </Typography>
+                </Typography>
               ))
                    
                   ))}</TableCell>

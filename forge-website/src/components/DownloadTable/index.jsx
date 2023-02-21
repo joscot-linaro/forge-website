@@ -8,6 +8,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Link from 'next/link';
+import Typography from '@mui/material/Typography';
 import downloads from '../../../content/JsonFiles/downloads.json';
 
 const DownloadTable = () => {
@@ -34,7 +35,9 @@ const DownloadTable = () => {
             </TableCell>
                 <TableCell align="center">
                   {row.download.map((item)=>(
-                    <div key={item.link} style={{color:'#2596be',}}><Link style={{textDecoration:'none!important',color:'#2596be'}} href={item.link}>{item.name}</Link></div>
+                    <Typography component='div' key={item.link}>
+                    <Typography component='a'  style={{color:'#2596be',fontSize:'12px',textDecoration:'none'}} href={item.link}>{item.name}</Typography>
+                    </Typography>
                   ))}
                 </TableCell>
             

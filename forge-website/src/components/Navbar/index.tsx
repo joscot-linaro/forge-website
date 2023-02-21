@@ -99,7 +99,7 @@ function ResponsiveAppBar() {
                 <MenuItem sx={{display:'flex',flexDirection:'column',justifyContent:'flex-end'}}>
                   <Typography component="a" textAlign="center" href='/linaroDdt' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
                   <Typography component="a" textAlign="center" href='/linaroMap' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
-                  <Typography component="a" textAlign="center" href="/documentations" sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentations</Typography>
+                  <Typography component="a" textAlign="center" href="/documentations" sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
                 </MenuItem>
              
             </Menu>
@@ -112,21 +112,21 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Link href='/linaroDdt' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Link>
+                <Typography component='a' href='/linaroDdt' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
               </Button>
               <Button
                
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Link href='/linaroMap' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Link>
+                <Typography component='a' href='/linaroMap' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
               </Button>
               <Button
                
                 // onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Link href='/documentations' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentations</Link>
+                <Typography component='a' href='/documentations' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
               </Button>
            
           </Box>

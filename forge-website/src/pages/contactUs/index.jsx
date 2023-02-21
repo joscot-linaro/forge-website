@@ -23,9 +23,9 @@ const Contact = () => {
     Company:"",
     Email:"",
     Tel_Number:"",
-    Linaro_Forge:false,
-    Linaro_Compiler:false,
-    Linaro_Performance:false
+    // Linaro_Forge:false,
+    // Linaro_Compiler:false,
+    // Linaro_Performance:false
   });
   const handleCheckboxInput=(e)=>{
     const fieldName = e.target.name;
@@ -138,8 +138,8 @@ const submitForm=(e)=> {
           value={formData.Company}
           onChange={handleInput}
         />
-        <Typography variant='caption' sx={{fontSize:'14px',width:'70%'}}>Note: your temporary license will be sent to this
-        email address.</Typography>
+        {/* <Typography variant='caption' sx={{fontSize:'14px',width:'70%'}}>Note: your temporary license will be sent to this
+        email address.</Typography> */}
        <TextField
           required
           name='Email'
@@ -172,7 +172,7 @@ const submitForm=(e)=> {
           value={formData.Country}
           onChange={handleInput}
         />
-                <Typography variant='body1' style={{fontSize:'14px'}}>Which product(s) are you interested in?</Typography>
+                {/* <Typography variant='body1' style={{fontSize:'14px'}}>Which product(s) are you interested in?</Typography>
           <FormGroup sx={{mt:3}}>
       <FormControlLabel  control={<Checkbox name='Linaro_Forge' checked={formData.Linaro_Forge} onChange={handleCheckboxInput} />}
        label={<Typography style={{fontSize:'14px'}}>Linaro Forge (includes Linaro DDT, Linaro MAP
@@ -184,7 +184,7 @@ const submitForm=(e)=> {
       <FormControlLabel control={<Checkbox name='Linaro_Performance' checked={formData.Linaro_Performance} onChange={handleCheckboxInput}  />}
       label={<Typography style={{fontSize:'14px'}}>Linaro Performance Libraries</Typography>}
        />
-    </FormGroup>
+    </FormGroup> */}
     <Typography variant='body1' style={{fontSize:'14px'}}>Linaro will process your information in accordance
       with our Privacy Policy.</Typography>
       <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px',mt:3}}>Submit</Button>

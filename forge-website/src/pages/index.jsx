@@ -1,6 +1,6 @@
 import React from 'react';
 import HeroCard from '../components/HeroCard/HomeHeroCard/index';
-import ForgeNeed from '../components/ForgeNeed';
+import ForgeNeed from '../components/ForgeNeed/index';
 import ForgePlatforms from '../components/ForgePlatforms/index';
 import { getSortedPostsData } from "../lib/platforms";
 import Grid from '@mui/material/Grid';

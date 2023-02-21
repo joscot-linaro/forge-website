@@ -6,4 +6,4 @@ description: Spot bottlenecks at a glance to optimize performance.* in Linaro Fo
 bordercolor: '#f28630'
 backcolor: '#fdf2e8'
 icon: /images/Perf_icon.png
-link: /
+link: https://docs.linaroforge.com/
