@@ -5,7 +5,7 @@ import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import LicenseServerTable from '../components/licenseServerTable/index';
 import HeaderBar from '../components/HeaderBar/index';
 
-const licenseServer = () => {
+const LicenseServer = () => {
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
@@ -23,4 +23,4 @@ const licenseServer = () => {
   )
 }
 
-export default licenseServer;
+export default LicenseServer;

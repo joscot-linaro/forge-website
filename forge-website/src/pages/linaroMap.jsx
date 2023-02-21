@@ -9,7 +9,7 @@ import CardMedia from '@mui/material/CardMedia';
 import TalkAndContact from '../components/TalkAndContact/index';
 import { useRouter } from "next/router"; 
 
-const linaroMap = () => {
+const LinaroMap = () => {
   const router = useRouter();
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',
@@ -68,4 +68,4 @@ const linaroMap = () => {
   )
 }
 
-export default linaroMap;
+export default LinaroMap;

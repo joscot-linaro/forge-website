@@ -11,7 +11,7 @@ import LinaroDdtHeroCard from '../components/HeroCard/LinaroDdtHeroCard/index';
 import { useRouter } from "next/router";
 import HeaderBar from '../components/HeaderBar/index';
 
-const linaroDdt = () => {
+const LinaroDdt = () => {
   const router = useRouter();
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',
@@ -73,4 +73,4 @@ const linaroDdt = () => {
   )
 }
 
-export default linaroDdt;
+export default LinaroDdt;

@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import jwt from 'jsonwebtoken';
 
-const contact = () => {
+const Contact = () => {
   const router = useRouter();
   const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
@@ -198,4 +198,4 @@ const submitForm=(e)=> {
   )
 }
 
-export default contact
+export default Contact;

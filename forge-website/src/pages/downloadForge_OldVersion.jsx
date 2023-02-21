@@ -13,7 +13,7 @@ import Link from 'next/link';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import HeaderBar from '../components/HeaderBar/index';
 
-const downloadForge_OldVersion = () => {
+const DownloadForge_OldVersion = () => {
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
@@ -69,4 +69,4 @@ const downloadForge_OldVersion = () => {
   )
 }
 
-export default downloadForge_OldVersion;
+export default DownloadForge_OldVersion;

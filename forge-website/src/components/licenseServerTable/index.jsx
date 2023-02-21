@@ -32,13 +32,13 @@ const licenseServerTable = () => {
               {row.os}
             </TableCell>
                 <TableCell align="center">
-                  {row.download.map((item)=>(
-                    <div style={{color:'#2596be',}}><Link style={{textDecoration:'none!important',color:'#2596be'}} href={item.link}>{item.name}</Link></div>
+                  {row.download.map((item,index)=>(
+                    <div key={index} style={{color:'#2596be',}}><Link style={{textDecoration:'none!important',color:'#2596be'}} href={item.link}>{item.name}</Link></div>
                   ))}
                 </TableCell>
             
             <TableCell align="center"> {row.download.map((item)=>(
-                    <div>{item.checksum}</div>
+                    <div key={item.link}>{item.checksum}</div>
                   ))}</TableCell>
                 </TableRow> 
          

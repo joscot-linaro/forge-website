@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 import DocumentationsHeroCard from '../components/HeroCard/DocumentationsHeroCard/index';
 import HeaderBar from '../components/HeaderBar/index';
 
-const documentations = () => {
+const Documentations = () => {
   return (
     <Grid>
       <HeaderBar/>
@@ -17,4 +17,4 @@ const documentations = () => {
   )
 }
 
-export default documentations;
+export default Documentations;

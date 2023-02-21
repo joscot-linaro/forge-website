@@ -8,7 +8,7 @@ import OpenSourcesTable from '../components/OpenSourcesTable/index';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import HeaderBar from '../components/HeaderBar/index';
 
-const openSource = () => {
+const OpenSource = () => {
     const [isExpanded,setIsExpanded]=useState(false);
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',
@@ -31,4 +31,4 @@ const openSource = () => {
   )
 }
 
-export default openSource
+export default OpenSource

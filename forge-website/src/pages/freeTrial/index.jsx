@@ -10,7 +10,7 @@ import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 
-const freeTrial = () => {
+const FreeTrial = () => {
   const router = useRouter();
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
   const [formSuccess, setFormSuccess] = useState(false);
@@ -262,4 +262,4 @@ const submitForm=async(e)=> {
   )
 }
 
-export default freeTrial;
+export default FreeTrial;

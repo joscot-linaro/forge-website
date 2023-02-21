@@ -10,7 +10,7 @@ import TalkAndContact from '../../components/TalkAndContact/index';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 
-const downloadForge = () => {
+const DownloadForge = () => {
   const buttonTitles=[{name:'Older versions of Linaro Forge',to:'/downloadForge_OldVersion'},{name:'Linaro License Server',to:'/licenseServer'},{name:'See Source code',to:'/openSource'},{name:'Supported platforms',to:'/'},{name:'User guide',to:'https://docs.linaroforge.com'}];
   const router = useRouter();
   
@@ -44,4 +44,4 @@ const downloadForge = () => {
   )
 }
 
-export default downloadForge;
+export default DownloadForge;
