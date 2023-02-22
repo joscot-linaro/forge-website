@@ -1,0 +1,26 @@
+[
+    {
+      "Title" : "Cross Platform",
+      "Description":"Moving to a new architecture or system is challenging enough without having to learn a new tool chain at the same time.Linaro DDT, MAP and Performance Reports run everywhere — on your own laptop, the latest supercomputer,and tomorrow's upcoming architectures. With Forge you can automatically detect memory bugs, profile behavior and see advanced performance metrics at all scales on Arm 64-bit, Intel Xeon, NVIDIA GPUs , and OpenPOWER."
+    },
+    {
+        "Title" : "Fast Debug",
+        "Description":"Linaro DDT is the debugger of choice for developing of C++, C or Fortran parallel, and threaded applications on CPUs, and GPUs. Its powerful intuitive graphical interface helps you easily detect memory bugs and divergent behavior at all scales, making Linaro DDT the number one debugger in research, industry and academia."
+      },
+      {
+        "Title" : "Low-overhead Profiling",
+        "Description":"Profile your code without distorting application behavior. Linaro MAP is Linaro Forge's scalable low-overhead profiler of C++, C, Cuda, Fortran and Python with no instrumentation or code changes required. It helps developers accelerate their code by revealing the causes of slow performance. From multicore Linux workstations to the largest supercomputers, you can profile realistic test cases with typically less than 5% runtime overhead."
+      },
+      {
+        "Title" : "Short Learning Curve",
+        "Description":"Linaro DDT offers a powerful intuitive GUI that sets the standard for multi-process and multi-threaded debugging. Complex software debugging is made simple whether you're working on a PC or offline, with the help of zero-click variable comparisons, built-in memory debugging, and powerful array visualizations — for today's increasingly parallel processors, clusters, and supercomputers."
+      },
+      {
+        "Title" : "Wide Issue Coverage",
+        "Description":"Linaro MAP exposes a wide set of performance indicators,including MPI metrics, PAPI counters, IO metrics, energy metrics and even your own custom metrics. Profile computation (with self and child and call tree representations over time), thread activity (to identify over-subscribed cores and sleeping threads that waste CPU time for OpenMP and pthreads),instruction types, as well as synchronization and I/O performance."
+      },
+      {
+        "Title" : "Single and Multi Threaded Profiling",
+        "Description":"Linaro MAP profiles parallel, multithreaded, and single threaded C, C++, Fortran, F90 and Python codes, providing in-depth analysis and bottleneck pinpointing to the source line. Unlike most profilers , it can profile pthreads, OpenMP or MPI for parallel and threaded code, including communication and  workload imbalance issues for MPI and multi-process codes."
+      }
+   ]

@@ -1,0 +1,14 @@
+[
+    {
+      "Title" : "Debugging Designed for Novice and Master Alike",
+      "Description":"Linaro DDT’s powerful intuitive GUI sets the standard for multi-process and multi-threaded debugging. Zero-click variable comparisons, built-in memory debugging and powerful array visualizations simplify the complexity of debugging software - whether on the desktop or today's increasingly parallel processors, clusters and supercomputers."
+    },
+    {
+        "Title" : "Cross-Platform to Keep You Productive",
+        "Description":"Moving to a new architecture or system is challenging enough without learning a new toolchain at the same time. Linaro DDT runs everywhere - on your own laptop, the latest supercomputer and tomorrow's upcoming architectures. It supports Arm 64-bit, Intel Xeon, Intel Xeon Phi, NVIDIA CUDA, and OpenPOWER."
+      },
+      {
+        "Title" : "Best-Practice Training from Parallel Debugging Experts",
+        "Description":"Maximize the results with on-site and web-based training courses from the experts in parallel debugging. A wide range of training materials and direct email access to our support team ensures you get the most out of your hardware and software for years to come."
+      } 
+   ]
