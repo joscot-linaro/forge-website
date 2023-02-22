@@ -46,7 +46,7 @@ function ResponsiveAppBar() {
   return (
     <ThemeProvider theme={darkTheme}>
     <AppBar position="absolute" sx={{backgroundColor:'rgba(0, 0, 0, 0.5)',}}>
-      <Container maxWidth="xl" sx={{fontFamily:'serif'}}>
+      <Container maxWidth="xl" sx={{fontFamily:'serif',display:'flex',justifyContent:'center'}}>
         <Toolbar disableGutters>
        
           <Typography
@@ -55,7 +55,7 @@ function ResponsiveAppBar() {
             component="a"
             href="/"
             sx={{
-              mr: 2,
+              mr: 40,
               // display: { xs: 'none', md: 'flex' },
               fontWeight: 500,
               color: 'inherit',
@@ -111,14 +111,21 @@ function ResponsiveAppBar() {
                 onClick={()=>router.push('/linaroDdt')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro DDT</Typography>
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3}}>Linaro DDT</Typography>
               </Button>
               <Button
                
                 onClick={()=>router.push('/linaroMap')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography underline='none' component='a' style={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Linaro MAP</Typography>
+                <Typography underline='none' component='a' style={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3}}>Linaro MAP</Typography>
+              </Button>
+              <Button
+               
+               onClick={()=>router.push('/downloadForge')}
+                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
+              >
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3}}>Download</Typography>
               </Button>
               <Button
                
