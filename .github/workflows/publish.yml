@@ -15,9 +15,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Fetch git repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.3.0
         with:
-          path: website
           fetch-depth: 0
       - uses: sonarsource/sonarqube-scan-action@master
         env:
@@ -28,18 +27,18 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Initialise environment
-        run: cat "$GITHUB_WORKSPACE/website/.github-env-${GITHUB_REF##*/}" >> $GITHUB_ENV
+        run: cat "$GITHUB_WORKSPACE/.github-env-${GITHUB_REF##*/}" >> $GITHUB_ENV
       - name: Check site
-        run: cd "$GITHUB_WORKSPACE/website/forge-website" && yarn install && yarn run lint
+        run: cd "$GITHUB_WORKSPACE/forge-website" && yarn install && yarn run lint
       - name: Wipe previous export
         run: |
-          cd "$GITHUB_WORKSPACE/website/forge-website"
+          cd "$GITHUB_WORKSPACE/forge-website"
           if [ -d out ]; then rm -r out; fi
       - name: Build site
-        run: cd "$GITHUB_WORKSPACE/website/forge-website" && yarn install && yarn run export
+        run: cd "$GITHUB_WORKSPACE/forge-website" && yarn install && yarn run export
       - name: Sync to S3
         run: |
-          cd "$GITHUB_WORKSPACE/website/forge-website/out"
+          cd "$GITHUB_WORKSPACE/forge-website/out"
           # Sync HTML files with different cache settings. Using "no-cache" does *NOT* mean that the file is not
           # cached - it just forces the browser to do a quick check upstream to make sure that the page is valid.
           aws --profile "$AWS_STATIC_SITE_PROFILE" s3 sync --exclude "*" --include "*.html" --cache-control "no-cache, max-age=86400" ./ "s3://$AWS_STATIC_SITE_URL" --delete --no-progress
