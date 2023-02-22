@@ -17,7 +17,6 @@ import countryList from 'react-select-country-list';
 
 const Contact = () => {
   const options = useMemo(() => countryList().getData(), []);
-  console.log(options);
   const router = useRouter();
   const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
