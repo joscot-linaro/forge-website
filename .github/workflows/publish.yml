@@ -17,18 +17,26 @@ jobs:
       - name: Fetch git repository
         uses: actions/checkout@v3
         with:
-          ssh-key: ${{ secrets.LINARO_BUILD_KEY }}
           path: website
+          fetch-depth: 0
+      - uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - uses: sonarsource/sonarqube-quality-gate-action@master
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: Initialise environment
         run: cat "$GITHUB_WORKSPACE/website/.github-env-${GITHUB_REF##*/}" >> $GITHUB_ENV
       - name: Check site
-        run: cd "$GITHUB_WORKSPACE/website/forge-website" && yarn install && npm run lint
+        run: cd "$GITHUB_WORKSPACE/website/forge-website" && yarn install && yarn run lint
       - name: Wipe previous export
         run: |
           cd "$GITHUB_WORKSPACE/website/forge-website"
           if [ -d out ]; then rm -r out; fi
       - name: Build site
-        run: cd "$GITHUB_WORKSPACE/website/forge-website" && yarn install && npm run export
+        run: cd "$GITHUB_WORKSPACE/website/forge-website" && yarn install && yarn run export
       - name: Sync to S3
         run: |
           cd "$GITHUB_WORKSPACE/website/forge-website/out"
