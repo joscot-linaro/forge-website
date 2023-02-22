@@ -1,4 +1,4 @@
-import React,{useState,useMemo} from 'react';
+import React,{useState,useMemo,useEffect} from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import jwt from 'jsonwebtoken';
 import countryList from 'react-select-country-list';
+import ThanksForm from './[id]/index';
 
 
 const Contact = () => {
@@ -31,6 +32,9 @@ const Contact = () => {
     // Linaro_Compiler:false,
     // Linaro_Performance:false
   });
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleCheckboxInput=(e)=>{
     const fieldName = e.target.name;
     const fieldValue = e.target.checked;
@@ -66,18 +70,51 @@ const Contact = () => {
 
 const submitForm=(e)=> {
   e.preventDefault();
+  setFormErrors(validate(formData));
+  setIsSubmitting(true);
+  if(Object.keys(formErrors).length === 0){
   var token = jwt.sign(formData,secretKey,{
     expiresIn: "1h" ,  // expires in 1 hour
     issuer:'ContactUs'
   });
   const res=postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
   if(res.status===0){
-    router.push('/contactUs/thanks')
+    // router.push('/contactUs/thanks')
      }
+    }
 }
+const validate = (values) => {
+  let errors = {};
+  // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
+  if (!values.Email) {
+    errors.email = "Email cannot be blank!";
+  }
+  //  else if (!regex.test(values.email)) {
+  //   errors.email = "Invalid email format!";
+  // }
+  if (!values.Name) {
+    errors.Name = "Name cannot be blank!";
+  } else if (values.Name.length < 1) {
+    errors.Name = "Name must be more than 2 characters!";
+  }
+  if (!values.LastName) {
+    errors.LastName = "LastName cannot be blank!";
+  } else if (values.LastName.length < 1) {
+    errors.LastName = "LastName must be more than 2 characters!";
+  }
+  return errors;
+};
+useEffect(() => {
+  if (Object.keys(formErrors).length === 0 && isSubmitting) {
+    submitForm();
+  }
+  console.log(formErrors);
+}, [formErrors]);
+
   return (
     <>
-     <Grid flexGrow={2} sx={{backgroundColor:'white',
+    {Object.keys(formErrors).length !== 0 || !isSubmitting ?
+     (<Grid flexGrow={2} sx={{backgroundColor:'white',
       boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
       , }} >
     <HeaderBar />
@@ -112,6 +149,9 @@ const submitForm=(e)=> {
            value={formData.Name}
            onChange={handleInput}
         />
+         {formErrors.Name && (
+            <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.Name}</Typography>
+          )}
          <TextField
           required
           id="outlined-LastName-input"
@@ -122,6 +162,9 @@ const submitForm=(e)=> {
           onChange={handleInput}
           value={formData.LastName}
         />
+         {formErrors.LastName && (
+            <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.LastName}</Typography>
+          )}
           <TextField
           required
           id="outlined-Job-title-input"
@@ -155,6 +198,9 @@ const submitForm=(e)=> {
           value={formData.Email}
           onChange={handleInput}
         />
+         {formErrors.email && (
+            <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.email}</Typography>
+          )}
            <TextField
           required
           id="outlined-Telephone-input"
@@ -207,7 +253,10 @@ const submitForm=(e)=> {
       </Box>
         </Grid>
           </Grid>
-      </Grid>
+      </Grid>):
+      (
+         <ThanksForm />
+      )}
       </>
    
   )
