@@ -21,7 +21,7 @@ export async function getStaticProps() {
   }
 
 export default function Home({allPlatformsData}) {
-  const [spacing, setSpacing] = React.useState(2);
+  const [spacing] = React.useState(2);
  
   return (
     <Grid flexGrow={2} sx={{backgroundColor:'white',boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' } }} >
@@ -32,7 +32,7 @@ export default function Home({allPlatformsData}) {
     <Grid container  spacing={2}  >
       <Grid item xs={12}>
       <Grid container justifyContent="center" spacing={spacing}>
-      {allPlatformsData.map(({ id,platName,link, title,description,bordercolor,backcolor,icon},index)=>(
+      {allPlatformsData.map(({ id,platName,link, title,description,bordercolor,backcolor,icon})=>(
       <ForgePlatforms key={id} link={link} platName={platName} title={title} description={description} bordercolor={bordercolor} backcolor={backcolor} icon={icon} />
     ))}
 		 </Grid>
