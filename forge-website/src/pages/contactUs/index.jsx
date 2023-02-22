@@ -1,7 +1,7 @@
 import React,{useState,useMemo} from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
@@ -13,12 +13,14 @@ import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import jwt from 'jsonwebtoken';
 import countryList from 'react-select-country-list';
+import ThanksForm from './[id]/index';
 
 
 const Contact = () => {
   const options = useMemo(() => countryList().getData(), []);
+  const [isLoading,setIsLoading]=useState(false);
   const router = useRouter();
-  const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
+  const[secretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -27,19 +29,9 @@ const Contact = () => {
     Company:"",
     Email:"",
     Tel_Number:"",
-    // Linaro_Forge:false,
-    // Linaro_Compiler:false,
-    // Linaro_Performance:false
   });
-  const handleCheckboxInput=(e)=>{
-    const fieldName = e.target.name;
-    const fieldValue = e.target.checked;
-  
-    setFormData((prevState) => ({
-      ...prevState,
-      [fieldName]: fieldValue
-    }));
-  }
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInput = (e) => {
     const fieldName = e.target.name;
@@ -56,25 +48,56 @@ const Contact = () => {
         method: 'POST',
         mode: 'no-cors',
     });
-    const jwtData = await response.body;
-    return jwtData;
+    setIsSubmitting(true);
+    const res = response;
+    console.log(res);
+    if(res.ok===true)
+    {
+      setIsSubmitting(false);
+      router.push('/contactUs/thanks')
+    };
+    return res;
     }catch(err){
       console.log(err);
     }
 
  }
 
-const submitForm=(e)=> {
+const submitForm=async(e)=> {
   e.preventDefault();
+  setFormErrors(validate(formData));
+
+  if(Object.keys(formErrors).length === 0){
+    setIsSubmitting(true);
   var token = jwt.sign(formData,secretKey,{
     expiresIn: "1h" ,  // expires in 1 hour
     issuer:'ContactUs'
   });
-  const res=postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
-  if(res.status===0){
-    router.push('/contactUs/thanks')
-     }
+  postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
+    }
 }
+const validate = (values) => {
+  let errors = {};
+  // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
+  if (!values.Email) {
+    errors.email = "Email cannot be blank!";
+  }
+  //  else if (!regex.test(values.email)) {
+  //   errors.email = "Invalid email format!";
+  // }
+  if (!values.Name) {
+    errors.Name = "Name cannot be blank!";
+  } else if (values.Name.length < 1) {
+    errors.Name = "Name must be more than 2 characters!";
+  }
+  if (!values.LastName) {
+    errors.LastName = "LastName cannot be blank!";
+  } else if (values.LastName.length < 1) {
+    errors.LastName = "LastName must be more than 2 characters!";
+  }
+  return errors;
+};
+
   return (
     <>
      <Grid flexGrow={2} sx={{backgroundColor:'white',
@@ -112,6 +135,9 @@ const submitForm=(e)=> {
            value={formData.Name}
            onChange={handleInput}
         />
+         {formErrors.Name && (
+            <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.Name}</Typography>
+          )}
          <TextField
           required
           id="outlined-LastName-input"
@@ -122,8 +148,11 @@ const submitForm=(e)=> {
           onChange={handleInput}
           value={formData.LastName}
         />
+         {formErrors.LastName && (
+            <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.LastName}</Typography>
+          )}
           <TextField
-          required
+          // required
           id="outlined-Job-title-input"
           placeholder="Job title"
           name='Job_title'
@@ -133,7 +162,7 @@ const submitForm=(e)=> {
           onChange={handleInput}
         />
           <TextField
-          required
+          // required
           id="outlined-Company-input"
           name="Company"
           placeholder="Company"
@@ -155,6 +184,9 @@ const submitForm=(e)=> {
           value={formData.Email}
           onChange={handleInput}
         />
+         {formErrors.email && (
+            <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.email}</Typography>
+          )}
            <TextField
           required
           id="outlined-Telephone-input"
@@ -182,24 +214,7 @@ const submitForm=(e)=> {
         ))}
         </Select>
       </FormControl>
-      </Box>
-            {/* <TextField
-          required
-          id="outlined-country-input"
-          name='Country'
-          InputProps={{ sx: { height: 40 } }}
-          placeholder="Select Country"
-          sx={{backgroundColor:'white',width:'60% !important'}}
-          value={formData.Country}
-          onChange={handleInput}
-        >
-          {options.map(name=>{
-              <MenuItem key={name.label}>
-              <span >{name.label}</span>
-            </MenuItem>
-          })}
-          </TextField> */}
-               
+      </Box>     
     <Typography variant='body1' style={{fontSize:'14px'}}>Linaro will process your information in accordance
       with our Privacy Policy.</Typography>
       <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px',mt:3}}>Submit</Button>

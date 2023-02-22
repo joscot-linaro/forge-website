@@ -12,8 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useRouter } from "next/router";
 
-const pages = ['Linaro DDT', 'Linaro MAP', 'Documentations'];
-
 function ResponsiveAppBar() {
   const router = useRouter();
     const darkTheme = createTheme({
@@ -31,17 +29,10 @@ function ResponsiveAppBar() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
 
   return (
     <ThemeProvider theme={darkTheme}>
@@ -109,30 +100,31 @@ function ResponsiveAppBar() {
               <Button
                 
                 onClick={()=>router.push('/linaroDdt')}
-                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
+                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important', }}
               >
-                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3}}>Linaro DDT</Typography>
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3,'&:hover':{color:'#9bcc4c'}}}>Linaro DDT</Typography>
               </Button>
               <Button
                
                 onClick={()=>router.push('/linaroMap')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography underline='none' component='a' style={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3}}>Linaro MAP</Typography>
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3,'&:hover':{color:'#9bcc4c'}}}>Linaro MAP</Typography>
+                
               </Button>
               <Button
                
                onClick={()=>router.push('/downloadForge')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3}}>Download</Typography>
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3,'&:hover':{color:'#9bcc4c'}}}>Download</Typography>
               </Button>
               <Button
                
                onClick={()=>router.push('/documentation')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px'}}>Documentation</Typography>
+                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px','&:hover':{color:'#9bcc4c'}}}>Documentation</Typography>
               </Button>
            
           </Box>
