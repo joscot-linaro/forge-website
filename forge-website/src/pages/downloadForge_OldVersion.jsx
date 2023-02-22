@@ -22,14 +22,14 @@ const DownloadForge_OldVersion = () => {
     
    <Grid sx={{ width: '100%',mt:2,}}>
          <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto'}}>
-         <Typography variant="h5" sx={{mt:2,mb:4,mx:'auto',fontWeight:'600'}}>Older versions of Arm Forge remote client software</Typography>
+         <Typography variant="h5" sx={{mt:2,mb:4,mx:'auto',fontWeight:'600'}}>Older versions of Linaro Forge remote client software</Typography>
          </Grid>
          <TableContainer sx={{width:'100%',display:'flex',mx:'auto'}} component={Paper}>
     <Table sx={{ minWidth: 650, }} size="small" aria-label="a dense table">
       <TableHead>
         <TableRow >
           <TableCell align="center" sx={{fontWeight:'bold'}}>Operating System</TableCell>
-          <TableCell align="center" sx={{fontWeight:'bold'}}>Arm Forge version</TableCell>
+          <TableCell align="center" sx={{fontWeight:'bold'}}>Linaro Forge version</TableCell>
           <TableCell align="center" sx={{fontWeight:'bold'}}>Packages</TableCell>
         </TableRow>
       </TableHead>
