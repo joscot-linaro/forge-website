@@ -68,19 +68,19 @@ const Contact = () => {
 
  }
 
-const submitForm=(e)=> {
+const submitForm=async(e)=> {
   e.preventDefault();
   setFormErrors(validate(formData));
-  setIsSubmitting(true);
   if(Object.keys(formErrors).length === 0){
+    setIsSubmitting(true);
   var token = jwt.sign(formData,secretKey,{
     expiresIn: "1h" ,  // expires in 1 hour
     issuer:'ContactUs'
   });
-  const res=postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`)
-  if(res.status===0){
-    // router.push('/contactUs/thanks')
-     }
+  await postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
+  // if(res.status===0){
+  //   // router.push('/contactUs/thanks')
+  //    }
     }
 }
 const validate = (values) => {
@@ -104,12 +104,6 @@ const validate = (values) => {
   }
   return errors;
 };
-useEffect(() => {
-  if (Object.keys(formErrors).length === 0 && isSubmitting) {
-    submitForm();
-  }
-  console.log(formErrors);
-}, [formErrors]);
 
   return (
     <>
@@ -166,7 +160,7 @@ useEffect(() => {
             <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.LastName}</Typography>
           )}
           <TextField
-          required
+          // required
           id="outlined-Job-title-input"
           placeholder="Job title"
           name='Job_title'
@@ -176,7 +170,7 @@ useEffect(() => {
           onChange={handleInput}
         />
           <TextField
-          required
+          // required
           id="outlined-Company-input"
           name="Company"
           placeholder="Company"
