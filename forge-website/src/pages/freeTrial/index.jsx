@@ -14,10 +14,15 @@ import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import countryList from 'react-select-country-list';
+import LoadingBar from '../../components/LoadingBar/index';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import AlertTitle from '@mui/material/AlertTitle';
 
 const FreeTrial = () => {
   const router = useRouter();
   const [isLoading,setIsLoading]=useState(false);
+  const [isError,setIsError]=useState(false);
   const options = useMemo(() => countryList().getData(), []);
   const [secretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
@@ -43,18 +48,21 @@ const FreeTrial = () => {
   }
   async function postData(url) {
     try {
+      setIsLoading(true);
       const response = await fetch(url, {
         method: 'POST',
          mode: 'no-cors',
       });
-      setIsSubmitting(true);
       const res = response;
+      setIsLoading(false);
       console.log(res);
       if(res.ok===true)
       {
-        setIsSubmitting(false);
         router.push('/freeTrial/thanks')
-      };
+      }
+      else{
+        setIsError(true);
+      }
       return res;
     } catch (err) {
       console.log(err);
@@ -99,10 +107,6 @@ const FreeTrial = () => {
   };
   return (
     <>
-      {/* {Object.keys(formErrors).length === 0 && isSubmitting ? (
-        <ThanksForm />
-      ) :
-        ( */}
           <Grid flexGrow={2} sx={{
             backgroundColor: 'white',
             boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
@@ -110,8 +114,20 @@ const FreeTrial = () => {
           }} >
             <HeaderBar />
             <TrialHeroCard />
+            {isError &&
+            
+              <Stack sx={{ width: '100%',}} spacing={3}>
+              <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
+                <AlertTitle style={{}}>Error</AlertTitle>
+                Something wrong is happening — <strong>please try again!</strong>
+              </Alert>
+            
+            </Stack>}
             <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }} >
               <Grid item xs={6}>
+              {isLoading && (
+              <LoadingBar/>
+            )}
                 <Box>
                   <FreeTrialContentText />
                 </Box>
@@ -222,9 +238,8 @@ const FreeTrial = () => {
                 </Box>
               </Grid>
             </Grid>
+            
           </Grid>
-        {/* )} */}
-
     </>
 
   )
