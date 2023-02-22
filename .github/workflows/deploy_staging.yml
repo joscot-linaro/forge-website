@@ -1,8 +1,8 @@
-name: Publish
+name: Deploy Staging
 
 on:
   push:
-    branches: [main, staging]
+    branches: [staging]
   workflow_dispatch:
 
 # Cancel in-progress jobs or runs for the current workflow
@@ -13,6 +13,7 @@ concurrency:
 jobs:
   process:
     runs-on: self-hosted
+    environment: staging
     steps:
       - name: Fetch git repository
         uses: actions/checkout@v3.3.0
