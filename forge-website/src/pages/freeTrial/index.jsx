@@ -14,12 +14,12 @@ import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import countryList from 'react-select-country-list';
-import ThanksForm from './[id]/index';
 
 const FreeTrial = () => {
   const router = useRouter();
+  const [isLoading,setIsLoading]=useState(false);
   const options = useMemo(() => countryList().getData(), []);
-  const [secretKey, setSecretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
+  const [secretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -45,33 +45,35 @@ const FreeTrial = () => {
     try {
       const response = await fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
+         mode: 'no-cors',
       });
-      const jwtData = await response;
-      return jwtData;
+      setIsSubmitting(true);
+      const res = response;
+      console.log(res);
+      if(res.ok===true)
+      {
+        setIsSubmitting(false);
+        router.push('/freeTrial/thanks')
+      };
+      return res;
     } catch (err) {
       console.log(err);
     }
 
   }
 
-  const submitForm = async (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
     setFormErrors(validate(formData));
 
     if (Object.keys(formErrors).length === 0) {
       setIsSubmitting(true);
-      var token = jwt.sign(formData, secretKey, {
+      const token = jwt.sign(formData, secretKey, {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      await postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
-      // if (res.status===0){
-
-      // }    
-
-
-
+      console.log(token);
+       postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
     }
   }
   const validate = (values) => {
@@ -85,29 +87,22 @@ const FreeTrial = () => {
     // }
     if (!values.Name) {
       errors.Name = "Name cannot be blank!";
-    } else if (values.Name.length < 1) {
-      errors.Name = "Name must be more than 2 characters!";
+    } else if (values.Name.length <= 1) {
+      errors.Name = "Name must be more than 1 characters!";
     }
     if (!values.LastName) {
       errors.LastName = "LastName cannot be blank!";
-    } else if (values.LastName.length < 1) {
+    } else if (values.LastName.length <= 2) {
       errors.LastName = "LastName must be more than 2 characters!";
     }
     return errors;
   };
-  // useEffect(() => {
-  //   if (Object.keys(formErrors).length === 0 && isSubmitting) {
-  //     submitForm();
-  //   }
-  //   console.log(formErrors);
-  // }, [formErrors]);
-
   return (
     <>
-      {Object.keys(formErrors).length === 0 && isSubmitting ? (
+      {/* {Object.keys(formErrors).length === 0 && isSubmitting ? (
         <ThanksForm />
       ) :
-        (
+        ( */}
           <Grid flexGrow={2} sx={{
             backgroundColor: 'white',
             boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
@@ -228,7 +223,7 @@ const FreeTrial = () => {
               </Grid>
             </Grid>
           </Grid>
-        )}
+        {/* )} */}
 
     </>
 
