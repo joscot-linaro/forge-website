@@ -1,7 +1,7 @@
-import React,{useState,useMemo,useEffect} from 'react';
+import React,{useState,useMemo} from 'react';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
@@ -18,8 +18,9 @@ import ThanksForm from './[id]/index';
 
 const Contact = () => {
   const options = useMemo(() => countryList().getData(), []);
+  const [isLoading,setIsLoading]=useState(false);
   const router = useRouter();
-  const[secretKey,setSecretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
+  const[secretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -28,22 +29,9 @@ const Contact = () => {
     Company:"",
     Email:"",
     Tel_Number:"",
-    // Linaro_Forge:false,
-    // Linaro_Compiler:false,
-    // Linaro_Performance:false
   });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleCheckboxInput=(e)=>{
-    const fieldName = e.target.name;
-    const fieldValue = e.target.checked;
-  
-    setFormData((prevState) => ({
-      ...prevState,
-      [fieldName]: fieldValue
-    }));
-  }
 
   const handleInput = (e) => {
     const fieldName = e.target.name;
@@ -60,8 +48,15 @@ const Contact = () => {
         method: 'POST',
         mode: 'no-cors',
     });
-    const jwtData = await response.body;
-    return jwtData;
+    setIsSubmitting(true);
+    const res = response;
+    console.log(res);
+    if(res.ok===true)
+    {
+      setIsSubmitting(false);
+      router.push('/contactUs/thanks')
+    };
+    return res;
     }catch(err){
       console.log(err);
     }
@@ -71,16 +66,14 @@ const Contact = () => {
 const submitForm=async(e)=> {
   e.preventDefault();
   setFormErrors(validate(formData));
+
   if(Object.keys(formErrors).length === 0){
     setIsSubmitting(true);
   var token = jwt.sign(formData,secretKey,{
     expiresIn: "1h" ,  // expires in 1 hour
     issuer:'ContactUs'
   });
-  await postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
-  // if(res.status===0){
-  //   // router.push('/contactUs/thanks')
-  //    }
+  postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
     }
 }
 const validate = (values) => {
@@ -107,8 +100,7 @@ const validate = (values) => {
 
   return (
     <>
-    {Object.keys(formErrors).length !== 0 || !isSubmitting ?
-     (<Grid flexGrow={2} sx={{backgroundColor:'white',
+     <Grid flexGrow={2} sx={{backgroundColor:'white',
       boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
       , }} >
     <HeaderBar />
@@ -222,24 +214,7 @@ const validate = (values) => {
         ))}
         </Select>
       </FormControl>
-      </Box>
-            {/* <TextField
-          required
-          id="outlined-country-input"
-          name='Country'
-          InputProps={{ sx: { height: 40 } }}
-          placeholder="Select Country"
-          sx={{backgroundColor:'white',width:'60% !important'}}
-          value={formData.Country}
-          onChange={handleInput}
-        >
-          {options.map(name=>{
-              <MenuItem key={name.label}>
-              <span >{name.label}</span>
-            </MenuItem>
-          })}
-          </TextField> */}
-               
+      </Box>     
     <Typography variant='body1' style={{fontSize:'14px'}}>Linaro will process your information in accordance
       with our Privacy Policy.</Typography>
       <Button type='submit' onClick={submitForm} sx={{border:'2px solid #9bcc4c',color:'black',fontWeight:'500',width:'100px',mt:3}}>Submit</Button>
@@ -247,10 +222,7 @@ const validate = (values) => {
       </Box>
         </Grid>
           </Grid>
-      </Grid>):
-      (
-         <ThanksForm />
-      )}
+      </Grid>
       </>
    
   )

@@ -12,8 +12,6 @@ import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useRouter } from "next/router";
 
-const pages = ['Linaro DDT', 'Linaro MAP', 'Documentations'];
-
 function ResponsiveAppBar() {
   const router = useRouter();
     const darkTheme = createTheme({
@@ -31,17 +29,10 @@ function ResponsiveAppBar() {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  // const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-
+  
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
 
   return (
     <ThemeProvider theme={darkTheme}>
