@@ -19,9 +19,15 @@ import AlertTitle from '@mui/material/AlertTitle';
 import Footer from '../../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 
 const Contact = () => {
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
   const router = useRouter();
   const [isLoading,setIsLoading]=useState(false);
   const [isError,setIsError]=useState(false);
@@ -109,7 +115,7 @@ const validate = (values) => {
 };
 
   return (
-    <>
+    <ThemeProvider theme={formtheme}>
         <Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
@@ -135,7 +141,7 @@ const validate = (values) => {
             )}
      <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'70%',mt:4,}}>
      <Typography variant="h5" sx={{mt:2,fontWeight:'600'}}>Request a Call Back</Typography>
-     <Typography variant="caption"  sx={{mt:4,borderBottom:'1px solid #e6e6e6',pb:3}}>Please provide your details in the fields opposite and we
+     <Typography variant="body1"  sx={{fontSize:'14px',mt:4,borderBottom:'1px solid #e6e6e6',pb:3}}>Please provide your details in the fields opposite and we
      will call you back as soon as possible.</Typography>
      </Grid>
      </Grid>
@@ -250,7 +256,7 @@ const validate = (values) => {
           </Grid>
           <Footer />
       </Grid>
-      </>
+      </ThemeProvider>
    
   )
 }

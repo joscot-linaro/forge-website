@@ -1,0 +1,6 @@
+a:-webkit-any-link {
+	text-decoration: none;
+}
+a:any-link {
+	text-decoration: none;
+}

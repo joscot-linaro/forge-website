@@ -12,11 +12,17 @@ import ListItem from '@mui/material/ListItem';
 import { useRouter } from "next/router"; 
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 const LinaroMap = () => {
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
   const router = useRouter();
   return (
-    <>
+    <ThemeProvider theme={formtheme}>
      <Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
@@ -33,7 +39,7 @@ const LinaroMap = () => {
       <Grid item xs={6} sx={{mx:{xs:'auto',md:'0',}}}>
       <Box xs='auto' md={4} sx={{backgroundColor:'white',mb:0,p:2,mt:2,width:{xs:'100%',md:'100%'},pl:{xs:'0',md:'10%'},display:'flex',
       justifyContent:'flex-end'}}>
-            <List sx={{ listStyleType: 'disc', pl:{ xs:0,md:25} ,width:{xs:'100%',md:'100%',fontFamily:'sans-serif',fontSize:'14px'}}}>
+            <List sx={{ listStyleType: 'disc', pl:{ xs:0,md:25} ,width:{xs:'100%',md:'100%',fontSize:'14px'}}}>
             <ListItem sx={{ display: 'list-item',mb:-1 }}>No need to change your code or the way you build it</ListItem>
             <ListItem sx={{ display: 'list-item',mb:-1 }}>Profiling for applications running on more than one server and multiple processes</ListItem>
             <ListItem sx={{ display: 'list-item',mb:-1 }}>Clear views of bottlenecks in I/O, in compute, in thread or in multi-process activity</ListItem>
@@ -64,7 +70,7 @@ const LinaroMap = () => {
           Find resources that describe how to develop, deploy and
           optimize enterprise and scientific HPC (High Performance
           Computing) applications, including:</Typography>
-          <List sx={{ listStyleType: 'disc', pl: 7 ,fontFamily:'sans-serif',fontSize:'14px'}}>
+          <List sx={{ listStyleType: 'disc', pl: 7 ,fontSize:'14px'}}>
           <ListItem sx={{ display: 'list-item' }}>Help and Tutorials</ListItem>
           <ListItem sx={{ display: 'list-item' }}>HPC Blog</ListItem>
           <ListItem sx={{ display: 'list-item' }}>Linaro Forge</ListItem>
@@ -75,7 +81,7 @@ const LinaroMap = () => {
     </Grid>
     <Footer/>
     </Grid>
-    </>
+    </ThemeProvider>
   )
 }
 

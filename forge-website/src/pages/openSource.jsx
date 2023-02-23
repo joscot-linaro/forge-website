@@ -6,14 +6,19 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import Button from "@mui/material/Button";
 import OpenSourcesTable from '../components/OpenSourcesTable/index';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
-import Footer from '../components/Footer/footerProps/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 const OpenSource = () => {
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
     const [isExpanded,setIsExpanded]=useState(false);
   return (
-    <>
+    <ThemeProvider theme={formtheme}>
       <Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
@@ -36,7 +41,7 @@ const OpenSource = () => {
         <OpenSourcesTable isExpanded={isExpanded} />
         </Grid>
         </Grid>
-        </>
+        </ThemeProvider>
   )
 }
 
