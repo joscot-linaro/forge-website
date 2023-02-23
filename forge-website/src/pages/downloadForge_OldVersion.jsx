@@ -13,10 +13,16 @@ import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import Footer from '../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 const DownloadForge_OldVersion = () => {
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
   return (
-    <>
+    <ThemeProvider theme={formtheme}>
       <Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
@@ -75,7 +81,7 @@ const DownloadForge_OldVersion = () => {
     </Grid>
     <Footer/>
     </Grid>
-    </>
+    </ThemeProvider>
   )
 }
 

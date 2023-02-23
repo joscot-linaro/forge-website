@@ -8,17 +8,21 @@ import InstallForge from '../../components/installForge/index';
 import ArmForgeToolsLinks from '../../components/ArmForgeToolsLinks/index';
 import TalkAndContact from '../../components/TalkAndContact/index';
 import { useRouter } from "next/router";
-import HeaderBar from '../../components/HeaderBar/index';
 import Footer from '../../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 const DownloadForge = () => {
   const buttonTitles=[{name:'Older versions of Linaro Forge',to:'/downloadForge_OldVersion'},{name:'Linaro License Server',to:'/licenseServer'},{name:'See Source code',to:'/openSource'},{name:'Supported platforms',to:'/'},{name:'User guide',to:'https://docs.linaroforge.com'}];
   const router = useRouter();
-  
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
   return (
-    <>
+    <ThemeProvider theme={formtheme}>
         <Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
@@ -51,7 +55,7 @@ const DownloadForge = () => {
     <TalkAndContact backColor={'#e6e6e6'} />
     <Footer/>
     </Grid>
-    </>
+    </ThemeProvider>
   )
 }
 

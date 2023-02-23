@@ -40,7 +40,7 @@ function ResponsiveAppBar() {
     <Box>
      
     <AppBar position={'fixed'} sx={{backgroundColor:'rgba(0, 0, 0, 0.8)',width:'100%',display:'flex',}}>
-      <Container  sx={{fontFamily:'serif',display:'flex',justifyContent:'center',}}>
+      <Container  sx={{display:'flex',justifyContent:'center',}}>
         <Toolbar disableGutters>
        
           <Typography

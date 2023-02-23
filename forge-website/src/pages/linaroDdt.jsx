@@ -11,15 +11,20 @@ import LinaroDdtHeroCard from '../components/HeroCard/LinaroDdtHeroCard/index';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { useRouter } from "next/router";
-import HeaderBar from '../components/HeaderBar/index';
 import Footer from '../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 const LinaroDdt = () => {
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
   const router = useRouter();
   return (
-    <>
+    <ThemeProvider theme={formtheme}>
       <Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
@@ -67,7 +72,7 @@ const LinaroDdt = () => {
         <Grid item xs={6} sx={{padding:4,mx:{xs:'auto',md:'0'}}}>  
         <Typography variant="h5" sx={{mx: 'auto',ml:2,p:3,fontWeight:'600'}}>Linaro DDT Makes
         Debugging Faster</Typography>
-        <List sx={{ listStyleType: 'disc', pl: 7,fontFamily:'sans-serif',fontSize:'14px' }}>
+        <List sx={{ listStyleType: 'disc', pl: 7,fontSize:'14px' }}>
                  <ListItem sx={{ display: 'list-item' }}>Cross-platform for multiple server and HPC architectures</ListItem>
                 <ListItem sx={{ display: 'list-item' }}>Native parallel debugging of Python applications</ListItem>
                  <ListItem sx={{ display: 'list-item' }}>Has market leading memory debugging</ListItem>
@@ -85,7 +90,7 @@ const LinaroDdt = () => {
     </Grid>
     <Footer/>
     </Grid>
-    </>
+    </ThemeProvider>
   )
 }
 

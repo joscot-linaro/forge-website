@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import TrialHeroCard from '../../components/HeroCard/TrialHeroCard/index';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
@@ -20,8 +20,14 @@ import Stack from '@mui/material/Stack';
 import AlertTitle from '@mui/material/AlertTitle';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 const FreeTrial = () => {
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
   const router = useRouter();
   const [isLoading,setIsLoading]=useState(false);
   const [isError,setIsError]=useState(false);
@@ -108,7 +114,7 @@ const FreeTrial = () => {
     return errors;
   };
   return (
-    <>
+    <ThemeProvider theme={formtheme}>
       <Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 			</Head>
@@ -246,7 +252,7 @@ const FreeTrial = () => {
             </Grid>
             <Footer/>
           </Grid>
-    </>
+    </ThemeProvider>
 
   )
 }
