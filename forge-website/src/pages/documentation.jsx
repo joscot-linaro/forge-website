@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 const Documentation = () => {
   return (
     <Grid>
-      <HeaderBar/>
+      {/* <HeaderBar/> */}
         <DocumentationHeroCard />
     <List style={{disply:'flex',flexDirection:'column',padding:'30px',fontFamily:'sans-serif'}}>
         <Typography variant="h6" sx={{mt:3,fontWeight:'600'}} >Technical specs</Typography>

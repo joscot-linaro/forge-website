@@ -1,6 +1,7 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -9,9 +10,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import { useRouter } from "next/router";
 import CardMedia from '@mui/material/CardMedia';
+import HeaderBar from '../HeaderBar/index';
 
 function ResponsiveAppBar() {
   const router = useRouter();
@@ -36,9 +38,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-    <AppBar position="absolute" sx={{backgroundColor:'rgba(0, 0, 0, 0.5)',}}>
-      <Container maxWidth="xl" sx={{fontFamily:'serif',display:'flex',justifyContent:'center'}}>
+    <Box Container>
+     
+    <AppBar position={'fixed'} sx={{backgroundColor:'rgba(0, 0, 0, 0.8)',width:'99%',display:'flex',mx:'auto',mr:1}}>
+      <Container  sx={{fontFamily:'serif',display:'flex',justifyContent:'center',}}>
         <Toolbar disableGutters>
        
           <Typography
@@ -133,7 +136,8 @@ function ResponsiveAppBar() {
         </Toolbar>
       </Container>
     </AppBar>
-    </ThemeProvider>
+    </Box>
+    
   );
 }
 export default ResponsiveAppBar;
