@@ -16,15 +16,13 @@ const ForgeFeatures = () => {
   <Card   
   key={item.Title}
           sx={{
-              // maxWidth: 345,
                backgroundColor: 'white',
                m:4,
-               width: '250px',
-      //  height:'300px',
+               width: '260px',
           }}>
-             <CardContent sx={{color:'black', display:'flex',justifyContent:'center',
+             <CardContent sx={{color:'black', display:'flex',justifyContent:'left',
           flexDirection:'column'}}>
-                <Typography variant="subtitle1" display="block" sx={{mx:'auto',fontWeight:'bold',fontSize:'15px',p:.5,display:'flex',justifyContent:'center'}}>{item.Title}</Typography>
+                <Typography variant="subtitle1" display="block" sx={{fontWeight:'bold',fontSize:'15px',display:'flex',justifyContent:'left'}}>{item.Title}</Typography>
     <Typography variant="body2" display="block" sx={{mx:'auto',fontSize:'14px'}} >{item.Description}</Typography>
           </CardContent>
             </Card>
