@@ -59,7 +59,7 @@ const LinaroMap = () => {
         />
         </Grid> 
          <Grid item xs={6} sx={{padding:4,mx:{xs:'auto',md:'0'}}}>
-        <Typography variant="h5" sx={{mx: 'auto',ml:2,p:3,fontWeight:'600'}}>Arm MAP Resources</Typography>
+        <Typography variant="h5" sx={{mx: 'auto',ml:2,p:3,fontWeight:'500'}}>Arm MAP Resources</Typography>
         <Typography variant="subtitle2" sx={{display:'flex',mt:2,mx: 'auto',ml:2,p:2,width:'60%'}}>
           Find resources that describe how to develop, deploy and
           optimize enterprise and scientific HPC (High Performance
