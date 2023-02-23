@@ -17,7 +17,6 @@ const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcol
     <Card   
      ref={colorRef}
 			sx={{
-				// maxWidth: 345,
 				 backgroundColor: backcolor,
          border:`2px solid`,
          borderColor:bordercolor,
@@ -27,8 +26,7 @@ const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcol
 			}}>
         <CardMedia
                 component="img"
-                sx={{width:40,mx:'auto',mt:2}}
-                //  sx={{filter:"brightness(30%)" }}
+                sx={{width:60,mx:'auto',mt:3}}
                 image={icon}
                 alt="Live from space album cover"
         />
