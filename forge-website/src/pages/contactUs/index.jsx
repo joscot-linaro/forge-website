@@ -17,6 +17,7 @@ import LoadingBar from '../../components/LoadingBar/index';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import AlertTitle from '@mui/material/AlertTitle';
+import Footer from '../../components/Footer/index';
 
 
 const Contact = () => {
@@ -138,7 +139,7 @@ const validate = (values) => {
      component="form"
       sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
-        backgroundColor:'#e6e6e6',ml:{xs:'8%',md:'0'},height:'100%',p:{md:'5%',},
+        backgroundColor:'#e6e6e6',ml:{xs:'8%',md:'0'},height:'100%',pl:{md:'10%',},
          display:'flex',
          width:{xs:'700px',md:'90%'}
     
@@ -242,6 +243,7 @@ const validate = (values) => {
       </Box>
         </Grid>
           </Grid>
+          <Footer />
       </Grid>
       </>
    

@@ -12,6 +12,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { useRouter } from "next/router";
 import HeaderBar from '../components/HeaderBar/index';
+import Footer from '../components/Footer/index';
 
 const LinaroDdt = () => {
   const router = useRouter();
@@ -74,6 +75,7 @@ const LinaroDdt = () => {
       <LinaroDdtFeatures/>
       <TalkAndContact backColor={'white'} />
     </Grid>
+    <Footer/>
     </Grid>
   )
 }

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
@@ -56,9 +55,8 @@ function ResponsiveAppBar() {
             <CardMedia
                 component="img"
                 image='/images/Linaro_Forge-white.png'
-                alt="Linaro Logo"
-                
-        />
+                alt="Linaro Logo"    
+          />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent:'flex-end' }}>

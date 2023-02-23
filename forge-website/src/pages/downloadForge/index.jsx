@@ -9,6 +9,7 @@ import ArmForgeToolsLinks from '../../components/ArmForgeToolsLinks/index';
 import TalkAndContact from '../../components/TalkAndContact/index';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
+import Footer from '../../components/Footer/index';
 
 const DownloadForge = () => {
   const buttonTitles=[{name:'Older versions of Linaro Forge',to:'/downloadForge_OldVersion'},{name:'Linaro License Server',to:'/licenseServer'},{name:'See Source code',to:'/openSource'},{name:'Supported platforms',to:'/'},{name:'User guide',to:'https://docs.linaroforge.com'}];
@@ -40,6 +41,7 @@ const DownloadForge = () => {
     <ArmForgeToolsLinks/>
     </Grid>
     <TalkAndContact backColor={'#e6e6e6'} />
+    <Footer/>
     </Grid>
   )
 }

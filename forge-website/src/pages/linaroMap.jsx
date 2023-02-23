@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import HeaderBar from '../components/HeaderBar/index';
+import Footer from '../components/Footer/index';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import TalkAndContact from '../components/TalkAndContact/index';
@@ -65,7 +66,7 @@ const LinaroMap = () => {
       </Grid>
       <TalkAndContact backColor={'#e6e6e6'} />
     </Grid>
-  {/* <CardHolder /> */}
+    <Footer/>
     </Grid>
   )
 }

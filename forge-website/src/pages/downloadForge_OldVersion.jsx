@@ -11,6 +11,7 @@ import Paper from '@mui/material/Paper';
 import previousVersions from '../../content/JsonFiles/previous_versions.json';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import HeaderBar from '../components/HeaderBar/index';
+import Footer from '../components/Footer/index';
 
 const DownloadForge_OldVersion = () => {
   return (
@@ -66,6 +67,7 @@ const DownloadForge_OldVersion = () => {
     </Table>
   </TableContainer>
     </Grid>
+    <Footer/>
     </Grid>
   )
 }
