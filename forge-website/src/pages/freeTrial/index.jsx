@@ -12,13 +12,14 @@ import Typography from '@mui/material/Typography';
 import FreeTrialContentText from '../../components/FreeTrialContentText/index';
 import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
-import HeaderBar from '../../components/HeaderBar/index';
 import Footer from '../../components/Footer/index';
 import countryList from 'react-select-country-list';
 import LoadingBar from '../../components/LoadingBar/index';
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
 import AlertTitle from '@mui/material/AlertTitle';
+import CssBaseline from '@mui/material/CssBaseline';
+import Head from 'next/head';
 
 const FreeTrial = () => {
   const router = useRouter();
@@ -108,6 +109,10 @@ const FreeTrial = () => {
   };
   return (
     <>
+      <Head>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
+      <CssBaseline />
           <Grid flexGrow={2} sx={{
             backgroundColor: 'white',
             boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
@@ -133,13 +138,13 @@ const FreeTrial = () => {
                   <FreeTrialContentText />
                 </Box>
               </Grid>
-              <Grid item xs={6} sx={{ width: '100%' }}>
+              <Grid item xs={6} sx={{ width: '100%',backgroundColor: '#e6e6e6' }}>
                 <Box
                   component="form"
                   sx={{
                     '& .MuiTextField-root': { m: 1, width: '25ch' },
-                    backgroundColor: '#e6e6e6', ml: { xs: '8%', md: '0' }, height: '100%',pl:'10%',
-                    display: 'flex',
+                    ml: { xs: '8%', md: '0' }, height: '100%',pl:'10%',
+                    display: 'flex',mt:2,
                     width: { xs: '700px', md: '90%' }
                   }}
                   autoComplete="off">

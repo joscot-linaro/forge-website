@@ -10,11 +10,17 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import previousVersions from '../../content/JsonFiles/previous_versions.json';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
-import HeaderBar from '../components/HeaderBar/index';
 import Footer from '../components/Footer/index';
+import CssBaseline from '@mui/material/CssBaseline';
+import Head from 'next/head';
 
 const DownloadForge_OldVersion = () => {
   return (
+    <>
+      <Head>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
+      <CssBaseline />
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
@@ -69,6 +75,7 @@ const DownloadForge_OldVersion = () => {
     </Grid>
     <Footer/>
     </Grid>
+    </>
   )
 }
 

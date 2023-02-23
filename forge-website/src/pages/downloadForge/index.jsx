@@ -10,15 +10,23 @@ import TalkAndContact from '../../components/TalkAndContact/index';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import Footer from '../../components/Footer/index';
+import CssBaseline from '@mui/material/CssBaseline';
+import Head from 'next/head';
 
 const DownloadForge = () => {
   const buttonTitles=[{name:'Older versions of Linaro Forge',to:'/downloadForge_OldVersion'},{name:'Linaro License Server',to:'/licenseServer'},{name:'See Source code',to:'/openSource'},{name:'Supported platforms',to:'/'},{name:'User guide',to:'https://docs.linaroforge.com'}];
   const router = useRouter();
   
   return (
-    <Grid flexGrow={2} sx={{backgroundColor:'white',
+    <>
+        <Head>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
+      <CssBaseline />
+    <Grid>
+    {/* <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
-    , }}>
+    , }}> */}
       {/* <HeaderBar/> */}
     <DownloadHeroCard/>
     <Grid sx={{ width: '100%',mt:2,}}>
@@ -43,6 +51,7 @@ const DownloadForge = () => {
     <TalkAndContact backColor={'#e6e6e6'} />
     <Footer/>
     </Grid>
+    </>
   )
 }
 
