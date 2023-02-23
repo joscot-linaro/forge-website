@@ -7,7 +7,8 @@
       "bordercolor": "#c91436",
       "backcolor": "#f9e6eb",
       "icon": "/images/DDT_icon.png",
-      "link":"/linaroDdt" 
+      "link":"/linaroDdt" ,
+      "width":"40px"
     },
     {
     "layout" : "post",
@@ -17,7 +18,8 @@
      "bordercolor": "#9bcc4c",
      "backcolor": "#f5faec",
      "icon": "/images/MAP_icon.png",
-     "link":"/linaroMap" 
+     "link":"/linaroMap" ,
+     "width":"40px"
     },
     {
        "layout" : "post",
@@ -27,7 +29,8 @@
        "bordercolor": "#f28630",
        "backcolor": "#fdf2e8",
        "icon": "/images/Perf_icon.png",
-       "link":"https://docs.linaroforge.com/" 
+       "link":"https://docs.linaroforge.com/" ,
+       "width":"60px"
       }
       
 ]
