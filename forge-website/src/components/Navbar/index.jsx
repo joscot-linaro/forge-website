@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useRouter } from "next/router";
+import CardMedia from '@mui/material/CardMedia';
 
 function ResponsiveAppBar() {
   const router = useRouter();
@@ -47,13 +48,14 @@ function ResponsiveAppBar() {
             href="/"
             sx={{
               mr: 40,
-              // display: { xs: 'none', md: 'flex' },
-              fontWeight: 500,
-              color: 'inherit',
-              textDecoration: 'none!important',
             }}
           >
-            Linaro Forge
+            <CardMedia
+                component="img"
+                image='/images/Linaro_Forge-white.png'
+                alt="Linaro Logo"
+                
+        />
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent:'flex-end' }}>
@@ -102,14 +104,14 @@ function ResponsiveAppBar() {
                 onClick={()=>router.push('/linaroDdt')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important', }}
               >
-                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3,'&:hover':{color:'#9bcc4c'}}}>Linaro DDT</Typography>
+                <Typography noWrap underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3,'&:hover':{color:'#9bcc4c'}}}>Linaro DDT</Typography>
               </Button>
               <Button
                
                 onClick={()=>router.push('/linaroMap')}
                 sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
               >
-                <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3,'&:hover':{color:'#9bcc4c'}}}>Linaro MAP</Typography>
+                <Typography noWrap underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px',mr:3,'&:hover':{color:'#9bcc4c'}}}>Linaro MAP</Typography>
                 
               </Button>
               <Button
@@ -122,7 +124,7 @@ function ResponsiveAppBar() {
               <Button
                
                onClick={()=>router.push('/documentation')}
-                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important' }}
+                sx={{ my: 2, color: 'white', display: 'block',textDecoration:'none!important',fontFamily:'' }}
               >
                 <Typography underline='none' component='a' sx={{textDecoration:'none!important',color: 'white',fontSize:'12px','&:hover':{color:'#9bcc4c'}}}>Documentation</Typography>
               </Button>
