@@ -116,7 +116,7 @@ const FreeTrial = () => {
             <TrialHeroCard />
             {isError &&
             
-              <Stack sx={{ width: '100%',}} spacing={3}>
+              <Stack sx={{ width: '100%',}} spacing={3} id='error_message'>
               <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
                 <AlertTitle style={{}}>Error</AlertTitle>
                 Something wrong is happening — <strong>please try again!</strong>

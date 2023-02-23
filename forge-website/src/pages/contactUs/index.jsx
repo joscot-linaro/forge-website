@@ -13,13 +13,17 @@ import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
 import jwt from 'jsonwebtoken';
 import countryList from 'react-select-country-list';
-import ThanksForm from './[id]/index';
+import LoadingBar from '../../components/LoadingBar/index';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import AlertTitle from '@mui/material/AlertTitle';
 
 
 const Contact = () => {
-  const options = useMemo(() => countryList().getData(), []);
-  const [isLoading,setIsLoading]=useState(false);
   const router = useRouter();
+  const [isLoading,setIsLoading]=useState(false);
+  const [isError,setIsError]=useState(false);
+  const options = useMemo(() => countryList().getData(), []);
   const[secretKey]=useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
     Name: "",
@@ -42,40 +46,44 @@ const Contact = () => {
       [fieldName]: fieldValue
     }));
   }
-  async function postData(url ) {
-    try{
+  async function postData(url) {
+    try {
+      setIsLoading(true);
       const response = await fetch(url, {
         method: 'POST',
-        mode: 'no-cors',
-    });
-    setIsSubmitting(true);
-    const res = response;
-    console.log(res);
-    if(res.ok===true)
-    {
-      setIsSubmitting(false);
-      router.push('/contactUs/thanks')
-    };
-    return res;
-    }catch(err){
+         mode: 'no-cors',
+      });
+      const res = response;
+      setIsLoading(false);
+      console.log(res);
+      if(res.ok===true)
+      {
+        router.push('/freeTrial/thanks')
+      }
+      else{
+        setIsError(true);
+      }
+      return res;
+    } catch (err) {
       console.log(err);
     }
 
- }
+  }
 
-const submitForm=async(e)=> {
-  e.preventDefault();
-  setFormErrors(validate(formData));
+  const submitForm = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formData));
 
-  if(Object.keys(formErrors).length === 0){
-    setIsSubmitting(true);
-  var token = jwt.sign(formData,secretKey,{
-    expiresIn: "1h" ,  // expires in 1 hour
-    issuer:'ContactUs'
-  });
-  postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
+    if (Object.keys(formErrors).length === 0) {
+      setIsSubmitting(true);
+      const token = jwt.sign(formData, secretKey, {
+        expiresIn: "1h",  // expires in 1 hour
+        issuer: 'TrialRequest'
+      });
+      console.log(token);
+       postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
     }
-}
+  }
 const validate = (values) => {
   let errors = {};
   // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
@@ -103,10 +111,22 @@ const validate = (values) => {
      <Grid flexGrow={2} sx={{backgroundColor:'white',
       boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
       , }} >
-    <HeaderBar />
+      <HeaderBar />
       <ContactHeroCard/>
+      {isError &&
+            
+            <Stack sx={{ width: '100%',}} spacing={3} id='error_message'>
+            <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
+              <AlertTitle style={{}}>Error</AlertTitle>
+              Something wrong is happening — <strong>please try again!</strong>
+            </Alert>
+          
+          </Stack>}
       <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'}}} >
       <Grid item xs={6}>
+      {isLoading && (
+              <LoadingBar/>
+            )}
      <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'70%',mt:4,}}>
      <Typography variant="h5" sx={{mt:2,fontWeight:'600'}}>Request a Call Back</Typography>
      <Typography variant="caption"  sx={{mt:4,borderBottom:'1px solid #e6e6e6',pb:3}}>Please provide your details in the fields opposite and we
