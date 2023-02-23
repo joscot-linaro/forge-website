@@ -8,12 +8,11 @@ import { useRouter } from "next/router";
 
 
 
-const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcolor,icon }) => {
+const ForgePlatforms = ({platName,link, title,description,bordercolor,backcolor,icon }) => {
   const colorRef = useRef();
   const router = useRouter();
 
   return (
-    <div key={id}>
     <Card   
      ref={colorRef}
 			sx={{
@@ -40,7 +39,7 @@ const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcol
         <Button onClick={()=>router.push(link)} ref={colorRef}  sx={{fontSize:'12px',mx:'auto',display:'flex',justifyContent:'center',border:'2px solid',borderColor:bordercolor,borderRadius:3,color:'black',mb:2,fontWeight:'600',mt:2,pt:1}} >Learn more</Button>
    
     </Card> 
-    </div>
+    
   )
 }
 

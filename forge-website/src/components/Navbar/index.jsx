@@ -37,9 +37,9 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <Box Container>
+    <Box>
      
-    <AppBar position={'fixed'} sx={{backgroundColor:'rgba(0, 0, 0, 0.8)',width:'99%',display:'flex',mx:'auto',mr:1}}>
+    <AppBar position={'fixed'} sx={{backgroundColor:'rgba(0, 0, 0, 0.8)',width:'98.99%',display:'flex',mx:'auto',mr:1}}>
       <Container  sx={{fontFamily:'serif',display:'flex',justifyContent:'center',}}>
         <Toolbar disableGutters>
        

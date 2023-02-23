@@ -10,7 +10,7 @@ const LinaroDdtFeatures = () => {
     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,backgroundColor:'#e6e6e6',}}>
         <Grid sx={{display:'flex',flexDirection:'column'}}>
             <Typography variant="h5" sx={{mb:2,mt:2,mx: 'auto',fontWeight:'600'}}>What is Linaro DDT</Typography>
-            <Typography variant="subtitle1" fontWeight={100} fontSize={12}  p={2}  sx={{width:'50%',display:'flex',mx:'auto',}}>
+            <Typography variant="subtitle1" fontWeight={100} fontSize={16}  p={2}  sx={{width:'50%',display:'flex',mx:'auto',}}>
             Linaro DDT is a powerful parallel debugger, available standalone or as part of the Linaro Forge debug and profile suite. Its
             intuitive graphical interface provides automatic detection of memory bugs and divergent behavior at all scales.
             </Typography>
@@ -22,11 +22,9 @@ const LinaroDdtFeatures = () => {
 <Card   
 key={item.Title}
         sx={{
-            // maxWidth: 345,
              backgroundColor: 'white',
              m:4,
-             width: '250px',
-    //  height:'300px',
+             width: '250px'
         }}>
            <CardContent sx={{color:'black', display:'flex',justifyContent:'center',
         flexDirection:'column'}}>
