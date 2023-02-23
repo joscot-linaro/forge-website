@@ -10,11 +10,18 @@ import TalkAndContact from '../components/TalkAndContact/index';
 // import HeaderBar from '../components/HeaderBar/index';
 import PlatformsData from '../../content/JsonFiles/ForgePlatforms.json';
 import Footer from '../components/Footer/index';
+import CssBaseline from '@mui/material/CssBaseline';
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <>
-    <Grid flexGrow={2} sx={{backgroundColor:'white',boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' } }} >
+    <Head>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
+      <CssBaseline />
+    <Grid>
+    {/* <Grid flexGrow={0} sx={{backgroundColor:'white',boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' },border:'2px solid red' }} > */}
 {/* <HeaderBar/> */}
     <HeroCard />
 		<ForgeNeed/>
