@@ -13,6 +13,7 @@ import FreeTrialContentText from '../../components/FreeTrialContentText/index';
 import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
 import HeaderBar from '../../components/HeaderBar/index';
+import Footer from '../../components/Footer/index';
 import countryList from 'react-select-country-list';
 import LoadingBar from '../../components/LoadingBar/index';
 import Alert from '@mui/material/Alert';
@@ -137,7 +138,7 @@ const FreeTrial = () => {
                   component="form"
                   sx={{
                     '& .MuiTextField-root': { m: 1, width: '25ch' },
-                    backgroundColor: '#e6e6e6', ml: { xs: '8%', md: '0' }, height: '100%', p: { md: '5%', },
+                    backgroundColor: '#e6e6e6', ml: { xs: '8%', md: '0' }, height: '100%',pl:'10%',
                     display: 'flex',
                     width: { xs: '700px', md: '90%' }
                   }}
@@ -238,7 +239,7 @@ const FreeTrial = () => {
                 </Box>
               </Grid>
             </Grid>
-            
+            <Footer/>
           </Grid>
     </>
 

@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import LicenseServerTable from '../components/licenseServerTable/index';
 import HeaderBar from '../components/HeaderBar/index';
+import Footer from '../components/Footer/index';
 
 const LicenseServer = () => {
   return (
@@ -19,6 +20,7 @@ const LicenseServer = () => {
         </Grid>
         <LicenseServerTable />
         </Grid>
+        <Footer/>
     </Grid>
   )
 }

@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import OpenSourcesTable from '../components/OpenSourcesTable/index';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import HeaderBar from '../components/HeaderBar/index';
+import Footer from '../components/Footer/index';
 
 const OpenSource = () => {
     const [isExpanded,setIsExpanded]=useState(false);
@@ -27,6 +28,7 @@ const OpenSource = () => {
         </Grid>
         <OpenSourcesTable isExpanded={isExpanded} />
         </Grid>
+        <Footer/>
         </Grid>
   )
 }
