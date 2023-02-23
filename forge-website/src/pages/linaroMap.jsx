@@ -25,7 +25,7 @@ const LinaroMap = () => {
       <Grid item xs={6} sx={{mx:{xs:'auto',md:'0',}}}>
       <Box xs='auto' md={4} sx={{backgroundColor:'white',mb:0,p:2,mt:2,width:{xs:'100%',md:'80%'},pl:{xs:'0',md:'10%'},display:'flex',
       justifyContent:'flex-end'}}>
-            <List sx={{ listStyleType: 'disc', pl:{xs:0,md:7} ,width:{xs:'100%',md:'70%',fontFamily:'sans-serif',fontSize:'14px'}}}>
+            <List sx={{ listStyleType: 'disc', pl:{ xs:0,md:7} ,width:{xs:'100%',md:'70%',fontFamily:'sans-serif',fontSize:'14px'}}}>
             <ListItem sx={{ display: 'list-item' }}>No need to change your code or the way you build it</ListItem>
             <ListItem sx={{ display: 'list-item' }}>Profiling for applications running on more than one server and multiple processes</ListItem>
             <ListItem sx={{ display: 'list-item' }}>Clear views of bottlenecks in I/O, in compute, in thread or in multi-process activity</ListItem>
