@@ -1,14 +1,14 @@
 import React,{ useRef} from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import { useRouter } from "next/router";
 
-
-
-const ForgePlatforms = ({platName,link, title,description,bordercolor,backcolor,icon }) => {
+const ForgePlatforms = ({platName,link, title,description,bordercolor,backcolor,icon,width }) => {
   const colorRef = useRef();
   const router = useRouter();
 
@@ -23,12 +23,14 @@ const ForgePlatforms = ({platName,link, title,description,bordercolor,backcolor,
 				 width: '250px',
           height:'350px',
 			}}>
+       <Box sx={{height:'50px'}}>
         <CardMedia
                 component="img"
-                sx={{width:60,mx:'auto',mt:3}}
+                sx={{width:{width},mx:'auto',mt:3,}}
                 image={icon}
                 alt="Live from space album cover"
         />
+        </Box>
         <CardContent sx={{color:'black', display:'flex',justifyContent:'center',
           flexDirection:'column'}}>
         <Typography variant="body1" sx={{mx:'auto',fontWeight:'700',fontSize:'12px',mt:2}} noWrap>{platName}</Typography>
