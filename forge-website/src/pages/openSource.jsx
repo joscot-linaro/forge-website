@@ -14,7 +14,7 @@ const OpenSource = () => {
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
-      <HeaderBar/>
+      {/* <HeaderBar/> */}
     <DownloadHeroCard />
     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto'}}>
         <Grid sx={{display:'flex',fontSize:'1.25em',color:'#343a40',flexDirection:'row',borderRadius:0,width:'80%',}}>

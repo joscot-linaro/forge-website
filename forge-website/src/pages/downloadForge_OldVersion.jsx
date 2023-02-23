@@ -17,7 +17,7 @@ const DownloadForge_OldVersion = () => {
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
-      <HeaderBar/>
+      {/* <HeaderBar/> */}
    <DownloadHeroCard/>
     
    <Grid sx={{ width: '100%',mt:2,}}>

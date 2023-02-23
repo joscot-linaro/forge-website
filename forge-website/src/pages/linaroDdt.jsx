@@ -19,7 +19,7 @@ const LinaroDdt = () => {
     <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
-      <HeaderBar/>
+      {/* <HeaderBar/> */}
     <LinaroDdtHeroCard/>
     <Grid sx={{ width: '100%',mt:2,}}>
     <Typography variant="h5" sx={{display:'flex',justifyContent:'center',mb:4,mt:4,mx: 'auto',fontWeight:'600'}}>The Number One Debugger for C, C++ and Fortran Threaded

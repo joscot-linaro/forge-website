@@ -111,7 +111,7 @@ const validate = (values) => {
      <Grid flexGrow={2} sx={{backgroundColor:'white',
       boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
       , }} >
-      <HeaderBar />
+      {/* <HeaderBar /> */}
       <ContactHeroCard/>
       {isError &&
             
