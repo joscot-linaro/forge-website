@@ -30,15 +30,15 @@ const OpenSource = () => {
     <DownloadHeroCard />
     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:6,mx:'auto'}}>
         <Grid sx={{display:'flex',fontSize:'1.25em',color:'#343a40',flexDirection:'row',borderRadius:0,width:'80%',mt:5,mb:3}}>
-        {isExpanded ?(
+        {/* {isExpanded ?(
             <Button  onClick={()=>setIsExpanded(!isExpanded)} style={{}}><KeyboardArrowUpIcon/></Button>
         ):(
             <Button onClick={()=>setIsExpanded(!isExpanded)} style={{}}><KeyboardArrowDownIcon /></Button>
-        )}
+        )} */}
         
-        <Typography variant="h6"  sx={{fontWeight:'600',}}>version: 22.1.3</Typography>
+        <Typography variant="h6"  sx={{fontWeight:'600',pl:4}}>version: 22.1.3</Typography>
         </Grid>
-        <OpenSourcesTable isExpanded={isExpanded} />
+        <OpenSourcesTable/>
         </Grid>
         </Grid>
         </ThemeProvider>
