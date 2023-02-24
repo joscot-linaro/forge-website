@@ -37,8 +37,8 @@ const DownloadForge_OldVersion = () => {
          <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto'}}>
          <Typography variant="h5" sx={{mt:2,mb:4,mx:'auto',fontWeight:'600'}}>Older versions of Linaro Forge remote client software</Typography>
          </Grid>
-         {previousVersions.map(row=>(
-          <Grid>
+         {previousVersions.map((row,index)=>(
+          <Grid key={index}>
             <Typography variant="h6" sx={{pl:10,mb:3}}>Linaro Forge version {row.forge}</Typography>
          <TableContainer 
          sx={{mx:'auto',width:'90%',mb:4}} 
