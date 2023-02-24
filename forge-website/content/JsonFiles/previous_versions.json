@@ -1,134 +1,115 @@
 [
     {
-        "os": "macOS",
-        "versions": [
+        "forge": "22.0",
+        "downloads": [
             {
-                "forge": "22.0",
-                "packages": [
+                "os": "Linux",
+                "download": [
                     {
-                        "label": "Mojave (10.14 and later)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-client-22.0.4-macos-x86_64.dmg",
-                        "suffix": "64-bit (Intel)"
+                        "name": "AMD/Intel (x86_64)",
+                        "link": "https://downloads.linaroforge.com/22.0.4/arm-forge-22.0.4-linux-x86_64.tar"
+                    },
+                    {
+                        "name": "IBM POWER Little Endian (ppc64le)",
+                        "link": "https://downloads.linaroforge.com/22.0.4/arm-forge-22.0.4-linux-ppc64le.tar"
                     }
                 ]
             },
             {
-                "forge": "21.1",
-                "packages": [
+                "os": "macOS (remote client only)",
+                "download": [
                     {
-                        "label": "Mojave (10.14 and later)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-client-21.1.3-macos-x86_64.dmg",
-                        "suffix": "64-bit (Intel)"
+                        "name": "Mojave (10.14 and later) (64-bit Intel)",
+                        "link": "https://downloads.linaroforge.com/22.0.4/arm-forge-client-22.0.4-macos-x86_64.dmg"
                     }
                 ]
             },
             {
-                "forge": "21.0",
-                "packages": [
+                "os": "Windows (remote client only)",
+                "download": [
                     {
-                        "label": "High Sierra (10.13 and later)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-client-21.0.3-macos-x86_64.dmg",
-                        "suffix": "64-bit (Intel)"
+                        "name": "Windows 7 (and later) (64-bit AMD/Intel)",
+                        "link": "https://downloads.linaroforge.com/22.0.4/arm-forge-client-22.0.4-windows-x86_64.exe"
                     }
                 ]
             }
         ]
     },
     {
-        "os": "Windows",
-        "versions": [
+        "forge": "21.1",
+        "downloads": [
             {
-                "forge": "22.0",
-                "packages": [
+                "os": "Linux",
+                "download": [
                     {
-                        "label": "Windows 7 (and later)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-client-22.0.4-windows-x86_64.exe",
-                        "suffix": "64-bit (AMD/Intel)"
+                        "name": "Arm (AArch64)",
+                        "link": "https://downloads.linaroforge.com/21.1.3/arm-forge-21.1.3-linux-aarch64.tar"
+                    },
+                    {
+                        "name": "AMD/Intel (x86_64)",
+                        "link": "https://downloads.linaroforge.com/21.1.3/arm-forge-21.1.3-linux-x86_64.tar"
+                    },
+                    {
+                        "name": "IBM POWER Little Endian (ppc64le)",
+                        "link": "https://downloads.linaroforge.com/21.1.3/arm-forge-21.1.3-linux-ppc64le.tar"
                     }
                 ]
             },
             {
-                "forge": "21.1",
-                "packages": [
+                "os": "macOS (remote client only)",
+                "download": [
                     {
-                        "label": "Windows 7 (and later)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-client-21.1.3-windows-x86_64.exe",
-                        "suffix": "64-bit (AMD/Intel)"
+                        "name": "Mojave (10.14 and later) (64-bit Intel)",
+                        "link": "https://downloads.linaroforge.com/21.1.3/arm-forge-client-21.1.3-macos-x86_64.dmg"
                     }
                 ]
             },
             {
-                "forge": "21.0",
-                "packages": [
+                "os": "Windows (remote client only)",
+                "download": [
                     {
-                        "label": "Windows 7 (and later)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-client-21.0.3-windows-x86_64.exe",
-                        "suffix": "64-bit (AMD/Intel)"
+                        "name": "Windows 7 (and later) (64-bit AMD/Intel)",
+                        "link": "https://downloads.linaroforge.com/21.1.3/arm-forge-client-21.1.3-windows-x86_64.exe"
                     }
                 ]
             }
         ]
     },
     {
-        "os": "Linux",
-        "versions": [
+        "forge": "21.0",
+        "downloads": [
             {
-                "forge": "22.0",
-                "packages": [
+                "os": "Linux",
+                "download": [
                     {
-                        "label": "Arm (AArch64)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-22.0.4-linux-aarch64.tar",
-                        "suffix": ""
+                        "name": "Arm (AArch64)",
+                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-21.0.3-linux-aarch64.tar"
                     },
                     {
-                        "label": "AMD/Intel (x86_64)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-22.0.4-linux-x86_64.tar",
-                        "suffix": ""
+                        "name": "AMD/Intel (x86_64)",
+                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-21.0.3-linux-x86_64.tar"
                     },
                     {
-                        "label": "IBM POWER Little Endian (ppc64le)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-22.0.4-linux-ppc64le.tar",
-                        "suffix": ""
+                        "name": "IBM POWER Little Endian (ppc64le)",
+                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-21.0.3-linux-ppc64le.tar"
                     }
                 ]
             },
             {
-                "forge": "21.1",
-                "packages": [
+                "os": "macOS (remote client only)",
+                "download": [
                     {
-                        "label": "Arm (AArch64)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-21.1.3-linux-aarch64.tar",
-                        "suffix": ""
-                    },
-                    {
-                        "label": "AMD/Intel (x86_64)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-21.1.3-linux-x86_64.tar",
-                        "suffix": ""
-                    },
-                    {
-                        "label": "IBM POWER Little Endian (ppc64le)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-21.1.3-linux-ppc64le.tar",
-                        "suffix": ""
+                        "name": "High Sierra (10.13 and later) (64-bit Intel)",
+                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-client-21.0.3-macos-x86_64.dmg"
                     }
                 ]
             },
             {
-                "forge": "21.0",
-                "packages": [
+                "os": "Windows (remote client only)",
+                "download": [
                     {
-                        "label": "Arm (AArch64)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-21.0.3-linux-aarch64.tar",
-                        "suffix": ""
-                    },
-                    {
-                        "label": "AMD/Intel (x86_64)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-21.0.3-linux-x86_64.tar",
-                        "suffix": ""
-                    },
-                    {
-                        "label": "IBM POWER Little Endian (ppc64le)",
-                        "link": "https://content.allinea.com/downloads/arm-forge-21.0.3-linux-ppc64le.tar",
-                        "suffix": ""
+                        "name": "Windows 7 (and later) (64-bit AMD/Intel)",
+                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-client-21.0.3-windows-x86_64.exe"
                     }
                 ]
             }

@@ -92,27 +92,40 @@ const Contact = () => {
        postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
     }
   }
-const validate = (values) => {
-  let errors = {};
-  // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
-  if (!values.Email) {
-    errors.email = "Email cannot be blank!";
-  }
-  //  else if (!regex.test(values.email)) {
-  //   errors.email = "Invalid email format!";
-  // }
-  if (!values.Name) {
-    errors.Name = "Name cannot be blank!";
-  } else if (values.Name.length < 1) {
-    errors.Name = "Name must be more than 2 characters!";
-  }
-  if (!values.LastName) {
-    errors.LastName = "LastName cannot be blank!";
-  } else if (values.LastName.length < 1) {
-    errors.LastName = "LastName must be more than 2 characters!";
-  }
-  return errors;
-};
+  const validate = (values) => {
+    let errors = {};
+    // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
+    var phoneno = /^\d{10}$/;
+    if (!values.Email) {
+      errors.email = "Email cannot be blank!";
+    }
+    //  else if (!regex.test(values.email)) {
+    //   errors.email = "Invalid email format!";
+    // }
+    if (!values.Name) {
+      errors.Name = "Name cannot be blank!";
+    } else if (values.Name.length <= 1) {
+      errors.Name = "Name must be more than 1 characters!";
+    }
+    if (!values.LastName) {
+      errors.LastName = "LastName cannot be blank!";
+    } else if (values.LastName.length <= 2) {
+      errors.LastName = "LastName must be more than 2 characters!";
+    }
+    if (!values.Country) {
+      errors.Country = "Country cannot be blank!";
+    }
+    if (!values.Job_title) {
+      errors.Job_title = "Job title cannot be blank!";
+    }
+    if (!values.Tel_Number) {
+      errors.Tel_Number = "Telephone Number cannot be blank!";
+    }
+     else if (!values.Tel_Number.match(phoneno)) {
+      errors.Tel_Number = "Invalid Number!";
+    }
+    return errors;
+  };
 
   return (
     <ThemeProvider theme={formtheme}>
@@ -123,17 +136,16 @@ const validate = (values) => {
      <Grid flexGrow={2} sx={{backgroundColor:'white',
       boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
       , }} >
-      {/* <HeaderBar /> */}
       <ContactHeroCard/>
-      {isError &&
+      {/* {isError &&
             
             <Stack sx={{ width: '100%',}} spacing={3} id='error_message'>
             <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
               <AlertTitle style={{}}>Error</AlertTitle>
-              Something wrong is happening — <strong>please try again!</strong>
+              Something went wrong — <strong>Please try again later!</strong>
             </Alert>
           
-          </Stack>}
+          </Stack>} */}
       <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'}}} >
       <Grid item xs={6}>
       {isLoading && (
@@ -184,7 +196,7 @@ const validate = (values) => {
             <Typography style={{color:'red',paddingLeft:'8px',fontWeight:'lighter',fontSize:'10px'}}>{formErrors.LastName}</Typography>
           )}
           <TextField
-          // required
+           required
           id="outlined-Job-title-input"
           placeholder="Job title"
           name='Job_title'
@@ -193,8 +205,11 @@ const validate = (values) => {
           value={formData.Job_title}
           onChange={handleInput}
         />
+         {formErrors.Job_title && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Job_title}</Typography>
+                    )}
           <TextField
-          // required
+           required
           id="outlined-Company-input"
           name="Company"
           placeholder="Company"
@@ -203,8 +218,9 @@ const validate = (values) => {
           value={formData.Company}
           onChange={handleInput}
         />
-        {/* <Typography variant='caption' sx={{fontSize:'14px',width:'70%'}}>Note: your temporary license will be sent to this
-        email address.</Typography> */}
+       {formErrors.Company && (
+        <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Company}</Typography>
+        )}
        <TextField
           required
           name='Email'
@@ -230,6 +246,9 @@ const validate = (values) => {
           value={formData.Tel_Number}
           onChange={handleInput}
         />
+          {formErrors.Tel_Number && (
+            <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Tel_Number}</Typography>
+          )}
          <Box sx={{ mt:1 ,ml:1,mb:2}}>
         <FormControl style={{backgroundColor:'white',color:'black',width:290,}}>
         <InputLabel id="country-select-label" >Country</InputLabel>
@@ -246,6 +265,9 @@ const validate = (values) => {
         ))}
         </Select>
       </FormControl>
+      {formErrors.Country && (
+        <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Country}</Typography>
+      )}
       </Box>     
     <Typography variant='body1' style={{fontSize:'14px'}}>Linaro will process your information in accordance
       with our Privacy Policy.</Typography>
