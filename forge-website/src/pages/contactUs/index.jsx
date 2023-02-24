@@ -66,7 +66,7 @@ const Contact = () => {
       console.log(res);
       if(res.ok===true)
       {
-        router.push('/freeTrial/thanks')
+        router.push('/contactUs/thanks')
       }
       else{
         setIsError(true);
@@ -86,7 +86,7 @@ const Contact = () => {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
         expiresIn: "1h",  // expires in 1 hour
-        issuer: 'TrialRequest'
+        issuer: 'ContactUs'
       });
       console.log(token);
        postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
@@ -137,15 +137,15 @@ const Contact = () => {
       boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
       , }} >
       <ContactHeroCard/>
-      {/* {isError &&
+      {isError &&
             
             <Stack sx={{ width: '100%',}} spacing={3} id='error_message'>
-            <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
+            <Alert severity="error" style={{display:'flex',mx:'auto',marginBottom:'16px',justifyContent:'center',flexDirection:'row'}}>
               <AlertTitle style={{}}>Error</AlertTitle>
               Something went wrong — <strong>Please try again later!</strong>
             </Alert>
           
-          </Stack>} */}
+          </Stack>}
       <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'}}} >
       <Grid item xs={6}>
       {isLoading && (
