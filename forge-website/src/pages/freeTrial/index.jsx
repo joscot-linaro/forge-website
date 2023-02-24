@@ -95,6 +95,7 @@ const FreeTrial = () => {
   const validate = (values) => {
     let errors = {};
     // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
+    var phoneno = /^\d{10}$/;
     if (!values.Email) {
       errors.email = "Email cannot be blank!";
     }
@@ -111,6 +112,18 @@ const FreeTrial = () => {
     } else if (values.LastName.length <= 2) {
       errors.LastName = "LastName must be more than 2 characters!";
     }
+    if (!values.Country) {
+      errors.Country = "Country cannot be blank!";
+    }
+    if (!values.Job_title) {
+      errors.Job_title = "Job title cannot be blank!";
+    }
+    if (!values.Tel_Number) {
+      errors.Tel_Number = "Telephone Number cannot be blank!";
+    }
+     else if (!values.Tel_Number.match(phoneno)) {
+      errors.Tel_Number = "Invalid Number!";
+    }
     return errors;
   };
   return (
@@ -124,17 +137,16 @@ const FreeTrial = () => {
             boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
             ,
           }} >
-            {/* <HeaderBar /> */}
             <TrialHeroCard />
-            {isError &&
+            {/* {isError &&
             
-              <Stack sx={{ width: '100%',}} spacing={3} id='error_message'>
+              <Stack sx={{ width: '100%',mb:'10px'}} spacing={3} id='error_message'>
               <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
                 <AlertTitle style={{}}>Error</AlertTitle>
-                Something wrong is happening — <strong>please try again!</strong>
+                Something went wrong — <strong>Please try again later!</strong>
               </Alert>
             
-            </Stack>}
+            </Stack>} */}
             <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }} >
               <Grid item xs={6}>
               {isLoading && (
@@ -182,7 +194,7 @@ const FreeTrial = () => {
                       <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.LastName}</Typography>
                     )}
                     <TextField
-                      // required
+                       required
                       id="outlined-Job-title-input"
                       placeholder="Job title"
                       name='Job_title'
@@ -191,8 +203,11 @@ const FreeTrial = () => {
                       value={formData.Job_title}
                       onChange={handleInput}
                     />
+                     {formErrors.Job_title && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Job_title}</Typography>
+                    )}
                     <TextField
-                      // required
+                       required
                       id="outlined-Company-input"
                       name="Company"
                       placeholder="Company"
@@ -201,6 +216,9 @@ const FreeTrial = () => {
                       value={formData.Company}
                       onChange={handleInput}
                     />
+                     {formErrors.Company && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Company}</Typography>
+                    )}
                     <Typography variant="body1" sx={{ fontSize: '14px', width: '60%', p: 1 }}>Note: your temporary license will be sent to this
                       email address.</Typography>
                     <TextField
@@ -218,7 +236,7 @@ const FreeTrial = () => {
                       <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.email}</Typography>
                     )}
                     <TextField
-                      // required
+                       required
                       id="outlined-Telephone-input"
                       type='number'
                       name='Tel_Number'
@@ -228,6 +246,9 @@ const FreeTrial = () => {
                       value={formData.Tel_Number}
                       onChange={handleInput}
                     />
+                      {formErrors.Tel_Number && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Tel_Number}</Typography>
+                    )}
                     <Box sx={{ mt: 1, ml: 1, mb: 2 }}>
                       <FormControl style={{ backgroundColor: 'white', color: 'black', width: 290, }}>
                         <InputLabel id="country-select-label" >Country</InputLabel>
@@ -244,6 +265,9 @@ const FreeTrial = () => {
                           ))}
                         </Select>
                       </FormControl>
+                      {formErrors.Country && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Country}</Typography>
+                    )}
                     </Box>
                     <Button type='submit' onClick={submitForm} sx={{ border: '2px solid #9bcc4c', color: 'black', fontWeight: '500', width: '100px', mt: 6, ml: 1 }}>Submit</Button>
                   </Grid>

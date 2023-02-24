@@ -20,9 +20,9 @@ const ForgeNeed = () => {
          <Typography variant="h5" sx={{display:'flex',justifyContent:'center',mb:2,mt:4,mx: 'auto',fontWeight:'600'}}>Everything you need</Typography>
         <Grid container rowSpacing={1} sx={{mx:'auto',flexDirection:{xs:'column',md:'row'}}} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
         <Grid item xs={6} sx={{mx:{xs:'auto',md:'0',}}}>
-        <Box xs='auto' md={4} sx={{backgroundColor:'white',mb:1,p:2,mt:2,width:{xs:'100%',md:'100%'},pl:{xs:'2',md:'37%'},display:'flex',
+        <Box xs='auto' md={4} sx={{backgroundColor:'white',mb:1,p:1,mt:2,width:'100%',pl:{xs:'2',md:'37%'},display:'flex',
       justifyContent:'flex-end'}}>
-        <Typography variant="subtitle2" sx={{mb:2,mt:2,mx: 'auto'}}>
+        <Typography variant="subtitle2" sx={{mb:2,mt:2.5,mx: 'auto'}}>
         Build reliable and optimized code for the right results on
             multiple Server and HPC architectures, from the latest
             compilers and C++ standards to Intel, 64-bit Arm, AMD,
