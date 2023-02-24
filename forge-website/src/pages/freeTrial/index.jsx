@@ -138,15 +138,15 @@ const FreeTrial = () => {
             ,
           }} >
             <TrialHeroCard />
-            {/* {isError &&
+            {isError &&
             
               <Stack sx={{ width: '100%',mb:'10px'}} spacing={3} id='error_message'>
-              <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
+              <Alert severity="error" style={{display:'flex',marginBottom:'6px',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
                 <AlertTitle style={{}}>Error</AlertTitle>
                 Something went wrong — <strong>Please try again later!</strong>
               </Alert>
             
-            </Stack>} */}
+            </Stack>}
             <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }} >
               <Grid item xs={6}>
               {isLoading && (
