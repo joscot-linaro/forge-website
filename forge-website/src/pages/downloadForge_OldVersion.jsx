@@ -39,7 +39,7 @@ const DownloadForge_OldVersion = () => {
          </Grid>
          {previousVersions.map(row=>(
           <Grid>
-            <Typography variant="h6" sx={{pl:10,mb:3}}>Arm Forge version {row.forge}</Typography>
+            <Typography variant="h6" sx={{pl:10,mb:3}}>Linaro Forge version {row.forge}</Typography>
          <TableContainer 
          sx={{mx:'auto',width:'90%',mb:4}} 
          component={Paper}>
