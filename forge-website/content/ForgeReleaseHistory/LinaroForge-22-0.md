@@ -12,7 +12,7 @@ date: "2022-07-29"
     padding:4px;
 }
 h1{
-    font-size:28px;
+    font-size:1.5rem;
     font-family:"Lato";
 }
 h6{

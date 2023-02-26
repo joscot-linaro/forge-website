@@ -1,6 +1,7 @@
 ---
 layout: post
 id: '22.1'
+title: 'Linaro Licence Server 22.1'
 
 ---
 
@@ -13,7 +14,7 @@ id: '22.1'
     padding:4px;
 }
 h1{
-    font-size:28px;
+    font-size:1.5rem;
     font-family:"Lato";
 }
 h6{
@@ -22,7 +23,7 @@ h6{
     font-size:14px;
 }
 ul li{
-margin-left:4%;
+margin-left:2%;
 font-family:"Lato";
 }
 
