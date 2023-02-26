@@ -90,7 +90,7 @@ const FreeTrial = () => {
         issuer: 'TrialRequest'
       });
       console.log(token);
-       postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
+       postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/post?token=${token}`);
     }
   }
   const validate = (values) => {
