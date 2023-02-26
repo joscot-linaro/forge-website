@@ -17,7 +17,7 @@ const OpenSourcesTable = () => {
     , mb:2,p:2}}>
     {/* {isExpanded && */}
      <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto'}}>
-         <TableContainer sx={{width:'70%',display:'flex',mx:'auto'}} component={Paper}>
+         <TableContainer sx={{width:'90%',display:'flex',mx:'auto'}} component={Paper}>
     <Table sx={{ minWidth: 650, }} size="small" aria-label="a dense table">
       <TableHead>
         <TableRow >
