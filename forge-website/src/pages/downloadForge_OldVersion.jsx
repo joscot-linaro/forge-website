@@ -33,8 +33,8 @@ const DownloadForge_OldVersion = () => {
 
    <DownloadHeroCard/>
     
-   <Grid sx={{ width: '100%',mt:2,}}>
-         <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto'}}>
+   <Grid sx={{ width: '100%',mt:2,minHeight:{md:'70.5vh'}}}>
+         <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto',}}>
          <Typography variant="h5" sx={{mt:2,mb:4,mx:'auto',fontWeight:'600'}}>Older versions of Linaro Forge remote client software</Typography>
          </Grid>
          {previousVersions.map((row,index)=>(

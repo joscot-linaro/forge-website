@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import Button from "@mui/material/Button";
+import Navbar from '../components/Navbar/index';
+import Footer from '../components/Footer';
 import OpenSourcesTable from '../components/OpenSourcesTable/index';
 import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -27,8 +26,8 @@ const OpenSource = () => {
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}>
       {/* <HeaderBar/> */}
-    <DownloadHeroCard />
-    <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:6,mx:'auto'}}>
+    <Navbar />
+    <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:6,mx:'auto',minHeight:{md:'91vh'}}}>
         <Grid sx={{display:'flex',fontSize:'1.25em',color:'#343a40',flexDirection:'row',borderRadius:0,width:'80%',mt:5,mb:3}}>
         {/* {isExpanded ?(
             <Button  onClick={()=>setIsExpanded(!isExpanded)} style={{}}><KeyboardArrowUpIcon/></Button>
@@ -40,6 +39,7 @@ const OpenSource = () => {
         </Grid>
         <OpenSourcesTable/>
         </Grid>
+        <Footer/>
         </Grid>
         </ThemeProvider>
   )

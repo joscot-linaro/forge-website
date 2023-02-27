@@ -33,7 +33,7 @@ const LinaroMap = () => {
     // , }}> */}
      
       <LinaroHeroMap />
-      <Grid sx={{ width: '100%',mt:2,}}>
+      <Grid sx={{ width: '100%',mt:2,minHeight:{md:'70.5vh',xs:'100vh'}}}>
       <Typography variant="h5" sx={{display:'flex',justifyContent:'center',mb:4,mt:4,mx: 'auto',fontWeight:'600'}}>Show Exactly Where and Why Code Is Losing Performance</Typography>
       <Grid container rowSpacing={1} sx={{mx:'auto',flexDirection:{xs:'column',md:'row'}}} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
       <Grid item xs={6} sx={{mx:{xs:'auto',md:'0',}}}>

@@ -143,7 +143,7 @@ const FreeTrial = () => {
               </Alert>
             
             </Stack>}
-            <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, minHeight:'100vh' }} >
+            <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, minHeight:{md:'73.5vh',xs:'50vh',sm:'90vh' }}} >
               <Grid item xs={6}>
               {isLoading && (
               <LoadingBar/>
