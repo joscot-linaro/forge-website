@@ -67,7 +67,6 @@ const Contact = () => {
       );
       const res = response;
       setIsLoading(false);
-      console.log(res);
       if(res)
       {
         router.push('/contactUs/thanks')
@@ -92,7 +91,6 @@ const Contact = () => {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      console.log(token);
        postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/post?token=${token}`);
     }
   }
@@ -146,7 +144,7 @@ const Contact = () => {
             </Alert>
           
           </Stack>}
-      <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'},minHeight:'100vh'}} >
+      <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'},minHeight:{md:'73.5vh',xs:'50vh',sm:'90vh' }}} >
       <Grid item xs={6}>
       {isLoading && (
               <LoadingBar/>
