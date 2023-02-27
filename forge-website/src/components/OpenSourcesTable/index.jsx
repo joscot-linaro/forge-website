@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography';
 const OpenSourcesTable = () => {
   return (
       <Grid flexGrow={2} sx={{backgroundColor:'white',
-    boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
+    boxSizing:'border-box',m:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , mb:2,p:2}}>
     {/* {isExpanded && */}
      <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto'}}>
