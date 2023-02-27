@@ -96,7 +96,6 @@ const Contact = () => {
   }
   const validate = (values) => {
     let errors = {};
-    var phoneno = /^\(?(\d{4})\)?[- ]?(\d{3})[- ]?(\d{3})$/;
     if (!values.Email) {
       errors.email = "Email cannot be blank!";
     }
@@ -119,9 +118,9 @@ const Contact = () => {
     if (!values.Tel_Number) {
       errors.Tel_Number = "Telephone Number cannot be blank!";
     }
-     else if (!values.Tel_Number.match(phoneno)) {
-      errors.Tel_Number = "Invalid Number!";
-    }
+    //  else if (!values.Tel_Number.match(phoneno)) {
+    //   errors.Tel_Number = "Invalid Number!";
+    // }
     return errors;
   };
 
