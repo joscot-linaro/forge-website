@@ -29,12 +29,12 @@ font-family:"Lato";
 
 </style>
 <div class='release-container'> 
-<h1>Arm Licence Server 22.1 covers the following releases:</h1> 
+<h1>Linaro Licence Server 22.1 covers the following releases:</h1> 
 <ul>
-<li>Arm Licence Server 22.1 - Released 30th September, 2022</li>
-<li>Arm Licence Server 22.1.1 - Released 28th October, 2022</li>
-<li>Arm Licence Server 22.1.2 - Released 16th December, 2022</li>
-<li>Arm Licence Server 22.1.3 - Released 27th January, 2023</li>
+<li>Linaro Licence Server 22.1 - Released 30th September, 2022</li>
+<li>Linaro Licence Server 22.1.1 - Released 28th October, 2022</li>
+<li>Linaro Licence Server 22.1.2 - Released 16th December, 2022</li>
+<li>Linaro Licence Server 22.1.3 - Released 27th January, 2023</li>
 </ul>
 
 <h1> 22.1.3</h1>

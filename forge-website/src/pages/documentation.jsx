@@ -26,26 +26,29 @@ const Documentation = () => {
       {/* <HeaderBar/> */}
         <DocumentationHeroCard />
       <List sx={{ listStyleType: 'disc',padding:'30px',minHeight:'68vh',mt:8 ,marginLeft:'40px'}}>
-        <ListItem sx={{ display: 'list-item' }}><Typography sx={{textDecoration:'none',color:'black'}} variant='h5'  component='a' href='https://docs.linaroforge.com/22.1.3/html/101136_arm-forge-user-guide/index.html'>
-          Forge user guide</Typography><Typography sx={{textDecoration:'none',color:'black'}} variant='h5' component='a' href='https://docs.linaroforge.com/22.1.3/userguide-forge.pdf'>[PDF]</Typography></ListItem>
-          <ListItem sx={{ display: 'list-item' }}><Typography sx={{textDecoration:'none',color:'black'}} variant='h5' component='a' href='https://docs.linaroforge.com/22.1.3/html/101169_arm-licence-server-user-guide/index.html'>
-          License server user guide</Typography><Typography sx={{textDecoration:'none',color:'black'}} variant='h5' component='a' href='https://docs.linaroforge.com/22.1.3/userguide-licenceserver.pdf'>[PDF]</Typography></ListItem>
-     
-          <ListItem sx={{ display: 'list-item' }}><Typography sx={{textDecoration:'none',color:'black'}} variant='h5' component='a' href='https://docs.linaroforge.com/22.1.3/html/101532_arm-map-metric-plugin-interface/index.html'>
-          MAP metric plugin interface</Typography></ListItem>
-      </List>
-    {/* <List style={{disply:'flex',flexDirection:'column',padding:'30px',minHeight:'100vh'}}>
-        <Grid sx={{display:'flex',flexDirection:'column',}}>
-        <Typography variant="h6" sx={{mt:8,fontWeight:'600'}}>User guide</Typography>
-        <Typography variant="body1" component='a' href='https://docs.linaroforge.com/22.1.3/userguide-licenceserver.pdf' sx={{mt:4,fontWeight:'500',mb:1,fontSize:'14px',textDecoration:'none',color:'#2596be'}}>https://docs.linaroforge.com/22.1.3/userguide-licenceserver.pdf</Typography>
-        <Typography variant="body1" component='a' href='https://docs.linaroforge.com/22.1.3/userguide-forge.pdf' sx={{fontWeight:'500',mb:1,fontSize:'14px',textDecoration:'none',color:'#2596be'}}>https://docs.linaroforge.com/22.1.3/userguide-forge.pdf</Typography>
-        <Typography variant="h6" sx={{mt:5,fontWeight:'600'}}>Html</Typography>
-        <Typography variant="body1" component='a' href='https://docs.linaroforge.com/22.1.3/html/101136_arm-forge-user-guide/index.html' sx={{mt:4,fontWeight:'500',mb:1,fontSize:'14px',textDecoration:'none',color:'#2596be'}}>https://docs.linaroforge.com/22.1.3/html/101136_arm-forge-user-guide/index.html</Typography>
-        <Typography variant="body1" component='a' href='https://docs.linaroforge.com/22.1.3/html/101169_arm-licence-server-user-guide/index.html' sx={{fontWeight:'500',mb:1,fontSize:'14px',textDecoration:'none',color:'#2596be'}}>https://docs.linaroforge.com/22.1.3/html/101169_arm-licence-server-user-guide/index.html</Typography>
-        <Typography variant="body1" component='a' href='https://docs.linaroforge.com/22.1.3/html/101532_arm-map-metric-plugin-interface/index.html' sx={{fontWeight:'500',mb:1,fontSize:'14px',textDecoration:'none',color:'#2596be'}}>https://docs.linaroforge.com/22.1.3/html/101532_arm-map-metric-plugin-interface/index.html</Typography>
+        
+        <ListItem sx={{ display: 'list-item'}}>
+          <Typography sx={{textDecoration:'none',color:'black'}} variant='h5'>Forge user guide</Typography>
+          <Grid sx={{display:'flex',flexDirection:'column',mt:2}}>
+          <Typography sx={{textDecoration:'none',color:'#2596be'}} variant='h6'  component='a' href='https://docs.linaroforge.com/22.1.3/html/101136_arm-forge-user-guide/index.html'>Html</Typography>
+          <Typography sx={{textDecoration:'none',color:'#2596be'}} variant='h6' component='a' href='https://docs.linaroforge.com/22.1.3/userguide-forge.pdf'>PDF</Typography>
         </Grid>
-    </List> */}
+        </ListItem>
 
+          <ListItem sx={{ display: 'list-item' }}>
+          <Typography sx={{textDecoration:'none',color:'black'}} variant='h5'>License server user guide</Typography>
+          <Grid sx={{display:'flex',flexDirection:'column',mt:2}}>
+          <Typography sx={{textDecoration:'none',color:'#2596be'}} variant='h6'  component='a' href='https://docs.linaroforge.com/22.1.3/html/101169_arm-licence-server-user-guide/index.html'>Html</Typography>
+          <Typography sx={{textDecoration:'none',color:'#2596be'}} variant='h6' component='a' href='https://docs.linaroforge.com/22.1.3/userguide-licenceserver.pdf'>PDF</Typography>
+          </Grid>
+          </ListItem>
+
+          <ListItem sx={{ display: 'list-item' }}>
+          <Typography sx={{textDecoration:'none',color:'black'}} variant='h5'>MAP metric plugin interface</Typography>
+          <Typography sx={{textDecoration:'none',color:'#2596be',mt:4}} variant='h6'  component='a' href='https://docs.linaroforge.com/22.1.3/html/101532_arm-map-metric-plugin-interface/index.html'>Html</Typography>
+          </ListItem>
+       
+      </List>
     <Footer/>
     </Grid>
     </ThemeProvider>
