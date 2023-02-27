@@ -14,7 +14,7 @@ const CollapseList = ({item}) => {
 
     const dateFormatConvertor=(str)=>{
         const d = new Date(str);
-        const convertedDate=moment(d).format('MMMM dd, YYYY');
+        const convertedDate=moment(d).format('MMMM D, YYYY');
        return convertedDate;
        
     }
