@@ -5,39 +5,42 @@ import {remark} from "remark";
 import html from "remark-html";
 
 
-const postsDirectory = path.join(process.cwd(), "ForgePlatforms");
+const postsDirectory = path.join(process.cwd(), "content/ForgeReleaseHistory");
 
-export function getSortedPostsData() {
-  const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.md$/, "");
-    const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, "utf8");
-    const matterResult = matter(fileContents);
+export  function getSortedPostsData() {
+  const files=fs.readdirSync(postsDirectory);
+  const posts=files.map(fileName=>{
+    const slug=fileName.replace('.md','')
+     const markdownWithMeta=fs.readFileSync(path.join(postsDirectory,fileName),'utf-8')
+     const {data:frontmatter,content}=matter(markdownWithMeta);
 
     return {
-      id,
-      ...matterResult.data,
-    };
-  });
-  return allPostsData.sort((a, b) => {
-    if (a.id < b.id) {
+      
+        frontmatter,
+        content,
+        slug
+     
+    }
+    
+  })
+  return posts.sort((a, b) => {
+    if (a < b) {
       return 1;
     } else {
       return -1;
     }
   });
 
-}
+ }
 
-export function getAllPlatforms() {
+export function getAllPostData() {
   const fileNames = fs.readdirSync(postsDirectory);
   return fileNames.map((fileName) => {
     return {
       params: {
         id: fileName.replace(/\.md$/, ""),
       },
-    };
+    }
   });
 }
 

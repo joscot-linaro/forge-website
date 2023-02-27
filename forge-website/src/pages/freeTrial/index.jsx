@@ -64,7 +64,7 @@ const FreeTrial = () => {
       const res = response;
       setIsLoading(false);
       console.log(res);
-      if(res.ok===true)
+      if(res)
       {
         router.push('/freeTrial/thanks')
       }
@@ -80,9 +80,10 @@ const FreeTrial = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    const infoErrors=validate(formData);
     setFormErrors(validate(formData));
 
-    if (Object.keys(formErrors).length === 0) {
+    if (Object.keys(infoErrors).length === 0) {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
         expiresIn: "1h",  // expires in 1 hour
@@ -94,14 +95,10 @@ const FreeTrial = () => {
   }
   const validate = (values) => {
     let errors = {};
-    // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
-    var phoneno = /^\d{10}$/;
+    var phoneno = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
     if (!values.Email) {
       errors.email = "Email cannot be blank!";
     }
-    //  else if (!regex.test(values.email)) {
-    //   errors.email = "Invalid email format!";
-    // }
     if (!values.Name) {
       errors.Name = "Name cannot be blank!";
     } else if (values.Name.length <= 1) {
@@ -134,8 +131,7 @@ const FreeTrial = () => {
       <CssBaseline />
           <Grid flexGrow={2} sx={{
             backgroundColor: 'white',
-            boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
-            ,
+            boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' } ,
           }} >
             <TrialHeroCard />
             {isError &&
@@ -147,7 +143,7 @@ const FreeTrial = () => {
               </Alert>
             
             </Stack>}
-            <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }} >
+            <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, minHeight:'100vh' }} >
               <Grid item xs={6}>
               {isLoading && (
               <LoadingBar/>

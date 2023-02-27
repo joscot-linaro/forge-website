@@ -12,7 +12,7 @@ const Thanks = () => {
     Thank you for requesting a trial licence. It has been sent to the email address you have provided.
         </Typography>
     </Grid>
-   </>
+    </>
   )
 }
 

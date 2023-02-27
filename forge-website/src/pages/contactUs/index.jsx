@@ -60,11 +60,15 @@ const Contact = () => {
       const response = await fetch(url, {
         method: 'POST',
          mode: 'no-cors',
-      });
+        
+       
+      },
+      
+      );
       const res = response;
       setIsLoading(false);
       console.log(res);
-      if(res.ok===true)
+      if(res)
       {
         router.push('/contactUs/thanks')
       }
@@ -80,13 +84,13 @@ const Contact = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    const infoErrors=validate(formData);
     setFormErrors(validate(formData));
-
-    if (Object.keys(formErrors).length === 0) {
+    if (Object.keys(infoErrors).length === 0) {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
         expiresIn: "1h",  // expires in 1 hour
-        issuer: 'ContactUs'
+        issuer: 'TrialRequest'
       });
       console.log(token);
        postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
@@ -94,14 +98,10 @@ const Contact = () => {
   }
   const validate = (values) => {
     let errors = {};
-    // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
-    var phoneno = /^\d{10}$/;
+    var phoneno = /^\(?(\d{4})\)?[- ]?(\d{3})[- ]?(\d{3})$/;
     if (!values.Email) {
       errors.email = "Email cannot be blank!";
     }
-    //  else if (!regex.test(values.email)) {
-    //   errors.email = "Invalid email format!";
-    // }
     if (!values.Name) {
       errors.Name = "Name cannot be blank!";
     } else if (values.Name.length <= 1) {
@@ -140,13 +140,13 @@ const Contact = () => {
       {isError &&
             
             <Stack sx={{ width: '100%',}} spacing={3} id='error_message'>
-            <Alert severity="error" style={{display:'flex',mx:'auto',marginBottom:'16px',justifyContent:'center',flexDirection:'row'}}>
+            <Alert severity="error" style={{display:'flex',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
               <AlertTitle style={{}}>Error</AlertTitle>
               Something went wrong — <strong>Please try again later!</strong>
             </Alert>
           
           </Stack>}
-      <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'}}} >
+      <Grid container  spacing={2} sx={{display:'flex',flexDirection:{xs:'column',md:'row'},minHeight:'100vh'}} >
       <Grid item xs={6}>
       {isLoading && (
               <LoadingBar/>

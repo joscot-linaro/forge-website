@@ -36,7 +36,7 @@ const OpenSource = () => {
             <Button onClick={()=>setIsExpanded(!isExpanded)} style={{}}><KeyboardArrowDownIcon /></Button>
         )} */}
         
-        <Typography variant="h6"  sx={{fontWeight:'600',pl:4}}>version: 22.1.3</Typography>
+        <Typography variant="h6"  sx={{fontWeight:'600',pl:10}}>version: 22.1.3</Typography>
         </Grid>
         <OpenSourcesTable/>
         </Grid>
