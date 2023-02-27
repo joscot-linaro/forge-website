@@ -5,7 +5,7 @@
             {
                 "name": "Arm (AArch64)",
                 "link": "https://downloads.linaroforge.com/22.1.3/arm-forge-22.1.4-linux-aarch64.tar",
-                "checksum": "d890b18b1d25dbe3df4607d4d68fe2c1"
+                "checksum": "b646b0c3d5bb6571cf209d6e0acbd85d"
             },
             {
                 "name": "AMD/Intel (x86_64)",
