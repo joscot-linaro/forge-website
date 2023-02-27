@@ -4,7 +4,6 @@ import Grid from '@mui/material/Grid';
 import Navbar from '../components/Navbar/index';
 import Footer from '../components/Footer';
 import OpenSourcesTable from '../components/OpenSourcesTable/index';
-import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
 import { ThemeProvider,createTheme } from '@mui/material/styles';

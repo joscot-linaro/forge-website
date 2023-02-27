@@ -32,7 +32,7 @@ const LicenceServerReleasehistory = ({allPostsData}) => {
       fontFamily: 'Lato',
     },
   });
-  console.log('aa',allPostsData);
+
   return (
     <ThemeProvider theme={formtheme}>
      <Head>
