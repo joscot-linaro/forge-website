@@ -1,23 +1,21 @@
 import React,{ useRef} from 'react';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
+import Box from '@mui/material/Box';
 import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import { useRouter } from "next/router";
 
-
-
-const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcolor,icon }) => {
+const ForgePlatforms = ({platName,link, title,description,bordercolor,backcolor,icon,width }) => {
   const colorRef = useRef();
   const router = useRouter();
 
   return (
-    <div key={id}>
     <Card   
      ref={colorRef}
 			sx={{
-				// maxWidth: 345,
 				 backgroundColor: backcolor,
          border:`2px solid`,
          borderColor:bordercolor,
@@ -25,13 +23,14 @@ const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcol
 				 width: '250px',
           height:'350px',
 			}}>
+       <Box sx={{height:'50px'}}>
         <CardMedia
                 component="img"
-                sx={{width:40,mx:'auto',mt:2}}
-                //  sx={{filter:"brightness(30%)" }}
+                sx={{width:{width},mx:'auto',mt:3,}}
                 image={icon}
                 alt="Live from space album cover"
         />
+        </Box>
         <CardContent sx={{color:'black', display:'flex',justifyContent:'center',
           flexDirection:'column'}}>
         <Typography variant="body1" sx={{mx:'auto',fontWeight:'700',fontSize:'12px',mt:2}} noWrap>{platName}</Typography>
@@ -42,7 +41,7 @@ const ForgePlatforms = ({id,platName,link, title,description,bordercolor,backcol
         <Button onClick={()=>router.push(link)} ref={colorRef}  sx={{fontSize:'12px',mx:'auto',display:'flex',justifyContent:'center',border:'2px solid',borderColor:bordercolor,borderRadius:3,color:'black',mb:2,fontWeight:'600',mt:2,pt:1}} >Learn more</Button>
    
     </Card> 
-    </div>
+    
   )
 }
 

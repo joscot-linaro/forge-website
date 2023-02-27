@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import TrialHeroCard from '../../components/HeroCard/TrialHeroCard/index';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
@@ -12,12 +12,25 @@ import Typography from '@mui/material/Typography';
 import FreeTrialContentText from '../../components/FreeTrialContentText/index';
 import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
-import HeaderBar from '../../components/HeaderBar/index';
+import Footer from '../../components/Footer/index';
 import countryList from 'react-select-country-list';
+import LoadingBar from '../../components/LoadingBar/index';
+import Alert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+import AlertTitle from '@mui/material/AlertTitle';
+import CssBaseline from '@mui/material/CssBaseline';
+import Head from 'next/head';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 
 const FreeTrial = () => {
+  const formtheme = createTheme({
+    typography: {
+      fontFamily: 'Lato',
+    },
+  });
   const router = useRouter();
   const [isLoading,setIsLoading]=useState(false);
+  const [isError,setIsError]=useState(false);
   const options = useMemo(() => countryList().getData(), []);
   const [secretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
   const [formData, setFormData] = useState({
@@ -43,18 +56,20 @@ const FreeTrial = () => {
   }
   async function postData(url) {
     try {
+      setIsLoading(true);
       const response = await fetch(url, {
         method: 'POST',
          mode: 'no-cors',
       });
-      setIsSubmitting(true);
       const res = response;
-      console.log(res);
-      if(res.ok===true)
+      setIsLoading(false);
+      if(res)
       {
-        setIsSubmitting(false);
         router.push('/freeTrial/thanks')
-      };
+      }
+      else{
+        setIsError(true);
+      }
       return res;
     } catch (err) {
       console.log(err);
@@ -64,27 +79,23 @@ const FreeTrial = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
+    const infoErrors=validate(formData);
     setFormErrors(validate(formData));
 
-    if (Object.keys(formErrors).length === 0) {
+    if (Object.keys(infoErrors).length === 0) {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      console.log(token);
-       postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/isthisworking?token=${token}`);
+       postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/post?token=${token}`);
     }
   }
   const validate = (values) => {
     let errors = {};
-    // const regex = /^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/gm;
     if (!values.Email) {
       errors.email = "Email cannot be blank!";
     }
-    //  else if (!regex.test(values.email)) {
-    //   errors.email = "Invalid email format!";
-    // }
     if (!values.Name) {
       errors.Name = "Name cannot be blank!";
     } else if (values.Name.length <= 1) {
@@ -95,34 +106,56 @@ const FreeTrial = () => {
     } else if (values.LastName.length <= 2) {
       errors.LastName = "LastName must be more than 2 characters!";
     }
+    if (!values.Country) {
+      errors.Country = "Country cannot be blank!";
+    }
+    if (!values.Job_title) {
+      errors.Job_title = "Job title cannot be blank!";
+    }
+    if (!values.Tel_Number) {
+      errors.Tel_Number = "Telephone Number cannot be blank!";
+    }
+    //  else if (!values.Tel_Number.match(phoneno)) {
+    //   errors.Tel_Number = "Invalid Number!";
+    // }
     return errors;
   };
   return (
-    <>
-      {/* {Object.keys(formErrors).length === 0 && isSubmitting ? (
-        <ThanksForm />
-      ) :
-        ( */}
+    <ThemeProvider theme={formtheme}>
+      <Head>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			</Head>
+      <CssBaseline />
           <Grid flexGrow={2} sx={{
             backgroundColor: 'white',
-            boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
-            ,
+            boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' } ,
           }} >
-            <HeaderBar />
             <TrialHeroCard />
-            <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }} >
+            {isError &&
+            
+              <Stack sx={{ width: '100%',mb:'10px'}} spacing={3} id='error_message'>
+              <Alert severity="error" style={{display:'flex',marginBottom:'6px',mx:'auto',justifyContent:'center',flexDirection:'row'}}>
+                <AlertTitle style={{}}>Error</AlertTitle>
+                Something went wrong — <strong>Please try again later!</strong>
+              </Alert>
+            
+            </Stack>}
+            <Grid container spacing={2} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, minHeight:{md:'73.5vh',xs:'50vh',sm:'90vh' }}} >
               <Grid item xs={6}>
+              {isLoading && (
+              <LoadingBar/>
+            )}
                 <Box>
                   <FreeTrialContentText />
                 </Box>
               </Grid>
-              <Grid item xs={6} sx={{ width: '100%' }}>
+              <Grid item xs={6} sx={{ width: '100%',backgroundColor: '#e6e6e6' }}>
                 <Box
                   component="form"
                   sx={{
                     '& .MuiTextField-root': { m: 1, width: '25ch' },
-                    backgroundColor: '#e6e6e6', ml: { xs: '8%', md: '0' }, height: '100%', p: { md: '5%', },
-                    display: 'flex',
+                    ml: { xs: '8%', md: '0' }, height: '100%',pl:'10%',
+                    display: 'flex',mt:2,
                     width: { xs: '700px', md: '90%' }
                   }}
                   autoComplete="off">
@@ -154,7 +187,7 @@ const FreeTrial = () => {
                       <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.LastName}</Typography>
                     )}
                     <TextField
-                      // required
+                       required
                       id="outlined-Job-title-input"
                       placeholder="Job title"
                       name='Job_title'
@@ -163,8 +196,11 @@ const FreeTrial = () => {
                       value={formData.Job_title}
                       onChange={handleInput}
                     />
+                     {formErrors.Job_title && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Job_title}</Typography>
+                    )}
                     <TextField
-                      // required
+                       required
                       id="outlined-Company-input"
                       name="Company"
                       placeholder="Company"
@@ -173,6 +209,9 @@ const FreeTrial = () => {
                       value={formData.Company}
                       onChange={handleInput}
                     />
+                     {formErrors.Company && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Company}</Typography>
+                    )}
                     <Typography variant="body1" sx={{ fontSize: '14px', width: '60%', p: 1 }}>Note: your temporary license will be sent to this
                       email address.</Typography>
                     <TextField
@@ -190,7 +229,7 @@ const FreeTrial = () => {
                       <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.email}</Typography>
                     )}
                     <TextField
-                      // required
+                       required
                       id="outlined-Telephone-input"
                       type='number'
                       name='Tel_Number'
@@ -200,6 +239,9 @@ const FreeTrial = () => {
                       value={formData.Tel_Number}
                       onChange={handleInput}
                     />
+                      {formErrors.Tel_Number && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Tel_Number}</Typography>
+                    )}
                     <Box sx={{ mt: 1, ml: 1, mb: 2 }}>
                       <FormControl style={{ backgroundColor: 'white', color: 'black', width: 290, }}>
                         <InputLabel id="country-select-label" >Country</InputLabel>
@@ -216,16 +258,18 @@ const FreeTrial = () => {
                           ))}
                         </Select>
                       </FormControl>
+                      {formErrors.Country && (
+                      <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Country}</Typography>
+                    )}
                     </Box>
                     <Button type='submit' onClick={submitForm} sx={{ border: '2px solid #9bcc4c', color: 'black', fontWeight: '500', width: '100px', mt: 6, ml: 1 }}>Submit</Button>
                   </Grid>
                 </Box>
               </Grid>
             </Grid>
+            <Footer/>
           </Grid>
-        {/* )} */}
-
-    </>
+    </ThemeProvider>
 
   )
 }

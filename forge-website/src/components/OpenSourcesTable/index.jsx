@@ -10,14 +10,14 @@ import openSourceData from '../../../content/JsonFiles/open_source.json';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
-const OpenSourcesTable = ({isExpanded}) => {
+const OpenSourcesTable = () => {
   return (
       <Grid flexGrow={2} sx={{backgroundColor:'white',
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
-    , }}>
-    {isExpanded &&
+    , mb:2,p:2}}>
+    {/* {isExpanded && */}
      <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto'}}>
-         <TableContainer sx={{width:'100%',display:'flex',mx:'auto'}} component={Paper}>
+         <TableContainer sx={{width:'90%',display:'flex',mx:'auto'}} component={Paper}>
     <Table sx={{ minWidth: 650, }} size="small" aria-label="a dense table">
       <TableHead>
         <TableRow >
@@ -54,7 +54,6 @@ const OpenSourcesTable = ({isExpanded}) => {
     </Table>
   </TableContainer>
     </Grid>
-}
     </Grid>
   )
 }

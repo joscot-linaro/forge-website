@@ -16,8 +16,8 @@ const LinaroDdtHeroCard = () => {
         />
         <Navbar />
         <Grid sx={{position: "absolute", color: "white",top: 100,left: "50%",transform: "translateX(-50%)",display:'flex',flexDirection:'column',fontSize:'40px'}}> 
-        <Typography variant="h4"  sx={{color: "white",mx:'auto',fontWeight:'600',fontFamily:'sans-serif'}}>Linaro DDT</Typography>
-        <Typography noWrap variant="h4" sx={{color: "#9bcc4c",fontWeight:'400',fontFamily:'sans-serif'}}>Development Tools & Software</Typography>
+        <Typography variant="h4"  sx={{color: "white",mx:'auto',fontWeight:'600'}}>Linaro DDT</Typography>
+        <Typography noWrap variant="h4" sx={{color: "#9bcc4c",fontWeight:'400',}}>Development Tools & Software</Typography>
         </Grid>
        
     </Grid>
