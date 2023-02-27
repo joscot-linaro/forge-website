@@ -12,7 +12,7 @@ date: "2023-01-27"
     padding:4px;
 }
 h1{
-    font-size:28px;
+    font-size:1.5rem;
 }
 h6{
     font-weight:500;
@@ -172,11 +172,13 @@ None in this release.
 <li>[FOR-16622] Fixed applying changed memory debugging options when stopped at memory error.</li>
 <li>[FOR-16728] Fixed an issue with Cray MPICH rank detection.</li>
 <li>[FOR-16815] Fixed an issue with the MDA viewer where display mode could not be changed.</li>
+</ul>
 <h6>Linaro MAP and Performance Reports:<h6>
 <ul>
 <li>[FOR-13743] Fixed an issue with CUDA profiling when using the CUDA libraries included with the NVIDIA HPC SDK.
 </li>
 <li>[FOR-16228] Fixed an issue causing a MAP sampler initialisation failure.</li>
+</ul>
 <h1>Deprecated features</h1>
 <h6>The following features have been deprecated in this release, and might be removed in a future version:</h6>
 <ul>

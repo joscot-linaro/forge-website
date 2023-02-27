@@ -29,7 +29,7 @@ const LicenseServer = () => {
     boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
     , }}> */}
     <DownloadHeroCard/>
-    <Grid sx={{ mt:2,}}>
+    <Grid sx={{ mt:2,minHeight:{md:'70.5vh',xs:'100vh'}}}>
     <Grid  sx={{display:'flex',flexDirection:'column',borderRadius:0,borderColor:'white',ml:6,width:'100%',mt:4,mx:'auto',}}>
         <Typography variant="h5"  sx={{mt:2,mb:3,fontWeight:'600',pl:3}}>Linaro License Server</Typography>
         <Typography variant="h6"  sx={{mt:2,mb:3,fontWeight:'600',pl:3}}>Download Linaro Licence Server 22.1.3</Typography>
