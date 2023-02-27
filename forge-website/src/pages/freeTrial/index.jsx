@@ -93,7 +93,6 @@ const FreeTrial = () => {
   }
   const validate = (values) => {
     let errors = {};
-    var phoneno = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
     if (!values.Email) {
       errors.email = "Email cannot be blank!";
     }
@@ -116,9 +115,9 @@ const FreeTrial = () => {
     if (!values.Tel_Number) {
       errors.Tel_Number = "Telephone Number cannot be blank!";
     }
-     else if (!values.Tel_Number.match(phoneno)) {
-      errors.Tel_Number = "Invalid Number!";
-    }
+    //  else if (!values.Tel_Number.match(phoneno)) {
+    //   errors.Tel_Number = "Invalid Number!";
+    // }
     return errors;
   };
   return (
