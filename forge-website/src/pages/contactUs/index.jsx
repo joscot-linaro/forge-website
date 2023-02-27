@@ -118,9 +118,6 @@ const Contact = () => {
     if (!values.Tel_Number) {
       errors.Tel_Number = "Telephone Number cannot be blank!";
     }
-    //  else if (!values.Tel_Number.match(phoneno)) {
-    //   errors.Tel_Number = "Invalid Number!";
-    // }
     return errors;
   };
 
