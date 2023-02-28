@@ -24,7 +24,7 @@ const FreeTrialContentText = () => {
                 almost daily basis, not only for finding and fixing errors but also in
                 order to get a more profound insight into program execution and
                 data states.</Typography>
-                <Typography variant="body1"  sx={{mt:2,fontWeight:500,fontSize:'14px'}}>Dr. Aurel Neic, Postdoctoral Researcher, Institute of Biophysics
+                <Typography variant="body1"  sx={{mt:2,fontWeight:600,fontSize:'14px',fontStyle:'italic'}}>Dr. Aurel Neic, Postdoctoral Researcher, Institute of Biophysics
                 Medical University of Graz</Typography>
         </Grid>
   )
