@@ -30,7 +30,7 @@ const Footer = () => {
                 component="img"
                 image='/images/Linaro_Forge-white.png'
                 alt="Linaro Logo"  
-                sx={{width:'120px',mt:3, mx:'auto',mt:2,padding:'10px',
+                sx={{width:'120px',mt:3, mx:'auto',padding:'10px',
                 display:'flex',
                 justifyContent:'center',}}  
           />
