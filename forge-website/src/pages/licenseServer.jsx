@@ -39,7 +39,7 @@ const LicenseServer = () => {
             <Typography variant="h5" sx={{ mt: 2, mb: 3, fontWeight: '600', pl: 3 }}>Linaro License Server</Typography>
             <Typography variant="h6" sx={{ mt: 2, mb: 3, fontWeight: '600', pl: 3 }}>Download Linaro Licence Server 22.1.3</Typography>
             <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>Use the table below to download the latest version of Linaro Licence Server for your server and HPC toolchain.</Typography>
-            <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>For more information, see <Typography sx={{ textDecoration: 'none', color: '#2596be' }} component='a' href='https://docs.linaroforge.com/22.1.3/html/101169_arm-licence-server-user-guide/use_arm_licence_server/index.html'>Use Linaro Licence Server</Typography>.</Typography>
+            <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>For more information, see <Typography sx={{ textDecoration: 'none', color: '#2596be' }} component='a' href='https://docs.linaroforge.com/latest/html/101169_arm-licence-server-user-guide/use_arm_licence_server/index.html'>Use Linaro Licence Server</Typography>.</Typography>
           </Grid>
           <LicenseServerTable />
           <Button onClick={() => router.push('/LicenceServerReleasehistory')} sx={{ color: 'white', background: '#23b1da', m: 2, borderRadius: 3, '&:hover': { color: '#23b1da' } }}>Release history</Button>

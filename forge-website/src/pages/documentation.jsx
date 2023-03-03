@@ -37,22 +37,22 @@ const Documentation = () => {
           <ListItem sx={{ display: 'list-item' }}>
             <Typography sx={{ textDecoration: 'none', color: 'black' }} variant='h5'>Forge user guide</Typography>
             <Grid sx={{ display: 'flex', flexDirection: 'column', mt: 2 }}>
-              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/22.1.3/html/101136_arm-forge-user-guide/index.html'>HTML</Typography>
-              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/22.1.3/userguide-forge.pdf'>PDF</Typography>
+              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/latest/html/101136_arm-forge-user-guide/index.html'>HTML</Typography>
+              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/latest/userguide-forge.pdf'>PDF</Typography>
             </Grid>
           </ListItem>
 
           <ListItem sx={{ display: 'list-item' }}>
             <Typography sx={{ textDecoration: 'none', color: 'black' }} variant='h5'>License server user guide</Typography>
             <Grid sx={{ display: 'flex', flexDirection: 'column', mt: 2 }}>
-              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/22.1.3/html/101169_arm-licence-server-user-guide/index.html'>HTML</Typography>
-              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/22.1.3/userguide-licenceserver.pdf'>PDF</Typography>
+              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/latest/html/101169_arm-licence-server-user-guide/index.html'>HTML</Typography>
+              <Typography sx={{ textDecoration: 'none', color: '#2596be' }} variant='h6' component='a' href='https://docs.linaroforge.com/latest/userguide-licenceserver.pdf'>PDF</Typography>
             </Grid>
           </ListItem>
 
           <ListItem sx={{ display: 'list-item' }}>
             <Typography sx={{ textDecoration: 'none', color: 'black' }} variant='h5'>MAP metric plugin interface</Typography>
-            <Typography sx={{ textDecoration: 'none', color: '#2596be', mt: 4 }} variant='h6' component='a' href='https://docs.linaroforge.com/22.1.3/html/101532_arm-map-metric-plugin-interface/index.html'>HTML</Typography>
+            <Typography sx={{ textDecoration: 'none', color: '#2596be', mt: 4 }} variant='h6' component='a' href='https://docs.linaroforge.com/latest/html/101532_arm-map-metric-plugin-interface/index.html'>HTML</Typography>
           </ListItem>
 
         </List>
