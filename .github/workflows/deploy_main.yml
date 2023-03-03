@@ -69,5 +69,5 @@ jobs:
           echo "======== INVALIDATION COMPLETED ========"
       - name: Update routing rules
         run: |
-          CF_DIST_ID_STATIC_LO="E2WREK9TKMY5OS" LAMBDA_ROLE="arn:aws:iam::493521345843:role/service-role/lambda-redirect-role" AWS_STATIC_SITE_URL="docs-linaroforge-com" AWS_STATIC_SITE_PROFILE="www-linaroforge-com-buildbot" /srv/github-action-scripts/set-up-lambda-redirect.sh ${{ github.workspace }}/forge-website/
-          CF_DIST_ID_STATIC_LO="E2F4DDTQ2FL7GQ" LAMBDA_ROLE="arn:aws:iam::493521345843:role/service-role/lambda-redirect-role" AWS_STATIC_SITE_URL="downloads-linaroforge-com" AWS_STATIC_SITE_PROFILE="www-linaroforge-com-buildbot" /srv/github-action-scripts/set-up-lambda-redirect.sh ${{ github.workspace }}/forge-website/
+          CF_DIST_ID_STATIC_LO="E2WREK9TKMY5OS" LAMBDA_ROLE="arn:aws:iam::493521345843:role/service-role/lambda-redirect-role" AWS_STATIC_SITE_URL="docs-linaroforge-com" AWS_STATIC_SITE_PROFILE="www-linaroforge-com-buildbot" /srv/github-action-scripts/set-up-lambda-redirect.sh ${{ github.workspace }}/
+          CF_DIST_ID_STATIC_LO="E2F4DDTQ2FL7GQ" LAMBDA_ROLE="arn:aws:iam::493521345843:role/service-role/lambda-redirect-role" AWS_STATIC_SITE_URL="downloads-linaroforge-com" AWS_STATIC_SITE_PROFILE="www-linaroforge-com-buildbot" /srv/github-action-scripts/set-up-lambda-redirect.sh ${{ github.workspace }}/
