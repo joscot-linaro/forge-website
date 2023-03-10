@@ -44,9 +44,9 @@ const DownloadForge = () => {
         <Grid sx={{ width: '100%', mt: 2, }}>
 
           <Grid container rowSpacing={1} sx={{ flexDirection: 'column', p: 3 }} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
-            <Typography variant="h5" sx={{ mt: 2, fontWeight: '600' }}>Download Linaro Forge 22.1.3</Typography>
+            <Typography variant="h5" sx={{ mt: 2, fontWeight: '600' }}>Download Linaro Forge</Typography>
             <Typography variant="body1" sx={{ mt: 2, }}>Linaro Forge includes a graphical debugger, parallel profiler, and an application performance reports tool.</Typography>
-            <Typography variant="body1" sx={{ mt: 2, }}>Download the packages you require for your operating system and architecture.</Typography>
+            <Typography variant="body1" sx={{ mt: 2, }}>Download the packages you require for your operating system and architecture. If you have any issues installing or configuring Forge, please contact <a href="mailto:support@forge.linaro.com">support@forge.linaro.com</a>.</Typography>
             <Typography variant="h5" sx={{ mt: 2, fontWeight: '600' }}>Download</Typography>
             <Typography variant="body1" sx={{ mt: 2, }}>Windows and macOS builds are remote clients only. They allow you to connect to a remote system and debug or profile. The
               remote clients cannot debug or profile programs on Windows and macOS. Linux downloads also function as remote clients.</Typography>
