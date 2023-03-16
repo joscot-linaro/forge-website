@@ -90,7 +90,7 @@ const Contact = () => {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      postData(`https://u656cu4cq8.execute-api.eu-west-2.amazonaws.com/stage/post?token=${token}`);
+      postData(`https://1z0t7a7xwg.execute-api.eu-west-2.amazonaws.com/main/post?token=${token}`);
     }
   }
   const validate = (values) => {
