@@ -56,9 +56,8 @@ const LinaroDdt = () => {
                   research, industry, and academia for software engineers and
                   scientists developing C++, C, Fortran parallel and threaded
                   applications on CPUs, GPUs, Intel and Arm. Linaro DDT is
-                  trusted as a powerful tool for automatic detection of memory
-                  bugs and divergent behavior to achieve lightning-fast
-                  performance at all scales.
+                  the trusted debugging tool for ensuring program correctness for
+                  applications ranging from single process to exascale.
                 </Typography>
               </Box>
             </Grid>
