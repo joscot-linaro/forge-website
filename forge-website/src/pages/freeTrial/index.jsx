@@ -87,7 +87,8 @@ const FreeTrial = () => {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      postData(`https://1z0t7a7xwg.execute-api.eu-west-2.amazonaws.com/main/post?token=${token}`);
+      const endpoint = process.env.NEXT_PUBLIC_ENDPOINT;
+      postData(`${endpoint}/post?token=${token}`);
     }
   }
   const validate = (values) => {
