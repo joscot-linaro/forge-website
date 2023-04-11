@@ -2,7 +2,7 @@ import React from 'react';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Grid from '@mui/material/Grid';
-import DocumentationHeroCard from '../components/HeroCard/DocumentationHeroCard/index';
+import HeroCard from '../components/HeroCard/HeroCard/index';
 import Footer from '../components/Footer/index';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -31,7 +31,7 @@ const Documentation = () => {
 
       <Grid>
         {/* <HeaderBar/> */}
-        <DocumentationHeroCard />
+        <HeroCard myTitle={'Documentation'} />
         <List sx={{ listStyleType: 'disc', padding: '30px', minHeight: '68vh', mt: 8, marginLeft: '40px' }}>
 
           <ListItem sx={{ display: 'list-item' }}>

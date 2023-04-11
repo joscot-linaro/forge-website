@@ -9,7 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import previousVersions from '../../content/JsonFiles/previous_versions.json';
-import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
+import HeroCardName from '../components/HeroCard/HeroCardName/index';
 import Footer from '../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
@@ -40,7 +40,7 @@ const DownloadForge_OldVersion = () => {
         ,
       }}>
 
-        <DownloadHeroCard />
+        <HeroCardName title_1={'Download Linaro Forge'} title_2={'Development Tools & Software'} />
 
         <Grid sx={{ width: '100%', mt: 2, minHeight: { md: '70.5vh' } }}>
           <Grid sx={{ display: 'flex', flexDirection: 'column', borderRadius: 0, borderColor: 'white', ml: 6, width: '100%', mt: 4, mx: 'auto', }}>

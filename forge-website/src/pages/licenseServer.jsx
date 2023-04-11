@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
+import HeroCardName from '../components/HeroCard/HeroCardName/index';
 import LicenseServerTable from '../components/licenseServerTable/index';
 import Footer from '../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -33,7 +33,7 @@ const LicenseServer = () => {
       <CssBaseline />
       <Grid>
 
-        <DownloadHeroCard />
+        <HeroCardName title_1={'Download Linaro Forge'} title_2={'Development Tools & Software'} />
         <Grid sx={{ mt: 2, minHeight: { md: '70.5vh', xs: '100vh' } }}>
           <Grid sx={{ display: 'flex', flexDirection: 'column', borderRadius: 0, borderColor: 'white', ml: 6, width: '100%', mt: 4, mx: 'auto', }}>
             <Typography variant="h5" sx={{ mt: 2, mb: 3, fontWeight: '600', pl: 3 }}>Linaro License Server</Typography>

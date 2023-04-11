@@ -1,5 +1,5 @@
 import React from 'react';
-import DownloadHeroCard from '../../components/HeroCard/DownloadHeroCard/index';
+import HeroCardName from '../../components/HeroCard/HeroCardName/index';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import DownloadTable from '../../components/DownloadTable/index';
@@ -36,13 +36,8 @@ const DownloadForge = () => {
       </Head>
       <CssBaseline />
       <Grid>
-        {/* <Grid flexGrow={2} sx={{backgroundColor:'white',
-    boxSizing:'border-box',m:0,p:0,width:{xs:'min-content',md:'100%',sm:'100%' }
-    , }}> */}
-        {/* <HeaderBar/> */}
-        <DownloadHeroCard />
+        <HeroCardName title_1={'Download Linaro Forge'} title_2={'Development Tools & Software'} />
         <Grid sx={{ width: '100%', mt: 2, }}>
-
           <Grid container rowSpacing={1} sx={{ flexDirection: 'column', p: 3 }} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
             <Typography variant="h5" sx={{ mt: 2, fontWeight: '600' }}>Download Linaro Forge</Typography>
             <Typography variant="body1" sx={{ mt: 2, }}>Linaro Forge includes a graphical debugger, parallel profiler, and an application performance reports tool.</Typography>

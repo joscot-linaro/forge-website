@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import TrialHeroCard from '../../components/HeroCard/TrialHeroCard/index';
+import HeroCard from '../../components/HeroCard/HeroCard/index';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
@@ -32,7 +32,8 @@ const FreeTrial = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
-  const [secretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
+  const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
+  const trial_url = process.env.NEXT_PUBLIC_Main_ENDPOINT;
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -87,7 +88,7 @@ const FreeTrial = () => {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      postData(`https://1z0t7a7xwg.execute-api.eu-west-2.amazonaws.com/main/post?token=${token}`);
+      postData(`${trial_url}?token=${token}`);
     }
   }
   const validate = (values) => {
@@ -114,9 +115,6 @@ const FreeTrial = () => {
     if (!values.Tel_Number) {
       errors.Tel_Number = "Telephone Number cannot be blank!";
     }
-    //  else if (!values.Tel_Number.match(phoneno)) {
-    //   errors.Tel_Number = "Invalid Number!";
-    // }
     return errors;
   };
   return (
@@ -136,7 +134,7 @@ const FreeTrial = () => {
         backgroundColor: 'white',
         boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' },
       }} >
-        <TrialHeroCard />
+        <HeroCard myTitle={'Free Trial'} />
         {isError &&
 
           <Stack sx={{ width: '100%', mb: '10px' }} spacing={3} id='error_message'>
