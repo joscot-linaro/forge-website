@@ -94,33 +94,4 @@ const DownloadForge_OldVersion = () => {
 
 export default DownloadForge_OldVersion;
 
-{/* <TableBody>
-    
-          <TableRow
-            key={index}
-            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-          >
-            <TableCell component="th" scope="row" align="center">
-              {}
-            </TableCell>
-                <TableCell align="center">
-                  {row.versions.map((item)=>(
-                    <div key={item.forge}>{item.forge}</div>
-                  ))}
-                </TableCell>
-            
-            <TableCell style={{fontSize:'12px'}} align="center">
-              
-                <Typography component='div' key={pack.link}>
-                <Typography component='a' sx={{color:'#2596be',textDecoration:'none',fontSize:'12px'}} href={}>{}
-                {pack.suffix &&<span style={{color:'black',}}>-{}</span>}
-                </Typography>
-                </Typography>
-             
-                   
-                  </TableCell>
-                </TableRow> 
-         
-          
-        
-      </TableBody> */}
+

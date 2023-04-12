@@ -18,7 +18,6 @@ import Stack from '@mui/material/Stack';
 import AlertTitle from '@mui/material/AlertTitle';
 import Footer from '../../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
-import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
@@ -85,7 +84,7 @@ const Contact = () => {
     if (Object.keys(infoErrors).length === 0) {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
-        expiresIn: "1h",  // expires in 1 hour
+        expiresIn: "1h",
         issuer: 'ContactUs'
       });
       postData(`${contact_url}?token=${token}`);

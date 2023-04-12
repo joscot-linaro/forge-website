@@ -41,8 +41,6 @@ const Feedback = () => {
     setSelectedNames((prev) => ({ ...prev, Further_feedback: value }));
   };
 
-  console.log(selectedNames);
-
   const handleCheckboxChange = (event) => {
     const { checked, name, value } = event.target;
 
@@ -149,7 +147,7 @@ const Feedback = () => {
     });
     postData(`${feed_url}?token=${token}`);
   }
-  // console.log('sk', secretKey)
+
   return (
     <Grid container sx={{ width: '100%' }}>
       <HeroCardName title_1={'Thank you for using Linaro Forge'} title_2={`We'd like to better understand how you use Linaro Forge`} title_3={'All responses will be anonymous. Please do not add any personal information.'} />
@@ -201,7 +199,7 @@ const Feedback = () => {
                   <TextField
                     disabled={!isShowProfiling}
                     value={isShowProfiling ? otherTextFieldValue : ""}
-                    //value={selectedNames.MAP_Profiling_features.Other}
+
                     onChange={handleOtherTextFieldChange}
                     placeholder='Other'
                     inputProps={{ autoComplete: "off", value: selectedNames.MAP_Profiling_features.Other }}
