@@ -16,6 +16,7 @@ import { data, MAPProfiling, DDTDebugging } from './formData';
 import LoadingBar from '../../components/LoadingBar/index';
 import jwt from 'jsonwebtoken';
 import { useRouter } from "next/router";
+import Typography from '@mui/material/Typography';
 
 
 const Feedback = () => {
@@ -150,7 +151,7 @@ const Feedback = () => {
 
   return (
     <Grid container sx={{ width: '100%' }}>
-      <HeroCardName title_1={'Thank you for using Linaro Forge'} title_2={`We'd like to better understand how you use Linaro Forge`} title_3={'All responses will be anonymous. Please do not add any personal information.'} />
+      <HeroCardName title_1={'Thank you for using Linaro Forge'} title_2={`We'd like to better understand how you use Linaro Forge`} />
       {isError &&
         <Stack sx={{ width: '100%', }} spacing={3} id='error_message'>
           <Alert severity="error" style={{ display: 'flex', mx: 'auto', justifyContent: 'center', flexDirection: 'row' }}>
@@ -169,7 +170,9 @@ const Feedback = () => {
         {isLoading && (
           <LoadingBar />
         )}
+
         <Box component="form" autoComplete="off" sx={{ mt: 4, mb: 4 }}>
+
           <Grid
             style={{
               display: "flex",
@@ -177,6 +180,7 @@ const Feedback = () => {
               padding: "30px",
             }}
           >
+            <Typography align="left" variant="subtitle1" sx={{ color: "#white", fontWeight: '400', mt: 4 }}>All responses will be anonymous. Please do not add any personal information.</Typography>
             <p>1: What MAP Profiling features do you use? </p>
             <FormGroup>
               {MAPProfiling.map((name) => (
