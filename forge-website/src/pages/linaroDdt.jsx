@@ -38,6 +38,7 @@ const LinaroDdt = () => {
             my: '0 auto',
             margin: '0 auto',
             justifyContent: 'center',
+
           }}
         >
           <Typography
@@ -45,6 +46,7 @@ const LinaroDdt = () => {
             sx={{
               display: 'flex',
               justifyContent: 'center',
+              p: { xs: 2 },
               mb: 4,
               mt: 4,
               mx: 'auto',
@@ -101,46 +103,6 @@ const LinaroDdt = () => {
               </Box>
             </Grid>
             <DownloadContainer />
-            {/* <Grid
-              item
-              xs={6}
-              sx={{
-                mx: { xs: 'auto', md: '0' },
-                maxWidth: { xs: '100%', },
-
-              }}
-            >
-              {/* <Grid sx={{ width: { s: '100%', md: '60%' } }}> */}
-            {/* <Box
-              xs='auto'
-              md={4}
-              sx={{
-                backgroundColor: '#e6e6e6',
-                mb: 1,
-                p: 2,
-                mt: 6,
-                width: { xs: '100%', md: '65%', }
-              }}
-            >
-              <Typography
-                variant="subtitle2"
-                sx={{ mb: 2, mt: 2, mx: 'auto' }}
-              >Download your free trial of Linaro Forge or contact us
-                for more information.</Typography>
-              <Button sx={{ backgroundColor: 'white', borderColor: '#f28630', fontSize: '14px', color: 'black', fontWeight: '600' }} onClick={() => router.push("/freeTrial")} variant="outlined">Download Free Trial</Button>
-            </Box>
-            <Box md={4}
-              sx={{
-                backgroundColor: '#e6e6e6',
-                mb: 1,
-                p: 2,
-                width: { xs: '100%', md: '65%' },
-                mt: 1,
-              }}>
-              <Button onClick={() => router.push("/contactUs")} sx={{ backgroundColor: 'white', borderColor: '#f28630', fontSize: '14px', color: 'black', fontWeight: '600' }} variant="outlined">Contact Us</Button>
-            </Box> */}
-            {/* </Grid> */}
-            {/* </Grid> */}
           </Grid>
           <Grid
             container

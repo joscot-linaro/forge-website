@@ -31,7 +31,7 @@ function ResponsiveAppBar() {
     <Grid>
       <AppBar position={'fixed'} sx={{ backgroundColor: 'rgba(0, 0, 0, 0.8)', width: '100%', display: 'flex', }}>
         <Container sx={{ display: 'flex', justifyContent: 'center', }}>
-          <Toolbar disableGutters>
+          <Toolbar disableGutters sx={{ width: '100%' }}>
 
             <Typography
               variant="h6"
@@ -39,11 +39,15 @@ function ResponsiveAppBar() {
               component="a"
               href="/"
               sx={{
-                mr: 40,
+                //mr: 40,
               }}
             >
               <CardMedia
                 component="img"
+                sx={{
+                  maxWidth: { xs: '60%', md: '100%' },
+
+                }}
                 image='/images/Linaro_Forge-white.png'
                 alt="Linaro Logo"
               />
@@ -82,7 +86,8 @@ function ResponsiveAppBar() {
                 <MenuItem sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
                   <Typography component="a" textAlign="center" href='/linaroDdt' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Linaro DDT</Typography>
                   <Typography component="a" textAlign="center" href='/linaroMap' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Linaro MAP</Typography>
-                  <Typography component="a" textAlign="center" href="/documentations" sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Documentation</Typography>
+                  <Typography component="a" textAlign="center" href='/downloadForge' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Download</Typography>
+                  <Typography component="a" textAlign="center" href="/documentation" sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Documentation</Typography>
 
                 </MenuItem>
 
@@ -124,6 +129,7 @@ function ResponsiveAppBar() {
             </Box>
           </Toolbar>
         </Container>
+
       </AppBar>
     </Grid>
 

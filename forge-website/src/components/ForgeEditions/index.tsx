@@ -14,11 +14,11 @@ const ForgeEditions = () => {
         borderRadius: 0,
         backgroundColor: "white",
         mt: 2,
+        width: "100%",
       }}
     >
       <Typography
         variant="h5"
-        noWrap
         sx={{
           mb: 5,
           mt: 2,

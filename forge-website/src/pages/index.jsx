@@ -20,25 +20,32 @@ export default function Home() {
   });
   return (
     <ThemeProvider theme={formtheme}>
-      <Grid sx={{ width: { xs: 'min-content', md: '100%', sm: '100%' } }}>
+      <Grid>
         <HeroCardName title_1={'Linaro Forge'} title_2={'Development Tools & Software'} />
-        <ForgeNeed />
-        <HeaderText />
-        <Grid container spacing={2}  >
-          <Grid item xs={12}>
-            <Grid container justifyContent="center" spacing={2}>
-              {PlatformsData.map(({ width, platName, link, title, description, bordercolor, backcolor, icon }, index) => (
-                <ForgePlatforms key={index} link={link} platName={platName} title={title} description={description} bordercolor={bordercolor} backcolor={backcolor} icon={icon} width={width} />
-              ))}
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          sx={{ display: 'flex', flexDirection: 'column' }}
+
+        >
+          <ForgeNeed />
+          <HeaderText />
+          <Grid container spacing={2}  >
+            <Grid item xs={12}>
+              <Grid container justifyContent="center" spacing={2}>
+                {PlatformsData.map(({ width, platName, link, title, description, bordercolor, backcolor, icon }, index) => (
+                  <ForgePlatforms key={index} link={link} platName={platName} title={title} description={description} bordercolor={bordercolor} backcolor={backcolor} icon={icon} width={width} />
+                ))}
+              </Grid>
             </Grid>
           </Grid>
+          <ForgeFeatures />
+          <ForgeEditions />
+          <TalkAndContact />
+          <Footer />
         </Grid>
-        <ForgeFeatures />
-        <ForgeEditions />
-        <TalkAndContact />
-        <Footer />
       </Grid>
-
     </ThemeProvider>
   )
 }
