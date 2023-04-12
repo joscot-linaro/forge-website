@@ -33,7 +33,7 @@ const Contact = () => {
   const [isError, setIsError] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
   const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
-  const contact_url = process.env.NEXT_PUBLIC_Main_ENDPOINT;
+  const contact_url = `${process.env.NEXT_PUBLIC_ENDPOINT}/post`;
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -86,7 +86,7 @@ const Contact = () => {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
         expiresIn: "1h",  // expires in 1 hour
-        issuer: 'TrialRequest'
+        issuer: 'ContactUs'
       });
       postData(`${contact_url}?token=${token}`);
     }

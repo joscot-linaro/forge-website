@@ -21,7 +21,7 @@ import { useRouter } from "next/router";
 const Feedback = () => {
   const router = useRouter();
   const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
-  const feed_url = process.env.NEXT_PUBLIC_Staging_Feedback_ENDPOINT;
+  const feed_url = `${process.env.NEXT_PUBLIC_ENDPOINT}/feedback`;
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [selectedNames, setSelectedNames] = useState(data);
@@ -143,13 +143,13 @@ const Feedback = () => {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    const token = jwt.sign(data, secretKey, {
+    const token = jwt.sign(selectedNames, secretKey, {
       expiresIn: "1h",
       issuer: 'feedback'
     });
     postData(`${feed_url}?token=${token}`);
   }
-  console.log('sk', secretKey)
+  // console.log('sk', secretKey)
   return (
     <Grid container sx={{ width: '100%' }}>
       <HeroCardName title_1={'Thank you for using Linaro Forge'} title_2={`We'd like to better understand how you use Linaro Forge`} title_3={'All responses will be anonymous. Please do not add any personal information.'} />
@@ -204,7 +204,7 @@ const Feedback = () => {
                     //value={selectedNames.MAP_Profiling_features.Other}
                     onChange={handleOtherTextFieldChange}
                     placeholder='Other'
-                    inputProps={{ maxLength: 20, autoComplete: "off", value: selectedNames.MAP_Profiling_features.Other }}
+                    inputProps={{ autoComplete: "off", value: selectedNames.MAP_Profiling_features.Other }}
                   />
                 </Box>}
               />
@@ -233,7 +233,7 @@ const Feedback = () => {
                     value={isShowDebugging ? otherTextFieldDebuggingValue : ""}
                     onChange={handleOtherTextFieldDebuggingChange}
                     placeholder='Other'
-                    inputProps={{ maxLength: 20, autoComplete: "off", value: selectedNames.DDT_Debugging_features.Other }}
+                    inputProps={{ autoComplete: "off", value: selectedNames.DDT_Debugging_features.Other }}
                   />
                 </Box>}
               />
