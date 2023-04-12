@@ -1,3 +1,4 @@
 AWS_STATIC_SITE_PROFILE=staging-linaroforge-com-buildbot
 AWS_STATIC_SITE_URL=staging-linaroforge-com
 CF_DIST_ID_STATIC_LO=E15IMSWB9MQDQP
+NEXT_PUBLIC_ENDPOINT=https://hvu0we4mqe.execute-api.eu-west-2.amazonaws.com/staging
