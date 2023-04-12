@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
-import ContactHeroCard from '../../components/HeroCard/ContactHeroCard/index';
+import HeroCard from '../../components/HeroCard/HeroCard/index';
 import { useRouter } from "next/router";
 import jwt from 'jsonwebtoken';
 import countryList from 'react-select-country-list';
@@ -32,7 +32,8 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
-  const [secretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
+  const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
+  const contact_url = process.env.NEXT_PUBLIC_Main_ENDPOINT;
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -60,10 +61,7 @@ const Contact = () => {
       const response = await fetch(url, {
         method: 'POST',
         mode: 'no-cors',
-
-
       },
-
       );
       const res = response;
       setIsLoading(false);
@@ -90,8 +88,7 @@ const Contact = () => {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      const endpoint = process.env.NEXT_PUBLIC_ENDPOINT;
-      postData(`${endpoint}/post?token=${token}`);
+      postData(`${contact_url}?token=${token}`);
     }
   }
   const validate = (values) => {
@@ -139,7 +136,7 @@ const Contact = () => {
         boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
         ,
       }} >
-        <ContactHeroCard />
+        <HeroCard myTitle={'Contact us'} />
         {isError &&
 
           <Stack sx={{ width: '100%', }} spacing={3} id='error_message'>

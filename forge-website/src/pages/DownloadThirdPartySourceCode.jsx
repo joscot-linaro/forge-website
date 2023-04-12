@@ -14,7 +14,7 @@ const OpenSource = () => {
       fontFamily: 'Lato',
     },
   });
-  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <ThemeProvider theme={formtheme}>
       <Head>

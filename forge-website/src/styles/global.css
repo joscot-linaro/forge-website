@@ -1,7 +1,30 @@
-
 a:-webkit-any-link {
-	text-decoration: none;
+  text-decoration: none;
 }
 a:any-link {
-	text-decoration: none;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .MuiTypography-h5 {
+    font-size: 1.25rem;
+  }
+  .MuiTypography-h6 {
+    font-size: 1rem;
+  }
+  .MuiTypography-h4 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .MuiTypography-h5 {
+    font-size: 1rem;
+  }
+  .MuiTypography-h6 {
+    font-size: 0.75rem;
+  }
+  .MuiTypography-h4 {
+    font-size: 1.25rem;
+  }
 }
