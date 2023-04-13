@@ -143,13 +143,13 @@ const Feedback = () => {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
-    const token = jwt.sign(data, secretKey, {
+    const token = jwt.sign(selectedNames, secretKey, {
       expiresIn: "1h",
       issuer: 'feedback'
     });
     postData(`${feed_url}?token=${token}`);
   }
-  console.log('sk', secretKey)
+  // console.log('sk', secretKey)
   return (
     <Grid container sx={{ width: '100%' }}>
       <HeroCardName title_1={'Thank you for using Linaro Forge'} title_2={`We'd like to better understand how you use Linaro Forge`} />
