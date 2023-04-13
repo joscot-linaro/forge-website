@@ -21,7 +21,7 @@ import { useRouter } from "next/router";
 const Feedback = () => {
   const router = useRouter();
   const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
-  const feed_url = process.env.NEXT_PUBLIC_Staging_Feedback_ENDPOINT;
+  const feed_url = `${process.env.NEXT_PUBLIC_ENDPOINT}/feedback`;
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [selectedNames, setSelectedNames] = useState(data);

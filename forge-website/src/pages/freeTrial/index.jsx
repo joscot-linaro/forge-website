@@ -33,7 +33,7 @@ const FreeTrial = () => {
   const [isError, setIsError] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
   const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
-  const trial_url = process.env.NEXT_PUBLIC_Main_ENDPOINT;
+  const trial_url = `${process.env.NEXT_PUBLIC_ENDPOINT}/post`;
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
