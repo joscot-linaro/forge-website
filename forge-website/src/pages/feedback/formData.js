@@ -39,7 +39,6 @@ const MAPProfiling = [
   "Arm Statistical Profiling Extension (SPE)",
   "Human readable Performance Reports (html, txt)",
   "Machine parsable Performance Reports (csv)",
-  "Harris Glenn",
 ];
 
 const DDTDebugging = [
