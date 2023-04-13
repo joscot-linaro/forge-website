@@ -86,7 +86,7 @@ const Contact = () => {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
         expiresIn: "1h",  // expires in 1 hour
-        issuer: 'TrialRequest'
+        issuer: 'ContactUs'
       });
       postData(`${contact_url}?token=${token}`);
     }
