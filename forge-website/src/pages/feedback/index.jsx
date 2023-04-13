@@ -204,7 +204,7 @@ const Feedback = () => {
                     //value={selectedNames.MAP_Profiling_features.Other}
                     onChange={handleOtherTextFieldChange}
                     placeholder='Other'
-                    inputProps={{ maxLength: 20, autoComplete: "off", value: selectedNames.MAP_Profiling_features.Other }}
+                    inputProps={{ autoComplete: "off", value: selectedNames.MAP_Profiling_features.Other }}
                   />
                 </Box>}
               />
@@ -233,7 +233,7 @@ const Feedback = () => {
                     value={isShowDebugging ? otherTextFieldDebuggingValue : ""}
                     onChange={handleOtherTextFieldDebuggingChange}
                     placeholder='Other'
-                    inputProps={{ maxLength: 20, autoComplete: "off", value: selectedNames.DDT_Debugging_features.Other }}
+                    inputProps={{ autoComplete: "off", value: selectedNames.DDT_Debugging_features.Other }}
                   />
                 </Box>}
               />
