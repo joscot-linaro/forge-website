@@ -4,7 +4,7 @@ import Navbar from '../../Navbar/index';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 
-const HeroCardName = ({ title_1, title_2, title_3 }) => {
+const HeroCardName = ({ title_1, title_2 }) => {
   return (
     <Grid sx={{
       display: 'flex', width: '100%', height: '350px', borderRadius: 0, position: 'relative',
@@ -48,7 +48,7 @@ const HeroCardName = ({ title_1, title_2, title_3 }) => {
         >
           <Typography variant="h4" sx={{ color: "white", mx: 'auto', fontWeight: '600' }}>{title_1}</Typography>
           <Typography noWrap align="center" variant="h4" sx={{ color: "#9bcc4c", fontWeight: '400', }}>{title_2}</Typography>
-          <Typography noWrap align="center" variant="subtitle1" sx={{ color: "#white", fontWeight: '400', mt: 4 }}>{title_3}</Typography>
+
         </Grid>
       </Grid>
     </Grid>

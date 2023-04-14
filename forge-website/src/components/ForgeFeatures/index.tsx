@@ -86,7 +86,6 @@ const ForgeFeatures = () => {
         </Grid>
       </Grid>
     </Grid>
-    // </Grid>
   );
 };
 

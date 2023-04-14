@@ -37,12 +37,6 @@ const OpenSource = () => {
         <Navbar />
         <Grid sx={{ display: 'flex', flexDirection: 'column', borderRadius: 0, borderColor: 'white', ml: 6, width: '100%', mt: 6, mx: 'auto', minHeight: { md: '91vh' } }}>
           <Grid sx={{ display: 'flex', fontSize: '1.25em', color: '#343a40', flexDirection: 'row', borderRadius: 0, width: '80%', mt: 5, mb: 3 }}>
-            {/* {isExpanded ?(
-            <Button  onClick={()=>setIsExpanded(!isExpanded)} style={{}}><KeyboardArrowUpIcon/></Button>
-        ):(
-            <Button onClick={()=>setIsExpanded(!isExpanded)} style={{}}><KeyboardArrowDownIcon /></Button>
-        )} */}
-
             <Typography variant="h6" sx={{ fontWeight: '600', pl: 10 }}>version: 22.1.3</Typography>
           </Grid>
           <OpenSourcesTable />
