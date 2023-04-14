@@ -19,10 +19,10 @@ const Thanks = () => {
         <meta name="theme-color" content="#ffffff" />
       </Head>
       <CssBaseline />
-      <HeroCard myTitle={'Contact us'} />
+      <HeroCard myTitle={'Feedback'} />
       <Grid sx={{ display: 'flex', width: '100%', borderRadius: 0, mx: 'auto', borderColor: 'white' }}>
         <Typography fontSize={14} variant="body1" pr={1} sx={{ pl: { xs: 1, md: 4 }, display: 'flex', mx: 'auto', mt: 4 }}>
-          Thank you for your interest. A member of the sales team will contact you in due course.
+          Thank you for your feedback.
         </Typography>
       </Grid>
     </>

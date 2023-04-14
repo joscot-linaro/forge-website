@@ -1,14 +1,15 @@
 import React from "react";
-import Button from '@mui/material/Button';
+import DownloadContainer from '../DownloadContainer/index';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import { useRouter } from "next/router";
 import Head from 'next/head';
 import CssBaseline from '@mui/material/CssBaseline';
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const ForgeNeed = () => {
-  const router = useRouter();
+
+  const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <>
       <Head>
@@ -24,7 +25,7 @@ const ForgeNeed = () => {
       <CssBaseline />
 
       <Grid sx={{ display: 'flex', flexDirection: 'column', borderRadius: 0, borderColor: 'white', mt: 2, mb: 8, mx: 'auto', }}>
-        <Typography variant="h5" sx={{ display: 'flex', justifyContent: 'center', mb: 2, mt: 4, mx: 'auto', fontWeight: '600' }}>Everything you need</Typography>
+        <Typography variant="h5" sx={{ display: 'flex', justifyContent: 'center', mb: 2, mt: 4, mx: 'auto', fontWeight: '600', fontSize: isMobile ? "1.25rem" : "1.5rem" }}>Everything you need</Typography>
         <Grid container rowSpacing={1} sx={{ mx: 'auto', flexDirection: { xs: 'column', md: 'row' } }} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
           <Grid item xs={6} sx={{ mx: { xs: 'auto', md: '0', } }}>
             <Box xs='auto' md={4} sx={{
@@ -45,14 +46,7 @@ const ForgeNeed = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={6} sx={{ mx: { xs: 'auto', md: '0', } }}>
-            <Box xs='auto' md={4} sx={{ backgroundColor: '#e6e6e6', mb: 1, p: 2, mt: 6, width: { xs: '100%', md: '65%', } }}>
-              <Typography variant="subtitle2" sx={{ mb: 2, mt: 2, mx: 'auto' }}>Download your free trial of Linaro Forge or contact us
-                for more information.</Typography>
-              <Button sx={{ backgroundColor: 'white', borderColor: '#f28630', fontSize: '14px', color: 'black', fontWeight: '600' }} onClick={() => router.push("/freeTrial")} variant="outlined">Download Free Trial</Button></Box>
-            <Box sx={{ backgroundColor: '#e6e6e6', p: 2, width: { xs: '100%', md: '65%' } }}>
-              <Button onClick={() => router.push("/contactUs")} sx={{ backgroundColor: 'white', borderColor: '#9bcc4c', fontSize: '14px', color: 'black', fontWeight: '600' }} variant="outlined">Contact us today</Button></Box>
-          </Grid>
+          <DownloadContainer />
 
         </Grid>
       </Grid>

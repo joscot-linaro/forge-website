@@ -8,7 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Button from "@mui/material/Button";
 import Typography from '@mui/material/Typography';
-import ContactHeroCard from '../../components/HeroCard/ContactHeroCard/index';
+import HeroCard from '../../components/HeroCard/HeroCard/index';
 import { useRouter } from "next/router";
 import jwt from 'jsonwebtoken';
 import countryList from 'react-select-country-list';
@@ -18,7 +18,6 @@ import Stack from '@mui/material/Stack';
 import AlertTitle from '@mui/material/AlertTitle';
 import Footer from '../../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
-import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 
@@ -32,7 +31,8 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
-  const [secretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
+  const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
+  const contact_url = `${process.env.NEXT_PUBLIC_ENDPOINT}/post`;
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -60,10 +60,7 @@ const Contact = () => {
       const response = await fetch(url, {
         method: 'POST',
         mode: 'no-cors',
-
-
       },
-
       );
       const res = response;
       setIsLoading(false);
@@ -87,10 +84,10 @@ const Contact = () => {
     if (Object.keys(infoErrors).length === 0) {
       setIsSubmitting(true);
       const token = jwt.sign(formData, secretKey, {
-        expiresIn: "1h",  // expires in 1 hour
-        issuer: 'TrialRequest'
+        expiresIn: "1h",
+        issuer: 'ContactUs'
       });
-      postData(`https://1z0t7a7xwg.execute-api.eu-west-2.amazonaws.com/main/post?token=${token}`);
+      postData(`${contact_url}?token=${token}`);
     }
   }
   const validate = (values) => {
@@ -122,23 +119,12 @@ const Contact = () => {
 
   return (
     <ThemeProvider theme={formtheme}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
       <CssBaseline />
       <Grid flexGrow={2} sx={{
         backgroundColor: 'white',
-        boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' }
-        ,
+        boxSizing: 'border-box', m: 0, p: 0, width: { md: '100%', sm: '100%' },
       }} >
-        <ContactHeroCard />
+        <HeroCard myTitle={'Contact us'} />
         {isError &&
 
           <Stack sx={{ width: '100%', }} spacing={3} id='error_message'>
@@ -159,14 +145,14 @@ const Contact = () => {
                 will call you back as soon as possible.</Typography>
             </Grid>
           </Grid>
-          <Grid item xs={6} sx={{ width: '100%', backgroundColor: '#e6e6e6' }}>
+          <Grid sx={{ width: { xs: '100%', md: '50%' }, backgroundColor: '#e6e6e6' }}>
             <Box
               component="form"
               sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
                 ml: { xs: '8%', md: '0' }, height: '100%', pl: { md: 10, },
                 display: 'flex', mt: 3,
-                width: { xs: '700px', md: '90%' }
+                width: { xs: '50%', md: '90%' }
 
               }}
               autoComplete="off">
@@ -252,7 +238,7 @@ const Contact = () => {
                   <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Tel_Number}</Typography>
                 )}
                 <Box sx={{ mt: 1, ml: 1, mb: 2 }}>
-                  <FormControl style={{ backgroundColor: 'white', color: 'black', width: 290, }}>
+                  <FormControl style={{ backgroundColor: 'white', color: 'black', width: '50%' }}>
                     <InputLabel id="country-select-label" >Country</InputLabel>
                     <Select
                       labelId="country-select-label"

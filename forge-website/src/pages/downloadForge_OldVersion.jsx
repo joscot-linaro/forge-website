@@ -9,7 +9,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import previousVersions from '../../content/JsonFiles/previous_versions.json';
-import DownloadHeroCard from '../components/HeroCard/DownloadHeroCard/index';
+import HeroCardName from '../components/HeroCard/HeroCardName/index';
 import Footer from '../components/Footer/index';
 import CssBaseline from '@mui/material/CssBaseline';
 import Head from 'next/head';
@@ -40,7 +40,7 @@ const DownloadForge_OldVersion = () => {
         ,
       }}>
 
-        <DownloadHeroCard />
+        <HeroCardName title_1={'Download Linaro Forge'} title_2={'Development Tools & Software'} />
 
         <Grid sx={{ width: '100%', mt: 2, minHeight: { md: '70.5vh' } }}>
           <Grid sx={{ display: 'flex', flexDirection: 'column', borderRadius: 0, borderColor: 'white', ml: 6, width: '100%', mt: 4, mx: 'auto', }}>
@@ -94,33 +94,4 @@ const DownloadForge_OldVersion = () => {
 
 export default DownloadForge_OldVersion;
 
-{/* <TableBody>
-    
-          <TableRow
-            key={index}
-            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-          >
-            <TableCell component="th" scope="row" align="center">
-              {}
-            </TableCell>
-                <TableCell align="center">
-                  {row.versions.map((item)=>(
-                    <div key={item.forge}>{item.forge}</div>
-                  ))}
-                </TableCell>
-            
-            <TableCell style={{fontSize:'12px'}} align="center">
-              
-                <Typography component='div' key={pack.link}>
-                <Typography component='a' sx={{color:'#2596be',textDecoration:'none',fontSize:'12px'}} href={}>{}
-                {pack.suffix &&<span style={{color:'black',}}>-{}</span>}
-                </Typography>
-                </Typography>
-             
-                   
-                  </TableCell>
-                </TableRow> 
-         
-          
-        
-      </TableBody> */}
+

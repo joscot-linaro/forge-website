@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import TrialHeroCard from '../../components/HeroCard/TrialHeroCard/index';
+import HeroCard from '../../components/HeroCard/HeroCard/index';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
@@ -32,7 +32,8 @@ const FreeTrial = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
-  const [secretKey] = useState('snorkel4-lair0-nicotine-Barrette-Foothill3-1Amulet-3pigeon-upstart');
+  const secretKey = process.env.NEXT_PUBLIC_JWT_KEY;
+  const trial_url = `${process.env.NEXT_PUBLIC_ENDPOINT}/post`;
   const [formData, setFormData] = useState({
     Name: "",
     LastName: "",
@@ -87,7 +88,7 @@ const FreeTrial = () => {
         expiresIn: "1h",  // expires in 1 hour
         issuer: 'TrialRequest'
       });
-      postData(`https://1z0t7a7xwg.execute-api.eu-west-2.amazonaws.com/main/post?token=${token}`);
+      postData(`${trial_url}?token=${token}`);
     }
   }
   const validate = (values) => {
@@ -114,29 +115,16 @@ const FreeTrial = () => {
     if (!values.Tel_Number) {
       errors.Tel_Number = "Telephone Number cannot be blank!";
     }
-    //  else if (!values.Tel_Number.match(phoneno)) {
-    //   errors.Tel_Number = "Invalid Number!";
-    // }
     return errors;
   };
   return (
     <ThemeProvider theme={formtheme}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
-      </Head>
       <CssBaseline />
       <Grid flexGrow={2} sx={{
         backgroundColor: 'white',
-        boxSizing: 'border-box', m: 0, p: 0, width: { xs: 'min-content', md: '100%', sm: '100%' },
+        boxSizing: 'border-box', m: 0, p: 0, width: { md: '100%', sm: '100%' },
       }} >
-        <TrialHeroCard />
+        <HeroCard myTitle={'Free Trial'} />
         {isError &&
 
           <Stack sx={{ width: '100%', mb: '10px' }} spacing={3} id='error_message'>
@@ -155,14 +143,14 @@ const FreeTrial = () => {
               <FreeTrialContentText />
             </Box>
           </Grid>
-          <Grid item xs={6} sx={{ width: '100%', backgroundColor: '#e6e6e6' }}>
+          <Grid item sx={{ backgroundColor: '#e6e6e6', width: { xs: '100%', md: '50%' } }}>
             <Box
               component="form"
               sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
                 ml: { xs: '8%', md: '0' }, height: '100%', pl: '10%',
                 display: 'flex', mt: 2,
-                width: { xs: '700px', md: '90%' }
+                width: { xs: '50%', md: '90%' }
               }}
               autoComplete="off">
               <Grid style={{ display: 'flex', flexDirection: 'column', padding: '20px', }}>
@@ -249,7 +237,7 @@ const FreeTrial = () => {
                   <Typography style={{ color: 'red', paddingLeft: '8px', fontWeight: 'lighter', fontSize: '10px' }}>{formErrors.Tel_Number}</Typography>
                 )}
                 <Box sx={{ mt: 1, ml: 1, mb: 2 }}>
-                  <FormControl style={{ backgroundColor: 'white', color: 'black', width: 290, }}>
+                  <FormControl style={{ backgroundColor: 'white', color: 'black', width: '50%', }}>
                     <InputLabel id="country-select-label" >Country</InputLabel>
                     <Select
                       labelId="country-select-label"
