@@ -2,6 +2,7 @@ import React from 'react';
 import HeroCardName from '../../components/HeroCard/HeroCardName/index';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import DownloadTable from '../../components/DownloadTable/index';
 import Button from "@mui/material/Button";
 import InstallForge from '../../components/installForge/index';
@@ -47,11 +48,40 @@ const DownloadForge = () => {
               remote clients cannot debug or profile programs on Windows and macOS. Linux downloads also function as remote clients.</Typography>
           </Grid>
           <DownloadTable />
-          <Grid sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', mx: 'auto' }}>
-            {buttonTitles.map((item) => (
-              <Button key={item.name} onClick={() => router.push(item.to)} sx={{ color: 'white', background: '#23b1da', m: 2, borderRadius: 3, '&:hover': { color: '#23b1da' } }}>{item.name}</Button>
-            ))}
-          </Grid>
+          <Box sx={{ overflowX: 'auto', minWidth: 0 }}>
+            <Grid
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                mx: { md: 'auto' },
+              }}
+            >
+              {buttonTitles.map((item) => (
+                <Button
+                  key={item.name}
+                  onClick={() => router.push(item.to)}
+                  sx={{
+                    color: 'white',
+                    background: '#23b1da',
+                    m: 2,
+                    borderRadius: 3,
+                    width: 'auto',
+                    fontSize: '14px',
+                    '@media (max-width: 768px)': {
+                      width: 'auto',
+                      fontSize: '12px',
+                      padding: '8px 40px',
+                    },
+                    '&:hover': { color: '#23b1da' },
+                  }}
+                >
+                  {item.name}
+                </Button>
+              ))}
+            </Grid>
+          </Box>
+
           <InstallForge />
           <ArmForgeToolsLinks />
         </Grid>

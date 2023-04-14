@@ -9,11 +9,10 @@ const HeaderText = () => {
     <Grid sx={{ display: "flex", flexDirection: "column" }}>
       <Typography
         variant="h5"
-        noWrap
         sx={{
           mt: 2,
           p: 2,
-          mx: "auto",
+          mx: { xs: "auto" },
           fontWeight: "600",
           fontSize: isMobile ? "1.25rem" : "1.5rem",
         }}
@@ -22,8 +21,7 @@ const HeaderText = () => {
       </Typography>
       <Typography
         variant="caption"
-        noWrap
-        sx={{ fontSize: "13px", mx: "auto", mb: 2 }}
+        sx={{ fontSize: "13px", mx: "auto", mb: 2, p: { xs: 2 } }}
       >
         Efficient application development for Linux Server and HPC with full
         technical support from Linaro Forge experts.

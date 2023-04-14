@@ -10,6 +10,8 @@ const ForgeFeatures = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   return (
     <Grid
+      container
+      spacing={2}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -30,56 +32,61 @@ const ForgeFeatures = () => {
       >
         Features and Benefits
       </Typography>
-      <Grid
-        container
-        spacing={2}
-        sx={{ width: { sm: "100%", md: "80%" }, mx: "auto" }}
-      >
-        <Grid item xs={12}>
-          <Grid container justifyContent="center" spacing={2}>
-            {ForgeFeaturesBenefits.map((item) => (
-              <Card
-                key={item.Title}
+      <Grid item xs={12}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          spacing={2}
+          sx={{
+            mx: { md: "auto" },
+            width: { sm: "100%", md: "70%" },
+          }}
+        >
+          {ForgeFeaturesBenefits.map((item) => (
+            <Card
+              key={item.Title}
+              sx={{
+                backgroundColor: "white",
+                m: 4,
+                width: "260px",
+                height: "350px",
+              }}
+            >
+              <CardContent
                 sx={{
-                  backgroundColor: "white",
-                  m: 4,
-                  width: "260px",
+                  color: "black",
+                  display: "flex",
+                  justifyContent: "left",
+                  flexDirection: "column",
                 }}
               >
-                <CardContent
+                <Typography
+                  variant="subtitle1"
+                  display="block"
                   sx={{
-                    color: "black",
+                    fontWeight: "bold",
+                    fontSize: "15px",
                     display: "flex",
                     justifyContent: "left",
-                    flexDirection: "column",
                   }}
                 >
-                  <Typography
-                    variant="subtitle1"
-                    display="block"
-                    sx={{
-                      fontWeight: "bold",
-                      fontSize: "15px",
-                      display: "flex",
-                      justifyContent: "left",
-                    }}
-                  >
-                    {item.Title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    display="block"
-                    sx={{ mx: "auto", fontSize: "14px" }}
-                  >
-                    {item.Description}
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </Grid>
+                  {item.Title}
+                </Typography>
+                <Typography
+                  variant="body2"
+                  display="block"
+                  sx={{ mx: "auto", fontSize: "14px" }}
+                >
+                  {item.Description}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
         </Grid>
       </Grid>
     </Grid>
+    // </Grid>
   );
 };
 

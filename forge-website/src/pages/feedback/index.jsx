@@ -152,7 +152,7 @@ const Feedback = () => {
   // console.log('sk', secretKey)
   return (
     <Grid container sx={{ width: '100%' }}>
-      <HeroCardName title_1={'Thank you for using Linaro Forge'} title_2={`We'd like to better understand how you use Linaro Forge`} />
+      <HeroCardName title_1={'Thank you for using Linaro Forge'} title_2={`We'd like to better understand how you use Linaro Forge`} title_3={'All responses will be anonymous. Please do not add any personal information.'} />
       {isError &&
         <Stack sx={{ width: '100%', }} spacing={3} id='error_message'>
           <Alert severity="error" style={{ display: 'flex', mx: 'auto', justifyContent: 'center', flexDirection: 'row' }}>
