@@ -23,7 +23,6 @@ const TalkAndContact: React.FC<TalkAndContactProps> = ({ backColor }) => {
     >
       <Typography
         variant="h5"
-        noWrap
         sx={{
           mb: 5,
           mt: 2,
@@ -36,7 +35,6 @@ const TalkAndContact: React.FC<TalkAndContactProps> = ({ backColor }) => {
       </Typography>
       <Typography
         variant="h6"
-        noWrap
         sx={{ mb: 5, mx: "auto", fontSize: isMobile ? "1rem" : "1.25rem" }}
       >
         Learn how Linaro Forge can accelerate your software development.

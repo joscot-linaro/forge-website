@@ -8,8 +8,8 @@ import { useRouter } from "next/router";
 const DownloadContainer = () => {
     const router = useRouter();
     return (
-        <Grid item xs={6} sx={{ mx: { xs: 'auto', md: '0', } }}>
-            <Box xs='auto' md={4} sx={{ backgroundColor: '#e6e6e6', mb: 1, p: 2, mt: 6, width: { xs: '100%', md: '65%', } }}>
+        <Grid item xs={6} sx={{ mx: { xs: 'auto', md: '0' }, maxWidth: { xs: '100%', md: '75%' }, }}>
+            <Box xs='auto' md={4} sx={{ backgroundColor: '#e6e6e6', mb: 1, p: 2, width: { xs: '100%', md: '65%', } }}>
                 <Typography variant="subtitle2" sx={{ mb: 2, mt: 2, mx: 'auto' }}>Download your free trial of Linaro Forge or contact us
                     for more information.</Typography>
                 <Button sx={{ backgroundColor: 'white', borderColor: '#f28630', fontSize: '14px', color: 'black', fontWeight: '600' }} onClick={() => router.push("/freeTrial")} variant="outlined">Download Free Trial</Button></Box>

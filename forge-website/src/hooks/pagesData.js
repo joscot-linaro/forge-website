@@ -22,3 +22,6 @@ export const ddtFeatures = [
   "Has an offline mode for debugging non-interactively",
   "Handles and visualizes huge data sets",
 ];
+
+export const homeHeaderText =
+  "Build reliable and optimized code for the right results on multiple Server and HPC architectures, from the latest compilers and C++ standards to Intel, 64-bit Arm, AMD, OpenPOWER and Nvidia GPU hardware. Linaro Forge combines Linaro DDT, the leading debugger for time-saving high performance application debugging, Linaro MAP, the trusted performance profiler for invaluable optimization advice across native and Python HPC codes, and Linaro Performance Reports for advanced reporting capabilities. Linaro DDT and Linaro MAP are also available as standalone products.";
