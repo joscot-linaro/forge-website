@@ -15,6 +15,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import useMediaQuery from "@mui/material/useMediaQuery";
 import DownloadContainer from '../components/DownloadContainer/index';
 import { linaroDdtText, ddtFeatures } from '../hooks/pagesData';
+import FormTextLayout from '../components/Layout/FormTextLayout';
 
 const LinaroDdt = () => {
   const formtheme = createTheme({
@@ -26,83 +27,23 @@ const LinaroDdt = () => {
   return (
     <ThemeProvider theme={formtheme}>
       <CssBaseline />
-      <Grid>
+      <Grid >
         <HeroCardName title_1={'Linaro DDT'} title_2={'Development Tools & Software'} />
         <Grid
-          container
-          justifyContent="center"
-          alignItems="center"
-          sx={{
-            width: '100%',
-            mt: 2,
-            my: '0 auto',
-            margin: '0 auto',
-            justifyContent: 'center',
-
-          }}
+          sx={{ display: 'flex', flexDirection: 'column', borderRadius: 0, borderColor: 'white', mt: 2, mb: 8, mx: 'auto', }}
         >
           <Typography
-            variant="h5"
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              p: { xs: 2 },
-              mb: 4,
-              mt: 4,
-              mx: 'auto',
-              fontWeight: '600',
-              fontSize: isMobile ? '1.25rem' : '1.5rem',
-            }}
+            variant="h5" sx={{ display: 'flex', justifyContent: 'center', mb: 2, mt: 4, mx: 'auto', fontWeight: '600', fontSize: isMobile ? "1.25rem" : "1.5rem", padding: { xs: 2 } }}
           >The Number One Debugger for C, C++ and Fortran Threaded and Parallel Code</Typography>
-          <Grid
-            container
-            justify="center"
-            alignItems="center"
-            rowSpacing={1}
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              margin: '0 auto',
-              flexDirection: { md: 'row', xs: 'column' },
-            }}
-            columnSpacing={{ xs: 1, sm: 2, md: 0 }}
-          >
+          <Grid container rowSpacing={1} sx={{ mx: 'auto', flexDirection: { xs: 'column', md: 'row' }, mt: 2, alignItems: { xs: "center" } }} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
             <Grid
-              item
-              xs={6}
-              sx={{
-                mx: { xs: 'auto', md: '0' },
-                maxWidth: { xs: '100%' }
-              }}
+              item xs={6} sx={{ maxWidth: { xs: "85%" } }}
             >
-              <Box
-                xs='auto'
-                md={4}
-                sx={{
-                  backgroundColor: 'white',
-                  mb: 1,
-                  p: 1,
-                  mt: 1,
-                  pl: { xs: '2', md: '30%' },
-                  display: 'flex',
-                  justifyContent: 'flex-end',
-                }}
-              >
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    mb: 2,
-                    mt: 2,
-                    mx: 'auto',
-                    width: { s: '90%', md: '65%' },
-                  }}
-                >
-                  {linaroDdtText}
-                </Typography>
-              </Box>
+              <FormTextLayout strData={linaroDdtText} />
             </Grid>
-            <DownloadContainer />
+            <Grid item xs={6} sx={{ maxWidth: { xs: "90%" } }}>
+              <DownloadContainer />
+            </Grid>
           </Grid>
           <Grid
             container

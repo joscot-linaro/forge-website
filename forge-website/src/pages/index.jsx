@@ -26,13 +26,13 @@ export default function Home() {
           container
           justifyContent="center"
           alignItems="center"
-          sx={{ display: 'flex', flexDirection: 'column' }}
+          sx={{ display: 'flex', flexDirection: 'column', }}
 
         >
           <ForgeNeed />
           <HeaderText />
-          <Grid container spacing={2}  >
-            <Grid item xs={12}>
+          <Grid container spacing={2}   >
+            <Grid item xs={12} >
               <Grid container justifyContent="center" spacing={2}>
                 {PlatformsData.map(({ width, platName, link, title, description, bordercolor, backcolor, icon }, index) => (
                   <ForgePlatforms key={index} link={link} platName={platName} title={title} description={description} bordercolor={bordercolor} backcolor={backcolor} icon={icon} width={width} />
