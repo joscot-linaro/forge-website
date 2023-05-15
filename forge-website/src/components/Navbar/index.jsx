@@ -84,8 +84,10 @@ function ResponsiveAppBar() {
               >
                 {/* {pages.map((page) => ( */}
                 <MenuItem sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+                  <Typography component="a" textAlign="center" href='/about' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>About</Typography>
                   <Typography component="a" textAlign="center" href='/linaroDdt' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Linaro DDT</Typography>
                   <Typography component="a" textAlign="center" href='/linaroMap' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Linaro MAP</Typography>
+                  <Typography component="a" textAlign="center" href='/linaroPerformanceReports' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Linaro Performance Reports</Typography>
                   <Typography component="a" textAlign="center" href='/downloadForge' sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Download</Typography>
                   <Typography component="a" textAlign="center" href="/documentation" sx={{ textDecoration: 'none!important', color: 'black', fontSize: '12px' }}>Documentation</Typography>
 
@@ -97,19 +99,30 @@ function ResponsiveAppBar() {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'right', mr: 4, } }}>
 
               <Button
+                onClick={() => router.push('/about')}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none!important', }}
+              >
+                <Typography noWrap underline='none' component='a' sx={{ textDecoration: 'none!important', color: 'white', fontSize: '12px', mr: 3, '&:hover': { color: '#9bcc4c' } }}>About</Typography>
+              </Button>
 
+              <Button
                 onClick={() => router.push('/linaroDdt')}
                 sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none!important', }}
               >
                 <Typography noWrap underline='none' component='a' sx={{ textDecoration: 'none!important', color: 'white', fontSize: '12px', mr: 3, '&:hover': { color: '#9bcc4c' } }}>Linaro DDT</Typography>
               </Button>
               <Button
-
                 onClick={() => router.push('/linaroMap')}
                 sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none!important' }}
               >
                 <Typography noWrap underline='none' component='a' sx={{ textDecoration: 'none!important', color: 'white', fontSize: '12px', mr: 3, '&:hover': { color: '#9bcc4c' } }}>Linaro MAP</Typography>
+              </Button>
 
+              <Button
+                onClick={() => router.push('/linaroPerformanceReports')}
+                sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none!important' }}
+              >
+                <Typography noWrap underline='none' component='a' sx={{ textDecoration: 'none!important', color: 'white', fontSize: '12px', mr: 3, '&:hover': { color: '#9bcc4c' } }}>Linaro Performance Reports</Typography>
               </Button>
               <Button
 
