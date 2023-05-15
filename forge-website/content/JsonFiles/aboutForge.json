@@ -1,0 +1,14 @@
+[
+  {
+    "Title": "Allinea Software",
+    "Description": "In 2002 Michael Rudgyard founded Streamline Computing and in 2003 released the first version of DDT, the Distributed Debugging Tool. In 2004 the software division was rebranded as Allinea and later in 2009 Allinea was spun out as Allinea Software Ltd. Allinea saw a need for tools which helped users maximise the efficiency of software for high performance computing (HPC) systems. Allinea quickly became an industry leader in development and performance analysis tools for HPC systems, with customers ranging from the US Department of Energy and NASA to a range of supercomputing national labs and universities."
+  },
+  {
+    "Title": "Arm Forge",
+    "Description": "In 2016, Allinea Software was acquired by Arm and became known as Arm Forge. Arm saw Allinea as crucial to ensuring Arm and its ecosystem had access to essential developer technologies needed to succeed in HPC and cloud markets. The acquisition helped Arm achieve this objective and Forge tools continued to thrive across the market."
+  },
+  {
+    "Title": "Today - Linaro Forge",
+    "Description": "In 2023, the timing was right to find a new home for the Forge suite of tools, resulting in Linaro acquiring Arm Forge. Offering ready-to-use software products and tools that help accelerate the development of Arm-based products was the natural evolution for Linaro. Linaro Forge has allowed Linaro to do just that."
+  }
+]

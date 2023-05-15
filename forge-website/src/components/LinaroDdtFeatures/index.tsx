@@ -19,7 +19,7 @@ const LinaroDdtFeatures = () => {
       <Grid sx={{ display: "flex", flexDirection: "column" }}>
         <Typography
           variant="h5"
-          sx={{ mb: 2, mt: 2, mx: "auto", fontWeight: "600" }}
+          sx={{ mb: 2, mt: 4, mx: "auto", fontWeight: "600" }}
         >
           What is Linaro DDT
         </Typography>
@@ -27,7 +27,13 @@ const LinaroDdtFeatures = () => {
           variant="body1"
           fontSize={16}
           p={2}
-          sx={{ width: "50%", display: "flex", mx: "auto" }}
+          sx={{
+            width: "50%",
+            display: "flex",
+            mx: "auto",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
         >
           Linaro DDT is a powerful parallel debugger, available standalone or as
           part of the Linaro Forge debug and profile suite. Its intuitive

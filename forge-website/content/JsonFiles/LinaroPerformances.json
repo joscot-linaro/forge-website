@@ -1,0 +1,14 @@
+[
+  {
+    "Title": "Choice of Report Format",
+    "Description": "Generate the report in HTML, plain text, or CSV format."
+  },
+  {
+    "Title": "Suitable for all scales",
+    "Description": "As with all tools in the Forge suite, Performance Reports scales from single-process single-threaded programs to parallel multithreaded applications running across thousands of nodes."
+  },
+  {
+    "Title": "Easily track core metrics",
+    "Description": "Performance Reports provides a breakdown of some key performance metrics. Infer likely bottlenecks, spot problems, or identify trends by comparing how these values vary between reports."
+  }
+]

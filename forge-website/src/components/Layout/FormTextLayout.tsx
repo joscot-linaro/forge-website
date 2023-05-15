@@ -18,7 +18,7 @@ const FormTextLayout = ({ strData }: FormTextLayoutProps) => {
         mt: { lg: 2 },
         width: { xs: "100%", md: "95%" },
 
-        pl: { xs: "2", md: "37%" },
+        pl: { xs: "2", md: "10%", lg: "20%" },
         display: "flex",
         justifyContent: "flex-end",
       }}

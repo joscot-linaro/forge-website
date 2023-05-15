@@ -6,14 +6,12 @@ const LinaroMapFirstPart = () => {
   return (
     <Grid
       container
-      spacing={4}
+      rowSpacing={1}
       sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        mx: "auto",
+        flexDirection: { xs: "column", md: "row" },
         mt: 2,
-        // margin: "0 auto",
-        flexDirection: { md: "row", xs: "column" },
+        alignItems: { xs: "center" },
       }}
       columnSpacing={{ xs: 1, sm: 2, md: 0 }}
     >
