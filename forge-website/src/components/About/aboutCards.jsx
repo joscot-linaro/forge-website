@@ -24,11 +24,11 @@ const AboutCards = () => {
             </Grid>
             <Grid item xs={12} sm={8} >
                 <Grid container sx={{ display: 'flex', flexDirection: { sm: 'column', md: 'column', lg: 'row' }, }}>
-                    <Grid item xs={12} sm={6} sx={{ width: '100%', mt: 0, p: { lg: 2, md: 0 }, mt: { xs: 2 }, alignSelf: { md: 'center', xs: 'center ' }, alignItems: { md: 'center', xs: 'center ' } }}>
+                    <Grid item xs={12} sm={6} sx={{ width: '100%', p: { lg: 2, md: 0 }, mt: { xs: 2, md: 0 }, alignSelf: { md: 'center', xs: 'center ' }, alignItems: { md: 'center', xs: 'center ' } }}>
                         <Typography variant='h3' sx={{ textAlign: 'center', fontWeight: 600, color: '#9bcc4c' }}>2016</Typography>
                         <CardContainer data={aboutForge[1]} />
                     </Grid>
-                    <Grid item xs={12} sm={6} sx={{ width: '100%', mt: 0, p: { lg: 2, md: 0 }, alignSelf: { md: 'center', xs: 'center ' }, mt: { xs: 2 } }}>
+                    <Grid item xs={12} sm={6} sx={{ width: '100%', p: { lg: 2, md: 0 }, alignSelf: { md: 'center', xs: 'center ' }, mt: { xs: 2, md: 0 } }}>
                         <Typography variant='h3' sx={{ textAlign: 'center', fontWeight: 600, color: '#9bcc4c' }}>2023</Typography>
                         <CardContainer data={aboutForge[2]} />
                     </Grid>
