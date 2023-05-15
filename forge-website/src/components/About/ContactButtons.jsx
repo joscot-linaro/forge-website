@@ -8,7 +8,7 @@ import Box from '@mui/material/Box';
 
 const ContactButtons = () => {
     const router = useRouter();
-    const contactButtons = [{ contact: 'Contact Us', contactLink: "/contactUs" }, { contact: 'Email Sales', contactLink: '' }, { contact: 'Email Support', contactLink: '' }];
+    const contactButtons = [{ contact: 'Contact Us', contactLink: "/contactUs" }, { contact: 'Email Sales', contactLink: '/freeTrial' }, { contact: 'Email Support', contactLink: '/feedback' }];
     return (
         <Grid sx={{ display: 'flex', flexDirection: 'column', mt: 5, width: '100%' }}>
             <Typography variant='h5' sx={{ textAlign: 'center', }}>Learn how Linaro Forge can accelerate your software development</Typography>
