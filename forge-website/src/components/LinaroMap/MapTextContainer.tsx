@@ -9,10 +9,10 @@ const TextContainer = () => {
         backgroundColor: "white",
         mb: 1,
         // p: 1,
-        mt: { lg: 2 },
-        width: { xs: "100%", md: "95%" },
+        mt: { lg: 2, md: 0 },
+        width: { xs: "100%", md: "100%" },
 
-        pl: { xs: "2", md: "37%" },
+        pl: { xs: "2", md: "0" },
         display: "flex",
         justifyContent: "flex-end",
       }}
@@ -20,8 +20,8 @@ const TextContainer = () => {
       <List
         sx={{
           listStyleType: "disc",
-          pl: { xs: "2%", md: "5%", lg: "10%" },
-          pb: { md: "40px" },
+          pl: { xs: "2%", md: "5%", lg: "20%" },
+          pb: { md: 0 },
           width: { xs: "100%", md: "100%", fontSize: "14px" },
           "@media (min-width: 920px)": {
             width: "100%",

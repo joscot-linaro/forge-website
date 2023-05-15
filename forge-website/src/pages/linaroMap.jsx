@@ -61,7 +61,7 @@ const LinaroMap = () => {
               <CardMedia
                 component="img"
                 sx={{ height: 400, mx: { xs: 'auto', md: '0' }, width: { xs: '100%' }, }}
-                image='/images/MAP_pic.jpg'
+                image='/images/MAP_page_image.jpg'
                 alt="Linaro Map image"
               />
             </Grid>

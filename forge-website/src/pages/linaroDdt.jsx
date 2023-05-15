@@ -1,6 +1,5 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import HeroText from '../components/HeroText/index';
@@ -37,7 +36,7 @@ const LinaroDdt = () => {
           >The Number One Debugger for C, C++ and Fortran Threaded and Parallel Code</Typography>
           <Grid container rowSpacing={1} sx={{ mx: 'auto', flexDirection: { xs: 'column', md: 'row' }, mt: 2, alignItems: { xs: "center" } }} columnSpacing={{ xs: 1, sm: 2, md: 0 }}>
             <Grid
-              item xs={6} sx={{ maxWidth: { xs: "85%" } }}
+              item xs={6} sx={{ width: { xs: "100%", md: "100%" }, }}
             >
               <FormTextLayout strData={linaroDdtText} />
             </Grid>
