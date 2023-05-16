@@ -6,7 +6,7 @@ import { aboutHeaderText } from '../../hooks/pagesData';
 const AboutHeader = () => {
     return (
         <Grid sx={{
-            width: { lg: '85%', xl: '75%' },
+            width: { lg: '87%', xl: '75%' },
             border: '5px solid lightgrey',
             mt: 5,
             p: { md: 4, xs: 2 }

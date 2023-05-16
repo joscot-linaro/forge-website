@@ -32,8 +32,8 @@ const AboutCards = () => {
                         <Typography variant='h3' sx={{ textAlign: 'center', fontWeight: 600, color: '#9bcc4c' }}>2023</Typography>
                         <CardContainer data={aboutForge[2]} cardHeight={275} />
                     </Grid>
-                    <Grid item xs={10} sx={{
-                        width: '100%',
+                    <Grid item sx={{
+                        width: { xl: '80%', lg: '87%', xs: '100%' },
                         border: '5px solid #e2eec1',
                         mt: { lg: 0, md: 2, xs: 2 },
                         p: { lg: 2, xs: 0 },
