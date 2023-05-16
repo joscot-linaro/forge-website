@@ -6,12 +6,12 @@ import { aboutHeaderText } from '../../hooks/pagesData';
 const AboutHeader = () => {
     return (
         <Grid sx={{
-            width: '100%',
+            width: { lg: '85%', xl: '75%' },
             border: '5px solid lightgrey',
             mt: 5,
             p: { md: 4, xs: 2 }
         }}>
-            <Typography variant="h5" sx={{ mx: 'auto', ml: 2, p: { md: 3, xs: 0 }, fontWeight: '500', textAlign: 'center', width: '100%' }}>{aboutHeaderText}</Typography>
+            <Typography variant="h5" sx={{ mx: 'auto', ml: { lg: 2, xs: 0 }, p: { md: 3, xs: 0 }, fontWeight: '500', textAlign: 'center', width: '100%' }}>{aboutHeaderText}</Typography>
         </Grid>
     )
 }

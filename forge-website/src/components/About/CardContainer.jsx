@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from '@mui/material/Typography';
 
-const CardContainer = ({ data }) => {
+const CardContainer = ({ data, cardHeight }) => {
     return (
         <Card
             key={data.Title}
@@ -11,8 +11,8 @@ const CardContainer = ({ data }) => {
                 backgroundColor: "#e6e6e6",
                 // mt: { lg: 4, md: 4, xs: 4 },
                 width: { md: 250, xs: '100%', sm: '100%' },
-                textAlign: 'left'
-                // height: 350
+                textAlign: 'left',
+                height: cardHeight
             }}
         >
             <CardContent
