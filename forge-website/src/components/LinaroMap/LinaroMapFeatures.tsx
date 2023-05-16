@@ -1,0 +1,99 @@
+import React from "react";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import MapFeatures from "../../../content/JsonFiles/LinaroMapFeatures.json";
+
+const LinaroMapFeatures = () => {
+  return (
+    <Grid
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        borderRadius: 0,
+        backgroundColor: "#e6e6e6",
+        width: "100%",
+      }}
+    >
+      <Grid sx={{ display: "flex", flexDirection: "column" }}>
+        <Typography
+          variant="h5"
+          sx={{ mb: 2, mt: 4, mx: "auto", fontWeight: "600" }}
+        >
+          What is Linaro MAP
+        </Typography>
+        <Typography
+          variant="body1"
+          fontSize={16}
+          p={2}
+          sx={{
+            width: "50%",
+            display: "flex",
+            mx: "auto",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          Linaro MAP is a parallel wallclock-time profiler, available standalone
+          or as part of the Linaro Forge debug and profile suite. Its intuitive
+          graphical interface shows hotspots and divergent behaviour at all
+          scales.
+        </Typography>
+      </Grid>
+      <Grid
+        container
+        spacing={2}
+        sx={{ width: "80%", display: "flex", mx: "auto" }}
+      >
+        <Grid item xs={12}>
+          <Grid container justifyContent="center" spacing={2}>
+            {MapFeatures.map((item) => (
+              <Card
+                key={item.Title}
+                sx={{
+                  backgroundColor: "white",
+                  m: 4,
+                  width: "250px",
+                }}
+              >
+                <CardContent
+                  sx={{
+                    color: "black",
+                    display: "flex",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                  }}
+                >
+                  <Typography
+                    variant="subtitle1"
+                    display="block"
+                    sx={{
+                      mx: "auto",
+                      fontWeight: "bold",
+                      fontSize: "15px",
+                      p: 0.5,
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {item.Title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    display="block"
+                    sx={{ mx: "auto", fontSize: "14px" }}
+                  >
+                    {item.Description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            ))}
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
+};
+
+export default LinaroMapFeatures;

@@ -9,12 +9,9 @@ interface FormTextLayoutProps {
 const FormTextLayout = ({ strData }: FormTextLayoutProps) => {
   return (
     <Box
-      // xs="auto"
-      // md={4}
       sx={{
         backgroundColor: "white",
         mb: 1,
-        // p: 1,
         mt: { lg: 2 },
         width: { xs: "100%", md: "95%" },
 
