@@ -19,7 +19,7 @@ const LicenseServer = () => {
       fontFamily: 'Lato',
     },
   });
-  const buttonTitles = [{ name: 'Release history', to: '/LicenceServerReleasehistory' }, { name: 'User Guide', to: 'https://docs.linaroforge.com/latest/html/101169_arm-licence-server-user-guide/use_arm_licence_server/index.html' }]
+  const buttonTitles = [{ name: 'Release history', to: '/LicenceServerReleasehistory' }, { name: 'User Guide', to: 'https://docs.linaroforge.com/23.0/html/licenceserver/use_licence_server/index.html' }]
   return (
     <ThemeProvider theme={formtheme}>
       <Head>
@@ -41,7 +41,7 @@ const LicenseServer = () => {
             <Typography variant="h5" sx={{ mt: 2, mb: 3, fontWeight: '600', pl: 3 }}>Linaro License Server</Typography>
             <Typography variant="h6" sx={{ mt: 2, mb: 3, fontWeight: '600', pl: 3 }}>Download Linaro Licence Server</Typography>
             <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>Use the table below to download the latest version of Linaro Licence Server for your server and HPC toolchain.</Typography>
-            {/* <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>For more information, see <Typography sx={{ textDecoration: 'none', color: '#2596be' }} component='a' href='https://docs.linaroforge.com/latest/html/101169_arm-licence-server-user-guide/use_arm_licence_server/index.html'>Use Linaro Licence Server</Typography>.</Typography> */}
+            {/* <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>For more information, see <Typography sx={{ textDecoration: 'none', color: '#2596be' }} component='a' href='https://docs.linaroforge.com/23.0/html/licenceserver/use_licence_server/index.html'>Use Linaro Licence Server</Typography>.</Typography> */}
           </Grid>
           <LicenseServerTable />
           <Box sx={{ overflowX: 'auto', minWidth: 0 }}>

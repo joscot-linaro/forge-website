@@ -1,5 +1,45 @@
 [
     {
+        "forge": "22.1",
+        "downloads": [
+            {
+                "os": "Linux",
+                "download": [
+                    {
+                        "name": "Arm (AArch64)",
+                        "link": "https://downloads.linaroforge.com/22.1.3/arm-forge-22.1.4-linux-aarch64.tar"
+                    },
+                    {
+                        "name": "AMD/Intel (x86_64)",
+                        "link": "https://downloads.linaroforge.com/22.1.3/arm-forge-22.1.3-linux-x86_64.tar"
+                    },
+                    {
+                        "name": "IBM POWER Little Endian (ppc64le)",
+                        "link": "https://downloads.linaroforge.com/22.1.3/arm-forge-22.1.3-linux-ppc64le.tar"
+                    }
+                ]
+            },
+            {
+                "os": "macOS (remote client only)",
+                "download": [
+                    {
+                        "name": "Mojave (10.14 and later) (64-bit Intel)",
+                        "link": "https://downloads.linaroforge.com/22.1.3/arm-forge-client-22.1.3-macos-x86_64.dmg"
+                    }
+                ]
+            },
+            {
+                "os": "Windows (remote client only)",
+                "download": [
+                    {
+                        "name": "Windows 7 (and later) (64-bit AMD/Intel)",
+                        "link": "https://downloads.linaroforge.com/22.1.3/arm-forge-client-22.1.3-windows-x86_64.exe"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "forge": "22.0",
         "downloads": [
             {
@@ -70,47 +110,6 @@
                     {
                         "name": "Windows 7 (and later) (64-bit AMD/Intel)",
                         "link": "https://downloads.linaroforge.com/21.1.3/arm-forge-client-21.1.3-windows-x86_64.exe"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "forge": "21.0",
-        "downloads": [
-            {
-                "os": "Linux",
-                "download": [
-                    {
-                        "name": "Arm (AArch64)",
-                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-21.0.3-linux-aarch64.tar"
-                    },
-                    {
-                        "name": "AMD/Intel (x86_64)",
-                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-21.0.3-linux-x86_64.tar"
-                    },
-                    {
-                        "name": "IBM POWER Little Endian (ppc64le)",
-                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-21.0.3-linux-ppc64le.tar"
-                    }
-                ]
-            },
-            {
-                "os": "macOS (remote client only)",
-                "download": [
-                    {
-                        "name": "High Sierra (10.13 and later) (64-bit Intel)",
-                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-client-21.0.3-macos-x86_64.dmg"
-                    }
-                ]
-            },
-            {
-                "os": "Windows (remote client only)",
-                "download": [
-                    {
-                        "name": "Windows 7 (and later) (64-bit AMD/Intel)",
-                        "link": "https://downloads.linaroforge.com/21.0.3/arm-forge-client-21.0.3-windows-x86_64.exe"
-
                     }
                 ]
             }

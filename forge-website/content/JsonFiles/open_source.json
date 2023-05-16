@@ -1,5 +1,159 @@
 [
     {
+        "version": "23.0",
+        "packages": [
+            {
+                "name": "GDB",
+                "download": [
+                    {
+                        "name": "Upstream website",
+                        "link": "https://www.sourceware.org/gdb/current/"
+                    },
+                    {
+                        "name": "gdb-7.6.2",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/gdb-762-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "gdb-8.2",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/gdb-82-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "gdb-11.1",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/gdb-111-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "gdb-12.1",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/gdb-121-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "gdb-13.1",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/gdb-131-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "cuda-gdb-11.0",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/cuda-gdb-110-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "cuda-gdb-12.0",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/cuda-gdb-101-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "rocm-gdb-5.1",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/rocm-gdb-51-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "Pretty printers",
+                "download": [
+                    {
+                        "name": "Upstream website",
+                        "link": "https://github.com/gcc-mirror/gcc/tree/master/libstdc++-v3/python/libstdcxx/v6"
+                    },
+                    {
+                        "name": "libstdcxx-gdb-8.2",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/libstdcxx-gdb-82-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "libstdcxx-gdb-11.1",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/libstdcxx-gdb-111-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "libstdcxx-gdb-12.1",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/libstdcxx-gdb-121-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "libstdcxx-gdb-13.1",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/libstdcxx-gdb-131-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "cppcheck",
+                "download": [
+                    {
+                        "name": "Upstream website",
+                        "link": "http://cppcheck.sourceforge.net/"
+                    },
+                    {
+                        "name": "Download source code",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/cppcheck-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "Python",
+                "download": [
+                    {
+                        "name": "python-2.7.9",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/pythongdb_2_7_9-23.0.tar.bz2"
+                    },
+                    {
+                        "name": "python-3.7.9",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/pythongdb_3_7_9-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "Exuberant Ctags",
+                "download": [
+                    {
+                        "name": "Upstream website",
+                        "link": "http://ctags.sourceforge.net/"
+                    },
+                    {
+                        "name": "Download source code",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/ctags-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "Qt",
+                "download": [
+                    {
+                        "name": "Upstream website",
+                        "link": "https://download.qt.io/archive/qt/5.14/5.14.0/single/"
+                    },
+                    {
+                        "name": "Download source code",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/qt-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "Tulliana 2.0 Icons",
+                "download": [
+                    {
+                        "name": "Upstream website",
+                        "link": "http://www.iconarchive.com/show/tulliana-2-icons-by-umut-pulat.html"
+                    },
+                    {
+                        "name": "Download source code",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/icons-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "Allinea Tools Utility Libraries",
+                "download": [
+                    {
+                        "name": "Download source code",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/ddt-util-23.0.tar.bz2"
+                    }
+                ]
+            },
+            {
+                "name": "Qt OpenSSH Ask Password Utility",
+                "download": [
+                    {
+                        "name": "Download source code",
+                        "link": "https://downloads.linaroforge.com/23.0/sources/openssh-askpass-qt-23.0.tar.bz2"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "version": "22.1.3",
         "packages": [
             {
@@ -99,51 +253,6 @@
                     {
                         "name": "python-3.7.9",
                         "link": "https://downloads.linaroforge.com/22.1.3/sources/pythongdb_3_7_9-22.1.3.tar.bz2"
-                    }
-                ]
-            },
-            {
-                "name": "Arm Compiler for HPC 18.0",
-                "download": [
-                    {
-                        "name": "Download source code",
-                        "link": "https://developer.arm.com/-/media/Files/downloads/hpc/arm-allinea-studio/18-0/sources/ARM-Compiler-for-HPC_18.0_Sources.tar?revision=8e39bf72-4c91-4306-9efe-8019205b50eb&rev=8e39bf724c9143069efe8019205b50eb&hash=304CA57DC1629DD8DB2B5B9B62A7E301"
-                    }
-                ]
-            },
-            {
-                "name": "Arm Compiler for HPC 19.0",
-                "download": [
-                    {
-                        "name": "Download source code",
-                        "link": "https://developer.arm.com/-/media/Files/downloads/hpc/arm-allinea-studio/19-0/sources/ARM-Compiler-for-HPC_19.0_Sources.tar?revision=14a82ee6-60bc-40a3-9d32-757ec9835464&rev=14a82ee660bc40a39d32757ec9835464&hash=D4C00E6EF0F89FBF2193388941A72397"
-                    }
-                ]
-            },
-            {
-                "name": "Arm Compiler for Linux 20.0",
-                "download": [
-                    {
-                        "name": "Download source code",
-                        "link": "https://developer.arm.com/-/media/Files/downloads/hpc/arm-allinea-studio/20-0/sources/Arm-Compiler-for-linux_20.0_Sources.tar?revision=4c2a5362-0803-4579-a487-1268c46029b4&rev=4c2a536208034579a4871268c46029b4&hash=5349D568BD13AED85F43D5F791DD75D4"
-                    }
-                ]
-            },
-            {
-                "name": "Arm Compiler for Linux 21.0",
-                "download": [
-                    {
-                        "name": "Download source code",
-                        "link": "https://developer.arm.com/-/media/Files/downloads/hpc/arm-allinea-studio/21-0/sources/gcc-10-sources.tar.xz?rev=186742c77cd146aaa58e302da00fe965&hash=D9A9F7F2DE1A678414D8AE6DB3BB5F24"
-                    }
-                ]
-            },
-            {
-                "name": "Arm Compiler for Linux 22.0",
-                "download": [
-                    {
-                        "name": "Download source code",
-                        "link": "https://developer.arm.com/-/media/Files/downloads/hpc/arm-allinea-studio/22-0/sources/gcc-11-sources.tar.xz?rev=a1de8c55b85744c5ad6a2ca75d658d2d&hash=7A23A702C1FF9894DC37A51301BBEA6F"
                     }
                 ]
             },

@@ -15,8 +15,8 @@ import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const DownloadForge = () => {
-  const buttonTitles = [{ name: 'Older versions of Linaro Forge', to: '/downloadForge_OldVersion' }, { name: 'Linaro License Server', to: '/licenseServer' }, { name: 'Third Party Source Code', to: '/DownloadThirdPartySourceCode' }, { name: 'Supported platforms', to: 'https://docs.linaroforge.com/latest/html/101136_arm-forge-user-guide/supported_platforms/index.html' },
-  { name: 'User guide', to: 'https://docs.linaroforge.com/latest/html/101136_arm-forge-user-guide/index.html' }, { name: 'Linaro Forge Release History', to: '/ReleaseHistory' }];
+  const buttonTitles = [{ name: 'Older versions of Linaro Forge', to: '/downloadForge_OldVersion' }, { name: 'Linaro License Server', to: '/licenseServer' }, { name: 'Third Party Source Code', to: '/DownloadThirdPartySourceCode' }, { name: 'Supported platforms', to: 'https://docs.linaroforge.com/23.0/html/forge/supported_platforms/index.html' },
+  { name: 'User guide', to: 'https://docs.linaroforge.com/23.0/html/forge/index.html' }, { name: 'Linaro Forge Release History', to: '/ReleaseHistory' }];
   const router = useRouter();
   const formtheme = createTheme({
     typography: {
