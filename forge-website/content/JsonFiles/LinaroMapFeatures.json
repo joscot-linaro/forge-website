@@ -1,0 +1,14 @@
+[
+  {
+    "Title": "Low-overhead Profiling",
+    "Description": "Profile your code without distorting application behaviour. Linaro MAP is Linaro Forge's scalable low-overhead profiler with no instrumentation or code changes required. It helps developers accelerate their code by revealing the causes of slow performance. From multicore Linux workstations to the largest supercomputers, you can profile realistic test cases with typically less than 5% runtime overhead."
+  },
+  {
+    "Title": "Single and Multi Threaded Profiling",
+    "Description": "Linaro MAP profiles parallel, multithreaded, and single threaded codes, providing in-depth analysis and bottleneck pinpointing to the source line. Unlike most profilers, it can profile pthreads, OpenMP or MPI for parallel and threaded code, including communication and workload imbalance issues for MPI and multi-process codes."
+  },
+  {
+    "Title": "Wide Issue Coverage",
+    "Description": "Linaro MAP exposes a wide set of performance indicators, including MPI metrics, Perf counters, I/O metrics, memory usage and even your own custom metrics. Profile computation (with self and child and call tree representations over time), thread activity (to identify over-subscribed cores and sleeping threads that waste CPU time for OpenMP and pthreads), instruction types, as well as synchronization and I/O performance."
+  }
+]

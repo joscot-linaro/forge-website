@@ -42,3 +42,12 @@ export const aboutHeaderText =
   "The Forge software has been around for years. While the name may have changed - from Allinea Software to Arm Forge and now Linaro Forge - the tools have always fulfilled the same purpose - to enable developers to build reliable and optimized code for the right results on multiple Server and HPC architectures.";
 export const aboutForgeBody =
   "Linaro was formed in 2010 to consolidate the Arm codebase and make it easier for companies to work with Arm software. Linaro has over the years done this through collaborative open-source projects and professional service engagements.";
+
+export const LinaroMapContext = [
+  " No need to change your code or the way you build it",
+  "Profiling for applications running on more than one server and multiple processes",
+  "Clear views of bottlenecks in I/O, in compute, in thread or in multi-process activity",
+  "Deep insight into actual processor instruction types that affect your performance",
+  "View memory usage over time to discover high watermarks and changes across the complete memory footprint",
+  "Track time in CUDA and ROCm GPU kernelss",
+];

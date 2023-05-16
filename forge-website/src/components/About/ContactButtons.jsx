@@ -8,6 +8,7 @@ import Box from '@mui/material/Box';
 
 const ContactButtons = () => {
     const router = useRouter();
+
     const contactButtons = [{ contact: 'Contact Us', contactLink: "/contactUs" }, { contact: 'Email Sales', contactLink: '/freeTrial' }, { contact: 'Email Support', contactLink: '/feedback' }];
     return (
         <Grid sx={{ display: 'flex', flexDirection: 'column', mt: 5, width: '100%' }}>
