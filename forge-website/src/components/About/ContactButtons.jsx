@@ -55,7 +55,7 @@ const ContactButtons = () => {
             </Box>
             <CardMedia
                 component="img"
-                sx={{ height: '60%', mx: { xs: 'auto', md: '0' }, maxWidth: '100%', mt: 2, mb: 4 }}
+                sx={{ height: '60%', width: { xl: '77%', lg: '87%', xs: '100%' }, mt: 2, mb: 4, alignSelf: 'center' }}
                 image='/images/ABOUT_page_image.jpg'
                 alt="About image"
             />
