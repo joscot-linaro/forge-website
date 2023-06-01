@@ -9,6 +9,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { useRouter } from "next/router";
 import Head from 'next/head';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 
 
 const LicenseServer = () => {
@@ -18,6 +19,7 @@ const LicenseServer = () => {
       fontFamily: 'Lato',
     },
   });
+  const buttonTitles = [{ name: 'Release history', to: '/LicenceServerReleasehistory' }, { name: 'User Guide', to: 'https://docs.linaroforge.com/latest/html/101169_arm-licence-server-user-guide/use_arm_licence_server/index.html' }]
   return (
     <ThemeProvider theme={formtheme}>
       <Head>
@@ -39,11 +41,43 @@ const LicenseServer = () => {
             <Typography variant="h5" sx={{ mt: 2, mb: 3, fontWeight: '600', pl: 3 }}>Linaro License Server</Typography>
             <Typography variant="h6" sx={{ mt: 2, mb: 3, fontWeight: '600', pl: 3 }}>Download Linaro Licence Server</Typography>
             <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>Use the table below to download the latest version of Linaro Licence Server for your server and HPC toolchain.</Typography>
-            <Typography sx={{ textDecoration: 'none', color: '#2596be', mt: 2, mb: 3, fontWeight: '400', pl: 3 }} component='a' href='https://docs.linaroforge.com/latest/html/101169_arm-licence-server-user-guide/use_arm_licence_server/index.html'>User Guide</Typography>
             {/* <Typography variant="body1" sx={{ mt: 2, mb: 3, fontWeight: '400', pl: 3 }}>For more information, see <Typography sx={{ textDecoration: 'none', color: '#2596be' }} component='a' href='https://docs.linaroforge.com/latest/html/101169_arm-licence-server-user-guide/use_arm_licence_server/index.html'>Use Linaro Licence Server</Typography>.</Typography> */}
           </Grid>
           <LicenseServerTable />
-          <Button onClick={() => router.push('/LicenceServerReleasehistory')} sx={{ color: 'white', background: '#23b1da', m: 2, borderRadius: 3, '&:hover': { color: '#23b1da' } }}>Release history</Button>
+          <Box sx={{ overflowX: 'auto', minWidth: 0 }}>
+            <Grid
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                mx: { md: 'auto' },
+              }}
+            >
+              {buttonTitles.map((item) => (
+                <Button
+                  key={item.name}
+                  onClick={() => router.push(item.to)}
+                  sx={{
+                    color: 'white',
+                    background: '#23b1da',
+                    m: 2,
+                    borderRadius: 3,
+                    width: '10%',
+                    fontSize: '14px',
+                    '@media (max-width: 768px)': {
+                      width: 'auto',
+                      fontSize: '12px',
+                      padding: '8px 40px',
+                    },
+                    '&:hover': { color: '#23b1da' },
+                  }}
+                >
+                  {item.name}
+                </Button>
+              ))}
+            </Grid>
+          </Box>
+          {/* <Button onClick={() => router.push('/LicenceServerReleasehistory')} sx={{ color: 'white', background: '#23b1da', m: 2, borderRadius: 3, '&:hover': { color: '#23b1da' } }}>Release history</Button> */}
         </Grid>
         <Footer />
       </Grid>
